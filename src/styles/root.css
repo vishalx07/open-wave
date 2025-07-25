@@ -1,0 +1,13 @@
+:root {
+  /* ... */
+  --header-mobile-height: 64px;
+  --header-desktop-height: 72px;
+  /* ... */
+  --dashboard-w: 272px;
+  --dashboard-mini-w: 80px;
+  /* ... */
+  --dashboard-item-h: 34px;
+  --dashboard-sub-item-h: 30px;
+  /* ... */
+  --dashboard-item-icon: 16px;
+}

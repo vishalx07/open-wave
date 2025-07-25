@@ -1,0 +1,58 @@
+@layer utilities {
+  .scrollbar-hide {
+    /* For Chrome, Safari, and Opera */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* For Firefox */
+    scrollbar-width: none;
+
+    /* Optional: Ensures compatibility with some edge cases in Firefox */
+    -ms-overflow-style: none; /* for Internet Explorer and Edge */
+  }
+}
+
+@utility container {
+  @apply mx-auto w-full max-w-(--breakpoint-xl) px-4 lg:px-6;
+}
+
+@utility app-container {
+  @apply mx-auto w-full max-w-(--breakpoint-xl) p-4 pb-20! lg:p-6;
+}
+
+@utility dashboard-container {
+  @apply mx-auto w-full max-w-(--breakpoint-2xl) p-4 pb-12!;
+}
+
+@utility scrollbar-thin {
+  @apply [&::-webkit-scrollbar-thumb]:bg-default-600/[0.48] dark:[&::-webkit-scrollbar-thumb]:bg-default-300/[0.48] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full;
+}
+
+@utility dashboard-bullet-join {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1.5px;
+    bottom: calc(32px - 2px - 12px / 2);
+    background-color: var(--color-content2);
+  }
+}
+
+@utility dashboard-bullet {
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--color-content2);
+    mask-image: url("/svg/dashboard-bullet.svg");
+    mask-position: 50% 50%;
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+    transform: translate(calc(12px * -1), calc(12px * -0.4));
+  }
+}

@@ -11,6 +11,9 @@ importers:
       '@jamsr-ui/react':
         specifier: ^0.1.16
         version: 0.1.16(@tanstack/react-table@8.21.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(@tiptap/pm@2.26.1)(@types/react@19.1.8)(highlight.js@11.11.1)(motion@12.23.9(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwindcss@4.1.11)(use-sync-external-store@1.5.0(react@19.1.0))
+      lucide-react:
+        specifier: ^0.525.0
+        version: 0.525.0(react@19.1.0)
       motion:
         specifier: ^12.23.9
         version: 12.23.9(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -23,6 +26,9 @@ importers:
       react-dom:
         specifier: 19.1.0
         version: 19.1.0(react@19.1.0)
+      zustand:
+        specifier: ^5.0.6
+        version: 5.0.6(@types/react@19.1.8)(react@19.1.0)(use-sync-external-store@1.5.0(react@19.1.0))
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3
@@ -2855,6 +2861,11 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
+  lucide-react@0.525.0:
+    resolution: {integrity: sha512-Tm1txJ2OkymCGkvwoHt33Y2JpN5xucVq1slHcgE6Lk0WjDfjgKWor5CdVER8U6DvcfMwh4M8XxmpTiyzfmfDYQ==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
 
@@ -3594,6 +3605,24 @@ packages:
 
   zustand@5.0.3:
     resolution: {integrity: sha512-14fwWQtU3pH4dE0dOpdMiWjddcH+QzKIgk1cl8epwSE7yag43k/AD/m4L6+K7DytAOr9gGBe3/EXj9g7cdostg==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@types/react': '>=18.0.0'
+      immer: '>=9.0.6'
+      react: '>=18.0.0'
+      use-sync-external-store: '>=1.2.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      immer:
+        optional: true
+      react:
+        optional: true
+      use-sync-external-store:
+        optional: true
+
+  zustand@5.0.6:
+    resolution: {integrity: sha512-ihAqNeUVhe0MAD+X8M5UzqyZ9k3FFZLBTtqo6JLPwV53cbRB/mJwBI0PxcIgqhBBHlEs8G45OTDTMq3gNcLq3A==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=18.0.0'
@@ -7046,6 +7075,10 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
+  lucide-react@0.525.0(react@19.1.0):
+    dependencies:
+      react: 19.1.0
+
   magic-string@0.30.17:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.4
@@ -7887,6 +7920,12 @@ snapshots:
   yocto-queue@0.1.0: {}
 
   zustand@5.0.3(@types/react@19.1.8)(react@19.1.0)(use-sync-external-store@1.5.0(react@19.1.0)):
+    optionalDependencies:
+      '@types/react': 19.1.8
+      react: 19.1.0
+      use-sync-external-store: 1.5.0(react@19.1.0)
+
+  zustand@5.0.6(@types/react@19.1.8)(react@19.1.0)(use-sync-external-store@1.5.0(react@19.1.0)):
     optionalDependencies:
       '@types/react': 19.1.8
       react: 19.1.0
