@@ -1,4 +1,4 @@
-import { LayoutGrid } from "lucide-react";
+import { CircleUser, LayoutGrid } from "lucide-react";
 import { APP_ROUTES } from "@/configs/routes";
 import { type NavItem } from "./types";
 
@@ -14,38 +14,100 @@ export const NAV_ITEMS: NavItem[] = [
     ],
   },
   {
-    title: "Levels",
+    title: "User",
     items: [
       {
-        title: "Levels",
-        icon: <LayoutGrid />,
-        url: "#",
+        title: "Public Profile",
+        icon: <CircleUser />,
+        url: APP_ROUTES.publicProfile.root,
         items: [
           {
-            title: "Level 1",
-            url: "#",
-          },
-          {
-            title: "Level 2",
-            url: "#",
+            title: "Profiles",
+            url: APP_ROUTES.publicProfile.profiles.root,
             items: [
               {
-                title: "Level 2.1",
-                url: "#",
+                title: "Default",
+                url: APP_ROUTES.publicProfile.profiles.default,
               },
               {
-                title: "Level 2.2",
-                url: "#",
+                title: "Creator",
+                url: APP_ROUTES.publicProfile.profiles.creator,
               },
               {
-                title: "Level 2.3",
-                url: "#",
+                title: "Company",
+                url: APP_ROUTES.publicProfile.profiles.company,
+              },
+              {
+                title: "NFT",
+                url: APP_ROUTES.publicProfile.profiles.nft,
+              },
+              {
+                title: "Blogger",
+                url: APP_ROUTES.publicProfile.profiles.blogger,
+              },
+              {
+                title: "CRM",
+                url: APP_ROUTES.publicProfile.profiles.crm,
+              },
+              {
+                title: "Gamer",
+                url: APP_ROUTES.publicProfile.profiles.gamer,
+              },
+              {
+                title: "Feeds",
+                url: APP_ROUTES.publicProfile.profiles.feeds,
+              },
+              {
+                title: "Plain",
+                url: APP_ROUTES.publicProfile.profiles.plain,
+              },
+              {
+                title: "Modal",
+                url: APP_ROUTES.publicProfile.profiles.modal,
               },
             ],
           },
           {
-            title: "Level 3",
-            url: "#",
+            title: "Projects",
+            url: APP_ROUTES.publicProfile.projects.root,
+            items: [
+              {
+                title: "3 Columns",
+                url: APP_ROUTES.publicProfile.projects["3Columns"],
+              },
+              {
+                title: "2 Columns",
+                url: APP_ROUTES.publicProfile.projects["2Columns"],
+              },
+            ],
+          },
+          {
+            title: "Works",
+            url: APP_ROUTES.publicProfile.works,
+          },
+          {
+            title: "Teams",
+            url: APP_ROUTES.publicProfile.teams,
+          },
+          {
+            title: "Network",
+            url: APP_ROUTES.publicProfile.network,
+          },
+          {
+            title: "Activity",
+            url: APP_ROUTES.publicProfile.activity,
+          },
+          {
+            title: "Campaigns - Card",
+            url: APP_ROUTES.publicProfile.campaigns.card,
+          },
+          {
+            title: "Campaigns - List",
+            url: APP_ROUTES.publicProfile.campaigns.list,
+          },
+          {
+            title: "Empty",
+            url: APP_ROUTES.publicProfile.empty,
           },
         ],
       },
