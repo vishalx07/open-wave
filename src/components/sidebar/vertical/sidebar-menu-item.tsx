@@ -96,3 +96,5 @@ export const SidebarMenuItem = React.memo((props: Props) => {
     </Collapsible>
   );
 });
+
+SidebarMenuItem.displayName = "SidebarMenuItem";

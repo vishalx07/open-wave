@@ -7,7 +7,21 @@ type Props = {
 export const ThemeProvider = ({ children }: Props) => {
   return (
     <UIProvider>
-      <UIConfigProvider>{children}</UIConfigProvider>
+      <UIConfigProvider
+        card={{
+          radius: "2xl",
+          className: "border border-divider",
+        }}
+        dataTable={{
+          allowHover: true,
+          radius: "2xl",
+          classNames: /** @tw */ {
+            thead: "bg-content2 ",
+          },
+        }}
+      >
+        {children}
+      </UIConfigProvider>
     </UIProvider>
   );
 };
