@@ -33,7 +33,7 @@
 
   /* Divider Colors */
   --ui-divider-light: oklch(13.3% 0.003 246.1);
-  --ui-divider: oklch(27.4% 0.006 286.033);
+  --ui-divider: var(--border);
   --ui-divider-dark: oklch(34.9% 0.013 248.2);
 
   /* Focus Color */
