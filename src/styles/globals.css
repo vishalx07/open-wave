@@ -2,6 +2,7 @@
 
 @import "@jamsr-ui/theme/styles.css";
 @source "../../node_modules/@jamsr-ui";
-
+@import "./theme.css";
+@import "./ui-theme.css";
 @import "./root.css";
 @import "./utilities.css";
