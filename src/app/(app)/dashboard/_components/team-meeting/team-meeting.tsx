@@ -6,10 +6,16 @@ import {
   Link,
   Text,
 } from "@jamsr-ui/react";
+import { APP_ROUTES } from "@/configs/routes";
 
-const usersAvatar = ["/user1.png", "/user2.png", "/user3.png", " "];
+const USERS = [
+  "/images/user1.png",
+  "/images/user2.png",
+  "/images/user3.png",
+  "",
+];
 
-export const TeamMetting = () => {
+export const TeamMeeting = () => {
   return (
     <Card className="h-full">
       <CardContent className="grow p-5 lg:p-7.5 lg:pt-6">
@@ -49,14 +55,14 @@ export const TeamMetting = () => {
               Team
             </div>
             <div className="flex -space-x-2">
-              {usersAvatar.map((src, ind) => {
+              {USERS.map((src, index) => {
                 return (
                   <Avatar
-                    className="border-divider border"
-                    key={ind}
-                    alt={"a"}
+                    key={index}
+                    alt={"S"}
                     src={src}
                     size="sm"
+                    className="border-divider border"
                   />
                 );
               })}
@@ -65,7 +71,7 @@ export const TeamMetting = () => {
         </div>
       </CardContent>
       <CardFooter className="border-divider flex min-h-14 items-center justify-center border-t py-0">
-        <Link href="/">Join Metting</Link>
+        <Link href={APP_ROUTES.home}>Join Meeting</Link>
       </CardFooter>
     </Card>
   );

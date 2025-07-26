@@ -1,7 +1,7 @@
 import { StarIcon } from "lucide-react";
 import { Avatar, ColumnDef } from "@jamsr-ui/react";
 import { cn } from "@jamsr-ui/utils";
-import { TeamType } from "./table";
+import { type TeamType } from "./data";
 
 export const columns: ColumnDef<TeamType>[] = [
   {

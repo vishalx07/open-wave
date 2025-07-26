@@ -1,55 +1,48 @@
-import {
-  Avatar,
-  Card,
-  CardContent,
-  CardFooter,
-  Link,
-  Text,
-} from "@jamsr-ui/react";
+import { Avatar, Card, CardContent, CardFooter, Link } from "@jamsr-ui/react";
+import { APP_ROUTES } from "@/configs/routes";
 
-const usersAvatar = ["/user1.png", "/user2.png", "/user3.png", " "];
+const USERS = [
+  "/images/user1.png",
+  "/images/user2.png",
+  "/images/user3.png",
+  "",
+];
 
 export const GetStarted = () => {
   return (
     <Card className="h-full">
-      <CardContent className="grow bg-[url('/bg-2-dark.png')] bg-[length:80%] [background-position:175%_25%] bg-no-repeat p-10">
+      <CardContent className="grow bg-[url('/images/bg-2-dark.png')] bg-[length:80%] [background-position:175%_25%] bg-no-repeat p-10">
         <div className="flex flex-col justify-center gap-4">
           <div className="flex -space-x-2">
-            {usersAvatar.map((src, ind) => {
+            {USERS.map((src, index) => {
               return (
                 <Avatar
                   className="border-divider border"
-                  key={ind}
-                  alt={"a"}
+                  key={index}
+                  alt={"S"}
                   src={src}
                 />
               );
             })}
           </div>
-          <Text
-            as="h2"
-            className="text-mono text-xl font-semibold"
-          >
+          <h2 className="text-mono text-xl font-semibold">
             Connect Today & Join <br /> the{" "}
             <Link
-              href="/"
+              href={APP_ROUTES.home}
               underline="never"
             >
               KeenThemes Network
             </Link>
-          </Text>
-          <Text
-            as="p"
-            className="text-secondary-foreground text-sm leading-5.5 font-normal"
-          >
+          </h2>
+          <p className="text-secondary-foreground text-sm leading-5.5 font-normal">
             Enhance your projects with premium themes and <br /> templates. Join
             the KeenThemes community today <br /> for top-quality designs and
             resources.
-          </Text>
+          </p>
         </div>
       </CardContent>
       <CardFooter className="border-divider flex min-h-14 items-center justify-center border-t py-0">
-        <Link href="/">Get Started</Link>
+        <Link href={APP_ROUTES.home}>Get Started</Link>
       </CardFooter>
     </Card>
   );

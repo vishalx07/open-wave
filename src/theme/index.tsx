@@ -16,7 +16,14 @@ export const ThemeProvider = ({ children }: Props) => {
           allowHover: true,
           radius: "2xl",
           classNames: /** @tw */ {
-            thead: "bg-content2 ",
+            th: "bg-content2",
+          },
+        }}
+        iconButton={{
+          props: ({ variant }) => {
+            return variant === "outlined"
+              ? { className: "border text-foreground-secondary" }
+              : {};
           },
         }}
       >
