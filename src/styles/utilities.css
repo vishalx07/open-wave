@@ -22,7 +22,7 @@
 }
 
 @utility dashboard-container {
-  @apply mx-auto w-full max-w-(--breakpoint-2xl) p-4 pb-12!;
+  @apply mx-auto w-full max-w-[1320px] p-4 pb-12! lg:px-6;
 }
 
 @utility scrollbar-thin {

@@ -27,7 +27,6 @@ export const columns: ColumnDef<TeamType>[] = [
         original: { rating },
       },
     }) => {
-      console.log(Math.floor(rating));
       return (
         <div className="flex items-center">
           {Array.from({ length: 5 }).map((_, ind) => {

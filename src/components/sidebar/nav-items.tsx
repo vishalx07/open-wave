@@ -111,36 +111,6 @@ export const NAV_ITEMS: NavItem[] = [
           },
         ],
       },
-      {
-        title: "Level 1",
-        icon: <LayoutGrid />,
-        url: "#",
-      },
-      {
-        title: "Level 2",
-        icon: <LayoutGrid />,
-        url: "#",
-      },
-      {
-        title: "Level 3",
-        icon: <LayoutGrid />,
-        url: "#",
-      },
-      {
-        title: "Level 4",
-        icon: <LayoutGrid />,
-        url: "#",
-      },
-      {
-        title: "Level 5",
-        icon: <LayoutGrid />,
-        url: "#",
-      },
-      {
-        title: "Level 6",
-        icon: <LayoutGrid />,
-        url: "#",
-      },
     ],
   },
 ];
