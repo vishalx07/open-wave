@@ -1,4 +1,9 @@
-import { CircleUser, LayoutGrid } from "lucide-react";
+import {
+  CircleUser,
+  HeadphonesIcon,
+  LayoutGrid,
+  ShieldIcon,
+} from "lucide-react";
 import { APP_ROUTES } from "@/configs/routes";
 import { type NavItem } from "./types";
 
@@ -112,18 +117,99 @@ export const NAV_ITEMS: NavItem[] = [
         ],
       },
       {
-        title: "Level 1",
-        icon: <LayoutGrid />,
-        url: "#",
+        title: "Authentication",
+        icon: <ShieldIcon />,
+        url: APP_ROUTES.auth.root,
+        items: [
+          {
+            title: "Login",
+            url: APP_ROUTES.auth.login.root,
+            items: [
+              {
+                title: "Login v1",
+                url: APP_ROUTES.auth.login.v1,
+              },
+              {
+                title: "Login v2",
+                url: APP_ROUTES.auth.login.v2,
+              },
+            ],
+          },
+          {
+            title: "Register",
+            url: APP_ROUTES.auth.register.root,
+            items: [
+              {
+                title: "Register v1",
+                url: APP_ROUTES.auth.register.v1,
+              },
+              {
+                title: "Register v2",
+                url: APP_ROUTES.auth.register.v2,
+              },
+            ],
+          },
+          {
+            title: "Verify Email",
+            url: APP_ROUTES.auth.verifyEmail.root,
+            items: [
+              {
+                title: "Verify Email 1",
+                url: APP_ROUTES.auth.verifyEmail.v1,
+              },
+              {
+                title: "Verify Email 2",
+                url: APP_ROUTES.auth.verifyEmail.v2,
+              },
+            ],
+          },
+          {
+            title: "Forgot Password",
+            url: APP_ROUTES.auth.forgotPassword.root,
+            items: [
+              {
+                title: "Forgot Password v1",
+                url: APP_ROUTES.auth.forgotPassword.v1,
+              },
+              {
+                title: "Forgot Password v2",
+                url: APP_ROUTES.auth.forgotPassword.v2,
+              },
+            ],
+          },
+          {
+            title: "Reset Password",
+            url: APP_ROUTES.auth.resetPassword.root,
+            items: [
+              {
+                title: "Reset Password v1",
+                url: APP_ROUTES.auth.resetPassword.v1,
+              },
+              {
+                title: "Reset Password v2",
+                url: APP_ROUTES.auth.resetPassword.v2,
+              },
+            ],
+          },
+          {
+            title: "2FA",
+            url: APP_ROUTES.auth.twoFA.root,
+            items: [
+              {
+                title: "2FA v1",
+                url: APP_ROUTES.auth.twoFA.v1,
+              },
+              {
+                title: "2FA v2",
+                url: APP_ROUTES.auth.twoFA.v2,
+              },
+            ],
+          },
+        ],
       },
       {
-        title: "Level 2",
-        icon: <LayoutGrid />,
-        url: "#",
-      },
-      {
-        title: "Level 3",
-        icon: <LayoutGrid />,
+        title: "Support",
+        icon: <HeadphonesIcon />,
         url: "#",
       },
       {

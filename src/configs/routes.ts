@@ -7,6 +7,16 @@ const profiles = <T extends string>(path: T) =>
 const projects = <T extends string>(path: T) =>
   publicProfile("/projects" + path);
 
+const auth = <T extends string>(path: T) => route("/auth" + path);
+const login = <T extends string>(path: T) => auth("/login" + path);
+const register = <T extends string>(path: T) => auth("/register" + path);
+const forgotPassword = <T extends string>(path: T) =>
+  auth("/forgot-password" + path);
+const resetPassword = <T extends string>(path: T) =>
+  auth("/reset-password" + path);
+const twoFA = <T extends string>(path: T) => auth("/2fa" + path);
+const verifyEmail = <T extends string>(path: T) => auth("/verify-email" + path);
+
 export const APP_ROUTES = {
   home: route(""),
   dashboard: route("/dashboard"),
@@ -40,5 +50,38 @@ export const APP_ROUTES = {
       list: publicProfile("/campaigns/list"),
     },
     empty: publicProfile("/empty"),
+  },
+  auth: {
+    root: route("/auth"),
+    login: {
+      root: login(""),
+      v1: login("/v1"),
+      v2: login("/v2"),
+    },
+    register: {
+      root: register(""),
+      v1: register("/v1"),
+      v2: register("/v2"),
+    },
+    verifyEmail: {
+      root: verifyEmail(""),
+      v1: verifyEmail("/v1"),
+      v2: verifyEmail("/v2"),
+    },
+    forgotPassword: {
+      root: forgotPassword(""),
+      v1: forgotPassword("/v1"),
+      v2: forgotPassword("/v2"),
+    },
+    resetPassword: {
+      root: resetPassword(""),
+      v1: resetPassword("/v1"),
+      v2: resetPassword("/v2"),
+    },
+    twoFA: {
+      root: twoFA("/2fa"),
+      v1: twoFA("/v1"),
+      v2: twoFA("/v2"),
+    },
   },
 };
