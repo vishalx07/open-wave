@@ -1,3 +1,6 @@
+import { Navigations } from "./_components/navigations";
+import { Profile } from "./_components/profile";
+
 type Props = {
   children: React.ReactNode;
 };
@@ -5,7 +8,8 @@ type Props = {
 export default function layout({ children }: Props) {
   return (
     <>
-      <div>layout</div>
+      <Profile />
+      <Navigations />
       {children}
     </>
   );
