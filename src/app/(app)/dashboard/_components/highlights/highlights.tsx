@@ -1,37 +1,7 @@
-import {
-  ArrowDownIcon,
-  ArrowUpIcon,
-  FacebookIcon,
-  InstagramIcon,
-  StoreIcon,
-} from "lucide-react";
+import { ArrowDownIcon, ArrowUpIcon } from "lucide-react";
 import { Card, CardContent, CardHeader, Chip, Divider } from "@jamsr-ui/react";
 import { formatMoney } from "@/utils/format-money";
-
-const sellsData = {
-  totalSells: 295700,
-  sellsGrowth: 2.7,
-  platformSells: [
-    {
-      name: "Online Store",
-      icon: StoreIcon,
-      sells: 172000,
-      growth: 3.9,
-    },
-    {
-      name: "Facebook",
-      icon: FacebookIcon,
-      sells: 85000,
-      growth: 0.7,
-    },
-    {
-      name: "Instagram",
-      icon: InstagramIcon,
-      sells: 36000,
-      growth: 8.2,
-    },
-  ],
-};
+import { SELLS_DATA } from "./data";
 
 export const HighLights = () => {
   return (
@@ -47,13 +17,13 @@ export const HighLights = () => {
           </span>
           <div className="flex items-center gap-2.5">
             <span className="text-mono text-3xl font-semibold">
-              ${formatMoney(sellsData.totalSells)}
+              ${formatMoney(SELLS_DATA.totalSells)}
             </span>
             <Chip
               size="sm"
               color="success"
             >
-              +{sellsData.sellsGrowth}%
+              +{SELLS_DATA.sellsGrowth}%
             </Chip>
           </div>
         </div>
@@ -78,8 +48,9 @@ export const HighLights = () => {
         </div>
 
         <Divider />
+
         <div className="grid gap-3">
-          {sellsData.platformSells.map((item, ind) => {
+          {SELLS_DATA.platformSells.map((item, ind) => {
             const Icon = item.icon;
             return (
               <div

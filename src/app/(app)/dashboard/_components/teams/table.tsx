@@ -1,85 +1,14 @@
 "use client";
 
-import { Card, CardHeader, DataTable } from "@jamsr-ui/react";
+import { DataTable } from "@jamsr-ui/react";
 import { columns } from "./columns";
-
-export type TeamType = {
-  name: string;
-  role: string;
-  rating: number;
-  lastModified: string;
-  members: {
-    name: string;
-    avatar: string;
-  }[];
-};
-const teamData: TeamType[] = [
-  {
-    name: "Quality Assurance",
-    role: "Product testing",
-    rating: 4.5,
-    lastModified: "25 Sep, 2024",
-    members: [
-      { name: "Member 1", avatar: "/user1.png" },
-      { name: "Member 2", avatar: "/user2.png" },
-    ],
-  },
-  {
-    name: "Legal Team",
-    role: "Legal support",
-    rating: 3,
-    lastModified: "25 Aug, 2024",
-    members: [
-      { name: "Member 1", avatar: "/user2.png" },
-      { name: "Member 2", avatar: "/user3.png" },
-    ],
-  },
-  {
-    name: "Product Management",
-    role: "Product development & lifecycle",
-    rating: 5,
-    lastModified: "21 Oct, 2024",
-    members: [
-      { name: "Member 1", avatar: "/user3.png" },
-      { name: "Member 2", avatar: "/user2.png" },
-      { name: "Member 3", avatar: "/user1.png" },
-      { name: "Member 3", avatar: "/user3.png" },
-    ],
-  },
-  {
-    name: "Finance Team",
-    role: "Financial planning",
-    rating: 4,
-    lastModified: "20 Sep, 2024",
-    members: [
-      { name: "Member 1", avatar: "/user2.png" },
-      { name: "Member 2", avatar: "/user3.png" },
-      { name: "Member 3", avatar: "/user1.png" },
-    ],
-  },
-  {
-    name: "Logistics Team",
-    role: "Supply chain",
-    rating: 2,
-    lastModified: "20 Aug, 2024",
-    members: [
-      { name: "Member 1", avatar: "/user2.png" },
-      { name: "Member 2", avatar: "/user3.png" },
-    ],
-  },
-];
+import { TEAMS_DATA } from "./data";
 
 export const TeamTable = () => {
   return (
-    <Card>
-      <CardHeader
-        heading="Teams"
-        className="border-divider border-b py-4"
-      />
-      <DataTable
-        data={teamData}
-        columns={columns}
-      />
-    </Card>
+    <DataTable
+      data={TEAMS_DATA}
+      columns={columns}
+    />
   );
 };

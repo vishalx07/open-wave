@@ -2,8 +2,8 @@ import { Earnings } from "./_components/earnings";
 import { GetStarted } from "./_components/get-started";
 import { HighLights } from "./_components/highlights";
 import { SocialMetrics } from "./_components/social-metrics";
-import { TeamMetting } from "./_components/team-metting";
-import { TeamTable } from "./_components/teams/table";
+import { TeamMeeting } from "./_components/team-meeting";
+import { Teams } from "./_components/teams";
 
 export default function Home() {
   return (
@@ -28,10 +28,10 @@ export default function Home() {
 
       <div className="items-strech grid gap-5 lg:grid-cols-3 lg:gap-7.5">
         <div className="lg:col-span-1">
-          <TeamMetting />
+          <TeamMeeting />
         </div>
         <div className="lg:col-span-2">
-          <TeamTable />
+          <Teams />
         </div>
       </div>
     </div>
