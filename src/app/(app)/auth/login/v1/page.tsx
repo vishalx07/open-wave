@@ -60,7 +60,7 @@ const page = () => {
           />
 
           <Link
-            href="/reset-password"
+            href={APP_ROUTES.auth.forgotPassword.v1}
             className="ml-auto text-sm"
           >
             Forgot Password?

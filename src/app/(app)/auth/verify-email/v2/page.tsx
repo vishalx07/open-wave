@@ -3,9 +3,9 @@ import { Button, Card, CardContent, Text } from "@jamsr-ui/react";
 
 export default function page() {
   return (
-    <Card className="flex min-h-dvh w-full flex-col items-center justify-center p-8">
+    <Card className="flex min-h-dvh w-full flex-col items-center justify-center bg-black p-8">
       <Card
-        className="w-full max-w-md border-none bg-transparent shadow-lg backdrop-blur-lg"
+        className="bg-background w-full max-w-md border-none shadow-lg backdrop-blur-lg"
         radius="2xl"
       >
         <CardContent className="p-6 sm:p-12">
