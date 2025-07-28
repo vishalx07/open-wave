@@ -1,7 +1,13 @@
+import { PageHeader } from "./_components/page-header";
+import { StatusGrid } from "./_components/status-grid";
+import { Table } from "./_components/table";
+
 export default function page() {
   return (
     <>
-      <div>page</div>
+      <PageHeader />
+      <StatusGrid />
+      <Table />
     </>
   );
-};
+}
