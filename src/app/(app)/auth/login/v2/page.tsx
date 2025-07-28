@@ -1,5 +1,6 @@
 import { Button, Card, Divider, Input, Link, Text } from "@jamsr-ui/react";
 import { Icons } from "@/components/icons";
+import { APP_ROUTES } from "@/configs/routes";
 
 const page = () => {
   return (
@@ -87,7 +88,8 @@ const page = () => {
               variant="paragraph2"
               className="text-center"
             >
-              Don't have an account? <Link href="#">Sign Up</Link>
+              Don't have an account?{" "}
+              <Link href={APP_ROUTES.auth.register.v2}>Sign Up</Link>
             </Text>
           </div>
         </div>

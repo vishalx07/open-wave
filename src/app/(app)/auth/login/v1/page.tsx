@@ -9,6 +9,7 @@ import {
   Text,
 } from "@jamsr-ui/react";
 import { Icons } from "@/components/icons";
+import { APP_ROUTES } from "@/configs/routes";
 import { TopHeading } from "./_components/top-heading";
 
 const page = () => {
@@ -90,9 +91,10 @@ const page = () => {
           </Button>
           <Text
             variant="paragraph2"
-            className="text-center"
+            className="text-foreground-secondary text-center"
           >
-            Don't have an account? <Link href="#">Sign Up</Link>
+            Don't have an account?{" "}
+            <Link href={APP_ROUTES.auth.register.v1}>Sign Up</Link>
           </Text>
         </CardContent>
       </Card>
