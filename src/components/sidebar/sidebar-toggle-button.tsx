@@ -15,7 +15,7 @@ export const SidebarToggleButton = () => {
       variant="outlined"
       onClick={onToggleMini}
       className={cn(
-        "border-divider bg-background fixed top-6 z-[61] -translate-x-1/2 border transition-[left] duration-300",
+        "border-divider bg-background fixed top-[calc(var(--header-desktop-height)/4)] z-[61] -translate-x-1/2 border transition-[left] duration-300",
         isMini
           ? isHovered
             ? "left-(--dashboard-w)"
