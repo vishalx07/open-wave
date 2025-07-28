@@ -1,12 +1,16 @@
 import { Bell, LayoutGrid, MessageCircleMore, Search } from "lucide-react";
 import { IconButton } from "@jamsr-ui/react";
 import { Account } from "./account";
+import { Nav } from "./nav";
 
 export const Header = () => {
   return (
     <header className="border-divider h-(--header-mobile-height) border-b lg:h-(--header-desktop-height)">
       <div className="container flex h-full items-center justify-between">
-        <div></div>
+        <div>
+          <Nav />
+        </div>
+
         <div className="flex items-center gap-3">
           <IconButton
             label="Search Button"

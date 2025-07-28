@@ -4,7 +4,7 @@ export const DATA = {
   user: {
     name: "Demosdckjd",
     email: "demo@kt.com",
-    avatar: "/images/user2.png",
+    avatar: "/images/user3.png",
   },
   items: [
     {
