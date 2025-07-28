@@ -88,7 +88,7 @@ const page = () => {
               variant="paragraph2"
               className="text-center"
             >
-              Don't have an account?{" "}
+              Don&apos;t have an account?{" "}
               <Link href={APP_ROUTES.auth.register.v2}>Sign Up</Link>
             </Text>
           </div>

@@ -33,7 +33,7 @@ export default function page() {
               variant="body1"
               className="text-foreground-secondary text-center"
             >
-              Didn't get the mail?
+              Didn&apos;t get the mail?
               <Link href="#"> Resend</Link>
             </Text>
           </div>
