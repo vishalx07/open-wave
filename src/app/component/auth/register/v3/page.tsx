@@ -3,9 +3,13 @@ import { COMPONENT_ROUTES } from "@/configs/routes/component";
 
 export default function page() {
   return (
-    <TerminalCodeBlock
-      iframeUrl={COMPONENT_ROUTES.auth.resetPassword.v2}
-      className="h-dvh"
-    />
+    <>
+      <TerminalCodeBlock
+        iframeUrl={COMPONENT_ROUTES.auth.login.v3}
+        className="h-dvh"
+      >
+        test
+      </TerminalCodeBlock>
+    </>
   );
 }

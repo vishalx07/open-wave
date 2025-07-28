@@ -4,7 +4,7 @@ import { COMPONENT_ROUTES } from "@/configs/routes/component";
 const page = () => {
   return (
     <TerminalCodeBlock
-      iframeUrl={COMPONENT_ROUTES.auth.register.v2}
+      iframeUrl={COMPONENT_ROUTES.auth.login.v3}
       className="h-dvh"
     />
   );

@@ -6,7 +6,7 @@ import {
   Link,
   Text,
 } from "@jamsr-ui/react";
-import { APP_ROUTES } from "@/configs/routes";
+import { COMPONENT_ROUTES } from "@/configs/routes/component";
 
 const USERS = [
   "/images/user1.png",
@@ -71,7 +71,7 @@ export const TeamMeeting = () => {
         </div>
       </CardContent>
       <CardFooter className="border-divider flex min-h-14 items-center justify-center border-t py-0">
-        <Link href={APP_ROUTES.home}>Join Meeting</Link>
+        <Link href={COMPONENT_ROUTES.home}>Join Meeting</Link>
       </CardFooter>
     </Card>
   );

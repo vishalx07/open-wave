@@ -1,4 +1,4 @@
-const route = <T extends string>(path: T) => `${path}` as const;
+const route = <T extends string>(path: T) => `/component${path}` as const;
 
 const publicProfile = <T extends string>(path: T) =>
   route("/public-profile" + path);
@@ -17,7 +17,7 @@ const resetPassword = <T extends string>(path: T) =>
 const twoFA = <T extends string>(path: T) => auth("/2fa" + path);
 const verifyEmail = <T extends string>(path: T) => auth("/verify-email" + path);
 
-export const APP_ROUTES = {
+export const COMPONENT_ROUTES = {
   home: route(""),
   dashboard: route("/dashboard"),
   publicProfile: {
@@ -57,6 +57,7 @@ export const APP_ROUTES = {
       root: login(""),
       v1: login("/v1"),
       v2: login("/v2"),
+      v3: login("/v3"),
     },
     register: {
       root: register(""),
