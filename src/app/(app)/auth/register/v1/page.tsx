@@ -15,10 +15,10 @@ import { TopHeading } from "../../login/v1/_components/top-heading";
 
 const page = () => {
   return (
-    <Card className="flex w-full items-end justify-center bg-[url(/images/register-v1-background.jpeg)] bg-cover bg-center p-8">
+    <Card className="flex w-full items-start justify-center bg-[url(/images/login-background.jpg)] bg-cover bg-center p-8">
       <Text
         as="h1"
-        className="absolute top-10 left-10"
+        className="absolute top-10 right-10"
       >
         LOGO
       </Text>
