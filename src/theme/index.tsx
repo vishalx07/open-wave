@@ -31,6 +31,11 @@ export const ThemeProvider = ({ children }: Props) => {
             return variant === "outlined" ? { className: "border " } : {};
           },
         }}
+        menu={{
+          classNames: {
+            content: "p-2 gap-1",
+          },
+        }}
       >
         {children}
       </UIConfigProvider>
