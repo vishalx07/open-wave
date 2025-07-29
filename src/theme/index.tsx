@@ -22,6 +22,7 @@ export const ThemeProvider = ({ children }: Props) => {
           radius: "2xl",
           classNames: /** @tw */ {
             th: "bg-content2",
+            td: "first:rounded-l-xl last:rounded-r-xl",
           },
         }}
         iconButton={{
@@ -34,6 +35,11 @@ export const ThemeProvider = ({ children }: Props) => {
         menu={{
           classNames: {
             content: "p-2 gap-1",
+          },
+        }}
+        select={{
+          classNames: /** @tw */ {
+            trigger: "border",
           },
         }}
       >

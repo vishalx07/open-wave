@@ -7,7 +7,7 @@ export const COLUMNS: ColumnDef<Team>[] = [
   {
     accessorKey: "fullname",
     header: "Member",
-    size: 200,
+    size: 240,
     cell: ({ row }) => {
       const { email, fullname, avatarUrl } = row.original;
       return (
@@ -64,7 +64,7 @@ export const COLUMNS: ColumnDef<Team>[] = [
   {
     accessorKey: "createdAt",
     header: "Registered at",
-    size: 140,
+    size: 120,
     cell: ({ row }) => {
       const { createdAt } = row.original;
       return <TableTimestamp time={createdAt} />;

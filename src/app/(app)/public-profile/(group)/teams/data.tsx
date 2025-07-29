@@ -1,6 +1,23 @@
 import { TriangleAlert, Undo2, UserCheck, Users } from "lucide-react";
 import type { Team } from "./type";
 
+export const TABS: {
+  label: string;
+  value: "all" | "my-referrals";
+  count: number;
+}[] = [
+  {
+    label: "All",
+    value: "all",
+    count: 66,
+  },
+  {
+    label: "My Referrals",
+    value: "my-referrals",
+    count: 29,
+  },
+];
+
 type UserCard = {
   title: string;
   value: number;
@@ -19,15 +36,15 @@ export const STATUS_DATA: UserCard[] = [
     users: [
       {
         name: "John Doe",
-        avatarUrl: "images/user1.png",
+        avatarUrl: "/images/user1.png",
       },
       {
         name: "Jenny Klabber",
-        avatarUrl: "images/user2.png",
+        avatarUrl: "/images/user2.png",
       },
       {
         name: "Olive",
-        avatarUrl: "images/user3.png",
+        avatarUrl: "/images/user3.png",
       },
     ],
   },
@@ -38,11 +55,11 @@ export const STATUS_DATA: UserCard[] = [
     users: [
       {
         name: "Jenny Klabber",
-        avatarUrl: "images/user2.png",
+        avatarUrl: "/images/user2.png",
       },
       {
         name: "Olive",
-        avatarUrl: "images/user3.png",
+        avatarUrl: "/images/user3.png",
       },
       {
         name: "John Doe",
