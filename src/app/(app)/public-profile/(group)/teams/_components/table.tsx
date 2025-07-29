@@ -1,11 +1,14 @@
-import { Card, CardContent, Tab, Tabs } from "@jamsr-ui/react";
-import { cn } from "@/lib/tw-merge";
+"use client";
+
+import { Card, CardContent, DataTable } from "@jamsr-ui/react";
+import { TEAM_DATA } from "../data";
+import { COLUMNS } from "./columns";
 
 export const Table = () => {
   return (
     <Card>
       <CardContent>
-        <Tabs
+        {/* <Tabs
           value={currentTab}
           variant="underlined"
           classNames={{
@@ -22,7 +25,14 @@ export const Table = () => {
               className={cn("h-auto py-3.5", index === 0 && "pl-0")}
             />
           ))}
-        </Tabs>
+        </Tabs> */}
+
+        <DataTable
+          allowHover
+          data={TEAM_DATA}
+          columns={COLUMNS}
+          rowCount={TEAM_DATA.length}
+        />
       </CardContent>
     </Card>
   );

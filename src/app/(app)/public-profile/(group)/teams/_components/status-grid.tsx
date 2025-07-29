@@ -8,7 +8,7 @@ import {
   MenuItem,
   Text,
 } from "@jamsr-ui/react";
-import { STATUS_DATA } from "./data";
+import { STATUS_DATA } from "../data";
 
 export const StatusGrid = () => {
   return (
