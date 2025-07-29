@@ -155,6 +155,10 @@ export const NAV_ITEMS: NavItem[] = [
                 title: "Register v2",
                 url: APP_ROUTES.auth.register.v2,
               },
+              {
+                title: "Register v4",
+                url: APP_ROUTES.auth.register.v4,
+              },
             ],
           },
           {

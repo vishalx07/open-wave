@@ -29,11 +29,11 @@ export default function page() {
             variant="h2"
             className="mt-6 text-3xl leading-10 font-[400]"
           >
-            Log in to OpenWave
+            Create a OpenWave Account
           </Text>
           <span className="text-foreground-secondary text-md font-normal">
-            Don&apos;t have an account?{" "}
-            <Link href={COMPONENT_ROUTES.auth.register.v4}>Sign up</Link>.
+            Already have an account?
+            <Link href={COMPONENT_ROUTES.auth.login.v4}> Log In</Link>.
           </span>
         </div>
         <div className="mb-4 flex w-full flex-col items-center gap-4 sm:flex-row">
@@ -49,24 +49,15 @@ export default function page() {
           <Input
             label="Password"
             placeholder="********"
-            className="relative"
-          >
-            <Link
-              href={COMPONENT_ROUTES.auth.forgotPassword.v1}
-              className="absolute -top-8 right-0 ml-auto"
-            >
-              Forgot your password?
-            </Link>
-          </Input>
-
-          <Button>Log In</Button>
+          />
+          <Button>Create Account</Button>
         </form>
 
         <Text
           variant="paragraph2"
-          className="!text-foreground-secondary mt-8 text-center"
+          className="!text-foreground-secondary mt-8 text-center text-sm"
         >
-          By signing in, you agree to our{" "}
+          By signing up, you agree to our{" "}
           <Link
             href="#"
             className="text-sm text-inherit"

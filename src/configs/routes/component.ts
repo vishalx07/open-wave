@@ -64,6 +64,8 @@ export const COMPONENT_ROUTES = {
       root: register(""),
       v1: register("/v1"),
       v2: register("/v2"),
+      v3: register("/v3"),
+      v4: register("/v4"),
     },
     verifyEmail: {
       root: verifyEmail(""),
