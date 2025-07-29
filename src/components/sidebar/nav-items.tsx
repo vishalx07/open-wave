@@ -187,6 +187,10 @@ export const NAV_ITEMS: NavItem[] = [
                 title: "Forgot Password v2",
                 url: APP_ROUTES.auth.forgotPassword.v2,
               },
+              {
+                title: "Forgot Password v4",
+                url: APP_ROUTES.auth.forgotPassword.v4,
+              },
             ],
           },
           {

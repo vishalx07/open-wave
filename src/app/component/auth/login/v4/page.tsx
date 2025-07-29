@@ -52,7 +52,7 @@ export default function page() {
             className="relative"
           >
             <Link
-              href={COMPONENT_ROUTES.auth.forgotPassword.v1}
+              href={COMPONENT_ROUTES.auth.forgotPassword.v4}
               className="absolute -top-8 right-0 ml-auto"
             >
               Forgot your password?

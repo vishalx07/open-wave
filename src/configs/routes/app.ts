@@ -76,6 +76,8 @@ export const APP_ROUTES = {
       root: forgotPassword(""),
       v1: forgotPassword("/v1"),
       v2: forgotPassword("/v2"),
+      v3: forgotPassword("/v3"),
+      v4: forgotPassword("/v4"),
     },
     resetPassword: {
       root: resetPassword(""),
