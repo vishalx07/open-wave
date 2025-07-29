@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
-import { COMPONENT_ROUTES } from "@/configs/routes/component";
+import { APP_ROUTES } from "@/configs/routes";
 
 export const GET = () => {
-  redirect(COMPONENT_ROUTES.dashboard);
+  redirect(APP_ROUTES.dashboard);
 };

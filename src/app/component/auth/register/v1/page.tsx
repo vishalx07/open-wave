@@ -74,7 +74,7 @@ const page = () => {
           <Checkbox
             label={
               <Text variant="paragraph2">
-                I agree with the <Link href="#">Tearms</Link> and{" "}
+                I agree with the <Link href="#">Terms</Link> and{" "}
                 <Link href="#">Privacy Policy</Link>
               </Text>
             }

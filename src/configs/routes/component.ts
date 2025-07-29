@@ -58,6 +58,7 @@ export const COMPONENT_ROUTES = {
       v1: login("/v1"),
       v2: login("/v2"),
       v3: login("/v3"),
+      v4: login("/v4"),
     },
     register: {
       root: register(""),

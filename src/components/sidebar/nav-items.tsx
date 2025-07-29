@@ -137,6 +137,10 @@ export const NAV_ITEMS: NavItem[] = [
                 title: "Login v3",
                 url: APP_ROUTES.auth.login.v3,
               },
+              {
+                title: "Login v4",
+                url: APP_ROUTES.auth.login.v4,
+              },
             ],
           },
           {
