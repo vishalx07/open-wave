@@ -1,6 +1,6 @@
 import { type Metadata } from "next";
 
-const appName = "Open Wave";
+const appName = "OpenWave";
 
 export const ROOT_METADATA: Metadata = {
   title: {

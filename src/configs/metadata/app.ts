@@ -6,6 +6,6 @@ type APP_METADATA_TYPE = {
 
 export const APP_METADATA: APP_METADATA_TYPE = {
   home: {
-    title: "Open Wave",
+    title: "OpenWave",
   },
 };
