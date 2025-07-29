@@ -11,7 +11,7 @@ export const MenuBar = ({ menuBarItems }: Props) => {
     <div
       role="menubar"
       data-slot="menubar"
-      className="flex h-auto items-stretch gap-3 space-x-1 rounded-md border border-none bg-transparent p-0"
+      className="flex h-auto items-stretch gap-3 space-x-1 overflow-x-auto rounded-md border border-none bg-transparent p-0"
     >
       {menuBarItems.map((menuBarItem) => {
         const { title, url = "#", items = [] } = menuBarItem;

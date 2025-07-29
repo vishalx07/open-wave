@@ -1,13 +1,35 @@
-import { Bell, LayoutGrid, MessageCircleMore, Search } from "lucide-react";
+"use client";
+
+import {
+  Bell,
+  LayoutGrid,
+  Menu,
+  MessageCircleMore,
+  Search,
+} from "lucide-react";
 import { IconButton } from "@jamsr-ui/react";
+import { useSidebarMobile } from "@/stores/use-sidebar-mobile";
 import { Account } from "./account";
 import { Nav } from "./nav";
 
 export const Header = () => {
+  const { onOpen } = useSidebarMobile();
+
   return (
     <header className="border-divider h-(--header-mobile-height) border-b lg:h-(--header-desktop-height)">
       <div className="container flex h-full items-center justify-between">
-        <div>
+        <div className="lg:hidden">
+          <IconButton
+            label="Sidebar Toggle Button"
+            size="sm"
+            variant="light"
+            onClick={onOpen}
+          >
+            <Menu size={20} />
+          </IconButton>
+        </div>
+
+        <div className="max-lg:hidden">
           <Nav />
         </div>
 
