@@ -1,5 +1,6 @@
 import { Link } from "@jamsr-ui/next";
 import { Button, Card, CardContent, Text } from "@jamsr-ui/react";
+import { DummyLogo } from "@/components/dummy-logo";
 
 export default function page() {
   return (
@@ -8,14 +9,8 @@ export default function page() {
         className="bg-background w-full max-w-md border-none shadow-lg backdrop-blur-lg"
         radius="2xl"
       >
-        <CardContent className="p-6 sm:p-12">
-          <Text
-            as="h1"
-            variant="h3"
-            className="mb-6 text-center font-semibold"
-          >
-            LOGO
-          </Text>
+        <CardContent className="p-4 sm:p-8">
+          <DummyLogo className="mx-auto mb-6" />
           <Text
             as="h4"
             className="text-2xl"
@@ -28,7 +23,7 @@ export default function page() {
               <Link href={"#"}> john.doe@email.com </Link>
               Please follow the link inside to continue.
             </Text>
-            <Button color="primary">Skip For Now</Button>
+            <Button color="primary">Verify Email</Button>
             <Text
               variant="body1"
               className="text-foreground-secondary text-center"

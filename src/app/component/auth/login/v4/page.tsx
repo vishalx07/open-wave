@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { Link } from "@jamsr-ui/next";
-import { Button, Divider, Input, Text } from "@jamsr-ui/react";
+import { Button, Divider, Text } from "@jamsr-ui/react";
 import { COMPONENT_ROUTES } from "@/configs/routes";
+import { Form } from "./form";
 
 export default function page() {
   return (
@@ -18,12 +19,13 @@ export default function page() {
       <main className="relative z-10 w-full max-w-lg pt-8">
         <div className="mb-6 text-center">
           {/* logo */}
-          <Text
-            as="h1"
-            variant="h3"
-          >
-            LOGO
-          </Text>
+          <Image
+            src="/images/logo2.svg"
+            alt=""
+            width={50}
+            height={50}
+            className="mx-auto"
+          />
           <Text
             as="h1"
             variant="h2"
@@ -41,26 +43,8 @@ export default function page() {
           <Button className="grow max-sm:w-full">Login with GitHub</Button>
         </div>
         <Divider className="my-8">or</Divider>
-        <form className="flex flex-col gap-5">
-          <Input
-            label="Email"
-            placeholder="abcd@gmail.com"
-          />
-          <Input
-            label="Password"
-            placeholder="********"
-            className="relative"
-          >
-            <Link
-              href={COMPONENT_ROUTES.auth.forgotPassword.v4}
-              className="absolute -top-8 right-0 ml-auto"
-            >
-              Forgot your password?
-            </Link>
-          </Input>
-
-          <Button>Log In</Button>
-        </form>
+        {/* Main Form */}
+        <Form />
 
         <Text
           variant="paragraph2"

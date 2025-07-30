@@ -1,18 +1,13 @@
 import { MailIcon } from "lucide-react";
 import { Link } from "@jamsr-ui/next";
 import { Button, Card, CardContent, Text } from "@jamsr-ui/react";
-import { TopHeading } from "../../login/v1/_components/top-heading";
+import { DummyLogo } from "@/components/dummy-logo";
+import { TopHeading } from "./_components/top-heading";
 
 export default function page() {
   return (
-    <div className="flex h-svh w-full flex-col items-center justify-center bg-[url(/images/login-background.jpg)] bg-cover bg-center p-8">
-      <Text
-        as="h1"
-        variant="h3"
-        className="absolute top-10 right-10 text-center font-semibold"
-      >
-        LOGO
-      </Text>
+    <div className="flex h-svh w-full flex-col items-center justify-center bg-[url(/images/login-background.jpg)] bg-cover bg-center p-4 sm:p-8">
+      <DummyLogo className="absolute top-10 right-10" />
       <Card
         className="w-full max-w-md border-none bg-transparent shadow-lg backdrop-blur-lg"
         radius="2xl"
@@ -27,7 +22,7 @@ export default function page() {
             <Link href={"#"}> john.doe@email.com </Link>
             Please follow the link inside to continue.
           </Text>
-          <Button color="primary">Skip For Now</Button>
+          <Button color="primary">Verify Email</Button>
           <Text
             variant="body1"
             className="text-foreground-secondary text-center"

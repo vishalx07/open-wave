@@ -1,53 +1,22 @@
 import { KeyRoundIcon } from "lucide-react";
-import {
-  Button,
-  Card,
-  CardContent,
-  Link,
-  OtpInput,
-  Text,
-} from "@jamsr-ui/react";
-import { TopHeading } from "../../login/v1/_components/top-heading";
+import { Card, CardContent, Link, Text } from "@jamsr-ui/react";
+import { DummyLogo } from "@/components/dummy-logo";
+import { TopHeading } from "./_components/top-heading";
+import { Form } from "./_components/form";
 
 export default function page() {
   return (
     <div className="flex h-svh w-full items-center justify-center bg-[url(/images/login-background.jpg)] bg-cover bg-center p-8">
-      <Text
-        as="h1"
-        className="absolute top-10 right-10"
-      >
-        LOGO
-      </Text>
-      <Card
-        className="flex w-full max-w-md flex-col gap-4 border-none bg-transparent px-8 pt-6 shadow-lg backdrop-blur-lg"
-        radius="2xl"
-      >
+      <DummyLogo className="absolute top-10 right-10" />
+      <Card>
         <CardContent className="flex flex-col gap-4">
           <TopHeading
             icon={<KeyRoundIcon />}
             heading={"Two Step Verification"}
-            subHeading="We sent a verification code to your mobile. Enter the code from the
-            mobile in the field below. ******1234"
+            subHeading="A verification code has been sent to your email address ending with ****@gmail.com. Please enter the code below to complete verification."
           />
 
-          <OtpInput
-            label="Type your 6 digit security code"
-            classNames={{
-              label: "text-foreground",
-              input: "grow-1 h-14 font-semibold text-lg",
-            }}
-            radius="xl"
-            numberOfDigits={6}
-          />
-
-          <Button
-            color="primary"
-            radius="xl"
-            size="lg"
-            className="drop-shadow-primary/50 mt-4 drop-shadow-lg"
-          >
-            Verify My Account
-          </Button>
+          <Form />
 
           <Text
             variant="body1"

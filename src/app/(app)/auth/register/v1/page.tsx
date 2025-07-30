@@ -5,7 +5,7 @@ const page = () => {
   return (
     <TerminalCodeBlock
       iframeUrl={COMPONENT_ROUTES.auth.register.v1}
-      className="h-dvh"
+      className="h-auto min-h-screen"
     />
   );
 };

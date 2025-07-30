@@ -1,30 +1,23 @@
-import { LockIcon, MailIcon, UserIcon } from "lucide-react";
+import { UserIcon } from "lucide-react";
 import {
   Button,
   Card,
   CardContent,
   Divider,
-  Input,
   Link,
   Text,
 } from "@jamsr-ui/react";
+import { DummyLogo } from "@/components/dummy-logo";
 import { Icons } from "@/components/icons";
 import { COMPONENT_ROUTES } from "@/configs/routes/component";
+import { Form } from "./_components/form";
 import { TopHeading } from "./_components/top-heading";
 
 export default function page() {
   return (
-    <div className="flex h-svh items-center justify-start border-none bg-[url(/images/login-background.jpg)] bg-cover bg-center p-8">
-      <Text
-        as="h1"
-        className="absolute top-10 right-10"
-      >
-        LOGO
-      </Text>
-      <Card
-        className="flex w-full max-w-md flex-col gap-4 border-none bg-transparent px-8 pt-6 shadow-lg backdrop-blur-lg"
-        radius="2xl"
-      >
+    <div className="flex h-svh items-center justify-start border-none bg-[url(/images/login-background.jpg)] bg-cover bg-center p-4 sm:p-8">
+      <DummyLogo className="absolute top-10 right-10" />
+      <Card>
         <CardContent className="flex flex-col gap-4">
           <TopHeading
             icon={<UserIcon />}
@@ -32,53 +25,13 @@ export default function page() {
             subHeading={"Enter your details to login your account."}
           />
 
-          <Input
-            label="Email Address"
-            placeholder="Enter you email"
-            classNames={{
-              label: "text-foreground",
-            }}
-            isFilled
-            startContent={<MailIcon size={16} />}
-            size="lg"
-            radius="xl"
-            isRequired
-          />
-          <Input
-            label="Password"
-            placeholder="Enter your password"
-            isSecuredText
-            classNames={{
-              label: "text-foreground",
-              endContent: "pr-2",
-            }}
-            isFilled
-            startContent={<LockIcon size={16} />}
-            size="lg"
-            radius="xl"
-            isRequired
-          />
-
-          <Link
-            href={COMPONENT_ROUTES.auth.forgotPassword.v1}
-            className="ml-auto text-sm"
-          >
-            Forgot Password?
-          </Link>
-
-          <Button
-            color="primary"
-            radius="xl"
-            size="lg"
-            className="drop-shadow-primary/50 drop-shadow-lg"
-          >
-            Log In
-          </Button>
+          <Form />
           <Divider className="text-foreground-secondary text-sm">OR</Divider>
+
           <Button
             variant="flat"
             radius="xl"
-            startContent={<Icons.GoogleIcon />}
+            startContent={<Icons.GoogleIcon className="size-5" />}
           >
             Continue with Google
           </Button>
@@ -89,6 +42,7 @@ export default function page() {
           >
             Continue with Github
           </Button>
+
           <Text
             variant="paragraph2"
             className="text-foreground-secondary text-center"
