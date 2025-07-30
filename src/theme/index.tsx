@@ -8,6 +8,11 @@ export const ThemeProvider = ({ children }: Props) => {
   return (
     <UIProvider>
       <UIConfigProvider
+        button={{
+          props: ({ variant }) => {
+            return variant === "outlined" ? { className: "border " } : {};
+          },
+        }}
         card={{
           radius: "2xl",
           className: "border border-divider",
@@ -20,10 +25,15 @@ export const ThemeProvider = ({ children }: Props) => {
           },
         }}
         iconButton={{
+          disableRipple: true,
+          className: "text-foreground-secondary",
           props: ({ variant }) => {
-            return variant === "outlined"
-              ? { className: "border text-foreground-secondary" }
-              : {};
+            return variant === "outlined" ? { className: "border " } : {};
+          },
+        }}
+        menu={{
+          classNames: {
+            content: "p-2 gap-1",
           },
         }}
       >

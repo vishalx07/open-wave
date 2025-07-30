@@ -49,16 +49,16 @@
   --ui-content2-foreground: var(--accent-foreground);
 
   /* Primary Colors (teal) */
-  --ui-primary-50: oklch(0.984 0.014 180.72);
-  --ui-primary-100: oklch(0.953 0.051 180.801);
-  --ui-primary-200: oklch(0.91 0.096 180.426);
-  --ui-primary-300: var(--color-blue-700);
-  --ui-primary-400: var(--color-blue-800);
-  --ui-primary-500: var(--color-blue-500);
-  --ui-primary-600: oklch(0.6 0.118 184.704);
-  --ui-primary-700: oklch(0.511 0.096 186.391);
-  --ui-primary-800: oklch(0.437 0.078 188.216);
-  --ui-primary-900: oklch(0.386 0.063 188.416);
+  --ui-primary-900: oklch(95.42% 0.019 252.87);
+  --ui-primary-800: oklch(91.08% 0.04 251.77);
+  --ui-primary-700: oklch(82.29% 0.081 252.14);
+  --ui-primary-600: oklch(73.58% 0.124 253.39);
+  --ui-primary-500: oklch(66.45% 0.161 254.12);
+  --ui-primary-400: oklch(59.11% 0.199 256.76);
+  --ui-primary-300: oklch(51.67% 0.174 256.77);
+  --ui-primary-200: oklch(42.59% 0.14 256.51);
+  --ui-primary-100: oklch(34.15% 0.107 255.73);
+  --ui-primary-50: oklch(24.88% 0.073 254.75);
   --ui-primary-foreground: oklch(100% 0 0);
-  --ui-primary: #1379f0;
+  --ui-primary: var(--ui-primary-400);
 }
