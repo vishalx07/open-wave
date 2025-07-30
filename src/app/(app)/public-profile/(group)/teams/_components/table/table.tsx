@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowUpDown, SearchIcon, SlidersHorizontal } from "lucide-react";
+import NextLink from "next/link";
+import { SearchIcon, Share, SlidersHorizontal } from "lucide-react";
 import {
   Button,
   Card,
@@ -9,24 +9,27 @@ import {
   Chip,
   DataTable,
   Input,
-  Select,
-  SelectItem,
   Tab,
   Tabs,
 } from "@jamsr-ui/react";
 import { cn } from "@/lib/tw-merge";
-import { TABS, TEAM_DATA } from "../data";
+import { TABS, TEAM_DATA } from "../../data";
 import { COLUMNS } from "./columns";
+import { PlansFilter } from "./plans-filter";
+import { StatusFilter } from "./status-filter";
 
-export const Table = () => {
-  const [currentTab, setCurrentTab] = useState(TABS[0]!?.value);
+type Props = {
+  tab?: string;
+};
+
+export const Table = ({ tab }: Props) => {
+  const currentTab = TABS.find(({ value }) => value === tab)?.value ?? "all";
 
   return (
     <Card>
       <CardContent className="py-0">
         <Tabs
           value={currentTab}
-          onValueChange={setCurrentTab}
           variant="underlined"
           classNames={{
             base: "border-b border-divider",
@@ -36,12 +39,14 @@ export const Table = () => {
           }}
         >
           {TABS.map((tab) => {
-            const { label, value, count } = tab;
+            const { label, value, href, count } = tab;
             return (
               <Tab
                 key={value}
                 heading={label}
                 value={value}
+                as={NextLink}
+                href={href}
                 endContent={
                   <Chip
                     size="sm"
@@ -66,32 +71,27 @@ export const Table = () => {
           className="gap-4 px-0"
           tableProps={{
             topContent: (
-              <div className="grid grid-cols-2 items-center gap-4">
+              <div className="grid grid-cols-3 items-center gap-4">
                 <Input
                   placeholder="Search..."
                   isFilled
                   startContent={<SearchIcon size={20} />}
                 />
 
+                <div className="flex items-center gap-3">
+                  <StatusFilter />
+                  <PlansFilter />
+                </div>
+
                 <div className="flex items-center justify-end gap-3">
-                  <Select
-                    placeholder="Import / Export"
-                    startContent={<ArrowUpDown size={16} />}
-                    classNames={{
-                      base: "min-w-[180px]",
-                      startContent: "text-foreground",
-                      placeholder: "text-foreground",
-                    }}
-                  >
-                    <SelectItem value="import-contact">
-                      Import Contact
-                    </SelectItem>
-                    <SelectItem value="export-contact">
-                      Export Contact
-                    </SelectItem>
-                  </Select>
                   <Button
-                    variant="outlined"
+                    variant="flat"
+                    startContent={<Share size={16} />}
+                  >
+                    Export
+                  </Button>
+                  <Button
+                    variant="flat"
                     startContent={<SlidersHorizontal size={16} />}
                   >
                     Filter

@@ -1,11 +1,11 @@
 const route = <T extends string>(path: T) => `${path}` as const;
 
 const publicProfile = <T extends string>(path: T) =>
-  route("/public-profile" + path);
+  route(`/public-profile${path}`);
 const profiles = <T extends string>(path: T) =>
-  publicProfile("/profiles" + path);
+  publicProfile(`/profiles${path}`);
 const projects = <T extends string>(path: T) =>
-  publicProfile("/projects" + path);
+  publicProfile(`/projects${path}`);
 
 const auth = <T extends string>(path: T) => route("/auth" + path);
 const login = <T extends string>(path: T) => auth("/login" + path);
@@ -41,7 +41,10 @@ export const APP_ROUTES = {
       "2Columns": projects("/2-columns"),
     },
     works: publicProfile("/works"),
-    teams: publicProfile("/teams"),
+    teams: {
+      root: publicProfile("/teams"),
+      tab: (tab: string) => publicProfile(`/teams?tab=${tab}`),
+    },
     network: publicProfile("/network"),
     activity: publicProfile("/activity"),
     campaigns: {

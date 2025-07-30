@@ -1,5 +1,7 @@
-import { Plus } from "lucide-react";
-import { Button, Text } from "@jamsr-ui/react";
+"use client";
+
+import { Link } from "lucide-react";
+import { Button, Text, toast } from "@jamsr-ui/react";
 
 export const PageHeader = () => {
   return (
@@ -12,9 +14,12 @@ export const PageHeader = () => {
       </Text>
       <Button
         color="primary"
-        startContent={<Plus className="size-4" />}
+        startContent={<Link className="size-4" />}
+        onClick={() => {
+          toast.success("Referral link copied!", { position: "top-right" });
+        }}
       >
-        Add User
+        Referral Link
       </Button>
     </div>
   );

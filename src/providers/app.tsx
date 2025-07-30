@@ -1,5 +1,6 @@
 "use client";
 
+import { ToastProvider } from "@jamsr-ui/react";
 import { ThemeProvider } from "@/theme";
 
 type Props = {
@@ -7,5 +8,10 @@ type Props = {
 };
 
 export const AppProvider = ({ children }: Props) => {
-  return <ThemeProvider>{children}</ThemeProvider>;
+  return (
+    <ThemeProvider>
+      {children}
+      <ToastProvider />
+    </ThemeProvider>
+  );
 };

@@ -1,9 +1,9 @@
 import {
-  Award,
-  CircleAlert,
-  Coffee,
+  Ban,
+  CircleMinus,
+  CirclePlus,
   EllipsisVertical,
-  TrendingUp,
+  LogIn,
   type LucideProps,
 } from "lucide-react";
 import { IconButton, Menu, MenuItem, Switch } from "@jamsr-ui/react";
@@ -16,21 +16,21 @@ const MORE_ACTIONS: {
   endContent?: React.ReactNode;
 }[] = [
   {
-    label: "Share Profile",
-    icon: Coffee,
+    label: "Add Balance",
+    icon: CirclePlus,
   },
   {
-    label: "Give Award",
-    icon: Award,
+    label: "Subtract Balance",
+    icon: CircleMinus,
   },
   {
-    label: "Stay Updated",
-    icon: TrendingUp,
+    label: "Login As Client",
+    icon: LogIn,
+  },
+  {
+    label: "Block User",
+    icon: Ban,
     endContent: <Switch size="xs" />,
-  },
-  {
-    label: "Report User",
-    icon: CircleAlert,
   },
 ];
 

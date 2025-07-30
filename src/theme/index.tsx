@@ -21,7 +21,7 @@ export const ThemeProvider = ({ children }: Props) => {
           allowHover: true,
           radius: "2xl",
           classNames: /** @tw */ {
-            th: "bg-content2",
+            th: "bg-content2 text-foreground-secondary",
             td: "first:rounded-l-xl last:rounded-r-xl",
           },
         }}

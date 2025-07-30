@@ -14,14 +14,6 @@ export const Navigations = () => {
 
       {/* Actions */}
       <div className="mb-1.5 flex grow items-center justify-end gap-2.5 lg:mb-0 lg:grow-0 lg:pb-4">
-        <Button
-          color="primary"
-          startContent={<Users className="size-4" />}
-          className="h-8.5"
-        >
-          Connect
-        </Button>
-
         <IconButton
           label="Chat Button"
           variant="outlined"

@@ -92,7 +92,7 @@ export const NAV_ITEMS: NavItem[] = [
           },
           {
             title: "Teams",
-            url: APP_ROUTES.publicProfile.teams,
+            url: APP_ROUTES.publicProfile.teams.root,
           },
           {
             title: "Network",
