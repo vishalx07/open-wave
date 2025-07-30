@@ -208,6 +208,16 @@ export const NAV_ITEMS: NavItem[] = [
             ],
           },
           {
+            title: "Change Password",
+            url: APP_ROUTES.auth.changePassword.root,
+            items: [
+              {
+                title: "Change Password v1",
+                url: APP_ROUTES.auth.changePassword.v1,
+              },
+            ],
+          },
+          {
             title: "2FA",
             url: APP_ROUTES.auth.twoFA.root,
             items: [

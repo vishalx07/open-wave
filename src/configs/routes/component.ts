@@ -16,6 +16,8 @@ const resetPassword = <T extends string>(path: T) =>
   auth("/reset-password" + path);
 const twoFA = <T extends string>(path: T) => auth("/2fa" + path);
 const verifyEmail = <T extends string>(path: T) => auth("/verify-email" + path);
+const changePassword = <T extends string>(path: T) =>
+  auth("/change-password" + path);
 
 export const COMPONENT_ROUTES = {
   home: route(""),
@@ -83,6 +85,10 @@ export const COMPONENT_ROUTES = {
       root: resetPassword(""),
       v1: resetPassword("/v1"),
       v2: resetPassword("/v2"),
+    },
+    changePassword: {
+      root: changePassword(""),
+      v1: changePassword("/v1"),
     },
     twoFA: {
       root: twoFA("/2fa"),
