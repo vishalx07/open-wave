@@ -11,7 +11,9 @@ type FormValues = {
 };
 
 const schema = object({
-  email: email("Invalid email"),
+  email: email({
+    error: (iss) => (!iss.input ? "Email is required" : "Invalid email"),
+  }),
 });
 
 export const Form = () => {

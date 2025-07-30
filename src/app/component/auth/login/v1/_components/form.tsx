@@ -15,7 +15,9 @@ type FormValues = {
 };
 
 const schema = object({
-  email: email("Invalid email"),
+  email: email({
+    error: (iss) => (!iss.input ? "Email is required" : "Invalid email"),
+  }),
   password: string().trim().min(1, "Password is required"),
 });
 
@@ -48,7 +50,7 @@ export const Form = () => {
       <RHFInput<FormValues>
         name="email"
         label="Email"
-        placeholder="Enter you email"
+        placeholder="Enter your email"
         startContent={<Icons.MailIcon />}
       />
       <RHFInput<FormValues>

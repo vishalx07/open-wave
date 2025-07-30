@@ -27,6 +27,7 @@ export const Form = () => {
   const methods = useForm<FormValues>({
     defaultValues,
     resolver: zodResolver(schema),
+    mode: "all",
   });
   const { handleSubmit, reset } = methods;
 
@@ -54,8 +55,10 @@ export const Form = () => {
         fullWidth
         size="lg"
         isRequired
+        isSecuredText
         classNames={{
           label: "text-foreground",
+          endContent: "pr-2",
         }}
       />
       <RHFInput<FormValues>

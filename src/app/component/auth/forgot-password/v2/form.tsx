@@ -11,7 +11,9 @@ type FormValues = {
 };
 
 const schema = object({
-  email: email("Invalid email"),
+  email: email({
+    error: (iss) => (!iss.input ? "Email is required" : "Invalid email"),
+  }),
 });
 
 export const Form = () => {
@@ -43,7 +45,7 @@ export const Form = () => {
         name="email"
         label="Email"
         variant="underlined"
-        placeholder="Enter you email"
+        placeholder="Enter your email"
         fullWidth
         size="lg"
         isRequired

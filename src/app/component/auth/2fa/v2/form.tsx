@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { object, string } from "zod";
 import { Button } from "@jamsr-ui/react";
 import { RHFOtpInput, RHFProvider } from "@jamsr-ui/rhf";
+import { cn } from "@/lib/tw-merge";
 
 type FormValues = {
   otp: string;
@@ -41,9 +42,10 @@ export const Form = () => {
     >
       <RHFOtpInput<FormValues>
         name="otp"
-        label="Type your 6 digit security code"
+        label="Enter your 6-digit verification code"
         classNames={{
-          input: "grow-1 h-14 font-semibold text-lg",
+          input: cn("grow-1 h-14 font-semibold text-lg"),
+          label: "text-foreground",
         }}
         radius="xl"
         numberOfDigits={6}

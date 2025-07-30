@@ -16,7 +16,9 @@ type FormValues = {
 
 const schema = object({
   fullName: string().min(1, "Full name is required"),
-  email: email("Invalid email"),
+  email: email({
+    error: (iss) => (!iss.input ? "Email is required" : "Invalid email"),
+  }),
   password: string().trim().min(1, "Password is required"),
 });
 
@@ -53,7 +55,7 @@ export const Form = () => {
         name="fullName"
         label="Full Name"
         variant="underlined"
-        placeholder="Enter you full name"
+        placeholder="Enter your full name"
         fullWidth
         size="lg"
         isRequired
@@ -65,7 +67,7 @@ export const Form = () => {
         name="email"
         label="Email"
         variant="underlined"
-        placeholder="Enter you email"
+        placeholder="Enter your email"
         fullWidth
         size="lg"
         isRequired

@@ -5,7 +5,7 @@ import { IconWrapper } from "./icon-wrapper";
 type Props = {
   icon: React.ReactNode;
   heading: string;
-  subHeading?: string;
+  subHeading?: string | React.ReactNode;
   className?: string;
 };
 

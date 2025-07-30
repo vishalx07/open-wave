@@ -1,8 +1,8 @@
 import { KeyRoundIcon } from "lucide-react";
 import { Card, CardContent, Link, Text } from "@jamsr-ui/react";
 import { DummyLogo } from "@/components/dummy-logo";
-import { TopHeading } from "./_components/top-heading";
 import { Form } from "./_components/form";
+import { TopHeading } from "./_components/top-heading";
 
 export default function page() {
   return (
@@ -13,7 +13,13 @@ export default function page() {
           <TopHeading
             icon={<KeyRoundIcon />}
             heading={"Two Step Verification"}
-            subHeading="A verification code has been sent to your email address ending with ****@gmail.com. Please enter the code below to complete verification."
+            subHeading={
+              <>
+                A verification code has been sent to your email address ending
+                with <strong className="text-white/80">****@gmail.com</strong>.
+                Please enter the code below to complete verification.{" "}
+              </>
+            }
           />
 
           <Form />

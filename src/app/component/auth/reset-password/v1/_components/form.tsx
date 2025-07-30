@@ -28,6 +28,7 @@ export const Form = () => {
   const methods = useForm<FormValues>({
     defaultValues,
     resolver: zodResolver(schema),
+    mode: "all",
   });
   const { handleSubmit, reset } = methods;
 
@@ -52,6 +53,7 @@ export const Form = () => {
         name="newPassword"
         label="New Password"
         placeholder="Enter your new password"
+        isSecuredText
         startContent={<Icons.PasswordIcon />}
       />
       <RHFInput<FormValues>

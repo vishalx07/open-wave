@@ -42,7 +42,7 @@ const page = () => {
 
           <Input
             label="Email Address"
-            placeholder="Enter you email"
+            placeholder="Enter your email"
             classNames={{
               label: "text-foreground",
             }}

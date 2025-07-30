@@ -16,7 +16,9 @@ type FormValues = {
 
 const schema = object({
   fullName: string().min(1, "Full name is required"),
-  email: email("Invalid email"),
+  email: email({
+    error: (iss) => (!iss.input ? "Email is required" : "Invalid email"),
+  }),
   password: string().trim().min(1, "Password is required"),
 });
 
@@ -52,13 +54,13 @@ export const Form = () => {
       <RHFInput<FormValues>
         name="fullName"
         label="Full Name"
-        placeholder="Enter you full name"
+        placeholder="Enter your full name"
         startContent={<Icons.UserIcon />}
       />
       <RHFInput<FormValues>
         name="email"
         label="Email"
-        placeholder="Enter you email"
+        placeholder="Enter your email"
         startContent={<Icons.MailIcon />}
       />
       <RHFInput<FormValues>
@@ -69,14 +71,13 @@ export const Form = () => {
         startContent={<Icons.PasswordIcon />}
       />
 
-      <Checkbox
-        label={
-          <Text variant="paragraph2">
-            I agree with the <Link href="#">Terms</Link> and{" "}
-            <Link href="#">Privacy Policy</Link>
-          </Text>
-        }
-      />
+      <Text
+        variant="paragraph2"
+        className="text-muted-foreground mt-2"
+      >
+        I agree with the <Link href="#">Terms</Link> and{" "}
+        <Link href="#">Privacy Policy</Link>
+      </Text>
 
       <Button
         color="primary"

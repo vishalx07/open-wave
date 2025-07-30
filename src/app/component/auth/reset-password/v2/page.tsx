@@ -27,10 +27,10 @@ export default function page() {
           <Form />
 
           <Link
-            className="flex items-center justify-center gap-1.5 text-center"
-            href={COMPONENT_ROUTES.auth.login.v2}
+            className="text-muted-foreground flex items-center justify-center text-center text-sm"
+            href={COMPONENT_ROUTES.auth.login.v1}
           >
-            <ChevronLeftIcon size={18} /> Back to login
+            <ChevronLeftIcon size={16} /> Back to login
           </Link>
         </CardContent>
       </Card>

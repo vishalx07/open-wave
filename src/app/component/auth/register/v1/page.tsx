@@ -22,7 +22,7 @@ const page = () => {
           <TopHeading
             icon={<UserPlusIcon />}
             heading={"Create a new account"}
-            subHeading={"Enter your details to register."}
+            subHeading={"Enter your details below to get started."}
           />
           <Form />
           <Divider className="text-foreground-secondary text-sm">OR</Divider>

@@ -19,8 +19,8 @@ export default function page() {
             </Text>
             <Text className="text-foreground-secondary text-sm">
               A verification code has been sent to your email address ending
-              with <strong>****@gmail.com</strong>. Please enter the code below
-              to complete verification.
+              with <strong className="text-white/80">****@gmail.com</strong>.
+              Please enter the code below to complete verification.
             </Text>
           </div>
 
