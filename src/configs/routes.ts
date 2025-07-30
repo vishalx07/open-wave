@@ -45,7 +45,10 @@ export const APP_ROUTES = {
       root: publicProfile("/teams"),
       tab: (tab: string) => publicProfile(`/teams?tab=${tab}`),
     },
-    network: publicProfile("/network"),
+    sales: {
+      root: publicProfile("/sales"),
+      tab: (tab: string) => publicProfile(`/sales?tab=${tab}`),
+    },
     activity: publicProfile("/activity"),
     campaigns: {
       root: publicProfile("/campaigns"),

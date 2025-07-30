@@ -1,4 +1,5 @@
 import { type MenuBarItem } from "@/components/menu-bar/types";
+import { APP_ROUTES } from "@/configs/routes";
 
 export const MENU_BAR_ITEMS: MenuBarItem[] = [
   {
@@ -70,11 +71,11 @@ export const MENU_BAR_ITEMS: MenuBarItem[] = [
   },
   {
     title: "Teams",
-    url: "#",
+    url: APP_ROUTES.publicProfile.teams.root,
   },
   {
-    title: "Network",
-    url: "#",
+    title: "Sales",
+    url: APP_ROUTES.publicProfile.sales.root,
   },
   {
     title: "Activity",
