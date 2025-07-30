@@ -1,8 +1,13 @@
+import { type Metadata } from "next";
 import { ChevronLeftIcon, KeyRoundIcon } from "lucide-react";
 import { Card, CardContent, Link, Text } from "@jamsr-ui/react";
 import { COMPONENT_ROUTES } from "@/configs/routes/component";
 import { Form } from "./_components/form";
 import { TopHeading } from "./_components/top-heading";
+
+export const metadata: Metadata = {
+  title: "Forgot Password v1",
+};
 
 export default function page() {
   return (

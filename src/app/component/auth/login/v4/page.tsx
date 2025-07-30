@@ -1,8 +1,13 @@
+import { type Metadata } from "next";
 import Image from "next/image";
 import { Link } from "@jamsr-ui/next";
 import { Button, Divider, Text } from "@jamsr-ui/react";
 import { COMPONENT_ROUTES } from "@/configs/routes";
 import { Form } from "./form";
+
+export const metadata: Metadata = {
+  title: "Login v4",
+};
 
 export default function page() {
   return (

@@ -1,3 +1,4 @@
+import { type Metadata } from "next";
 import { UserPlusIcon } from "lucide-react";
 import {
   Button,
@@ -12,6 +13,10 @@ import { Icons } from "@/components/icons";
 import { COMPONENT_ROUTES } from "@/configs/routes/component";
 import { Form } from "./_components/form";
 import { TopHeading } from "./_components/top-heading";
+
+export const metadata: Metadata = {
+  title: "Register v1",
+};
 
 const page = () => {
   return (

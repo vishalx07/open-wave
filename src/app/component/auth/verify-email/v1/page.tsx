@@ -1,9 +1,14 @@
+import { type Metadata } from "next";
 import { MailIcon } from "lucide-react";
 import { Link } from "@jamsr-ui/next";
 import { Card, CardContent, Text } from "@jamsr-ui/react";
 import { DummyLogo } from "@/components/dummy-logo";
 import { Form } from "./_components/form";
 import { TopHeading } from "./_components/top-heading";
+
+export const metadata: Metadata = {
+  title: "Verify Email v1",
+};
 
 export default function page() {
   return (

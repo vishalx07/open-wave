@@ -1,3 +1,4 @@
+import { type Metadata } from "next";
 import { LockIcon, MailIcon, UserIcon } from "lucide-react";
 import {
   Button,
@@ -11,6 +12,10 @@ import {
 import { Icons } from "@/components/icons";
 import { COMPONENT_ROUTES } from "@/configs/routes/component";
 import { TopHeading } from "../v1/_components/top-heading";
+
+export const metadata: Metadata = {
+  title: "Login v3",
+};
 
 const page = () => {
   return (

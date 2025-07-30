@@ -1,8 +1,13 @@
+import { type Metadata } from "next";
 import { Button, Divider, Link, Text } from "@jamsr-ui/react";
 import { DummyLogo } from "@/components/dummy-logo";
 import { Icons } from "@/components/icons";
 import { COMPONENT_ROUTES } from "@/configs/routes/component";
 import { Form } from "./form";
+
+export const metadata: Metadata = {
+  title: "Register v2",
+};
 
 export default function page() {
   return (

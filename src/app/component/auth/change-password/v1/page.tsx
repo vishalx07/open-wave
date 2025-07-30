@@ -1,8 +1,13 @@
+import { type Metadata } from "next";
 import { KeyRoundIcon } from "lucide-react";
 import { Card, CardContent } from "@jamsr-ui/react";
 import { DummyLogo } from "@/components/dummy-logo";
 import { Form } from "./_components/form";
 import { TopHeading } from "./_components/top-heading";
+
+export const metadata: Metadata = {
+  title: "Change Password v1",
+};
 
 export default function page() {
   return (

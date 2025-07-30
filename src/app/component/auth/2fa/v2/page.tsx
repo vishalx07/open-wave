@@ -1,7 +1,12 @@
+import { type Metadata } from "next";
 import { Link } from "@jamsr-ui/next";
 import { Card, CardContent, Text } from "@jamsr-ui/react";
 import { DummyLogo } from "@/components/dummy-logo";
 import { Form } from "./form";
+
+export const metadata: Metadata = {
+  title: "2FA v2",
+};
 
 export default function page() {
   return (

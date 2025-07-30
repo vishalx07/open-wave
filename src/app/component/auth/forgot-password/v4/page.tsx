@@ -1,6 +1,11 @@
+import { type Metadata } from "next";
 import Image from "next/image";
 import { Text } from "@jamsr-ui/react";
 import { Form } from "./form";
+
+export const metadata: Metadata = {
+  title: "Forgot Password v4",
+};
 
 export default function page() {
   return (
