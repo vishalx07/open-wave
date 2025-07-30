@@ -10,7 +10,8 @@ export default function layout({ children }: Props) {
   return (
     <UINextConfigProvider
       link={{
-        className: "hover:text-foreground-secondary text-foreground text-md",
+        className:
+          "hover:text-foreground-secondary text-foreground-secondary text-md",
       }}
     >
       <UIConfigProvider
@@ -47,7 +48,7 @@ export default function layout({ children }: Props) {
               // animation
               "transition-all duration-200 ease-in-out",
               // border & background
-              "border-white/5 bg-[linear-gradient(104deg,rgba(253,253,253,0.05)_5%,rgba(240,240,228,0.1)_100%)] backdrop-blur-[25px]",
+              "border-white/5 before:absolute before:bg-repeat before:top-[-2px] before:left-[-2px] before:h-[calc(100%+4px)] before:w-[calc(100%+4px)] before:rounded-[1rem] before:bg-[linear-gradient(104deg,rgba(253,253,253,0.05)_5%,rgba(240,240,228,0.1)_100%)] backdrop-blur-[25px]",
               // focus
               "uig-focus:ring-2 uig-focus:ring-white/20  uig-focus:outline-hidden uig-focus:border-white/5 uig-hover:border-white/5",
             ),

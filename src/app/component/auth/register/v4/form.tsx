@@ -48,11 +48,13 @@ export const Form = () => {
         name="email"
         label="Email"
         placeholder="abcd@gmail.com"
+        isRequired
       />
       <RHFInput<FormValues>
         name="password"
         label="Password"
         placeholder="********"
+        isRequired
       />
       <Button type="submit">Create Account</Button>
     </RHFProvider>

@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { object, string } from "zod";
 import { Button } from "@jamsr-ui/react";
 import { RHFOtpInput, RHFProvider } from "@jamsr-ui/rhf";
+import { cn } from "@/lib/tw-merge";
 
 type FormValues = {
   otp: string;
@@ -22,7 +23,11 @@ export const Form = () => {
     defaultValues,
     resolver: zodResolver(schema),
   });
-  const { handleSubmit, reset } = methods;
+  const {
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = methods;
 
   const onSubmit = handleSubmit((values) => {
     alert(`OTP: ${values.otp}`);
@@ -44,7 +49,10 @@ export const Form = () => {
         label="Type your 6 digit security code"
         classNames={{
           label: "text-foreground",
-          input: "grow-1 h-14 font-semibold text-lg",
+          input: cn(
+            "grow-1 h-14 font-semibold text-lg",
+            !!errors.otp && "border-danger",
+          ),
         }}
         radius="xl"
         numberOfDigits={6}

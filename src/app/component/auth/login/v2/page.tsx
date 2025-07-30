@@ -45,7 +45,7 @@ export default function page() {
           {/* footer */}
           <Text
             variant="paragraph2"
-            className="text-center"
+            className="text-muted-foreground text-center"
           >
             Don&apos;t have an account?{" "}
             <Link href={COMPONENT_ROUTES.auth.register.v2}>Sign Up</Link>

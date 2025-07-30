@@ -50,12 +50,14 @@ export const Form = () => {
         name="email"
         label="Email"
         placeholder="abcd@gmail.com"
+        isRequired
       />
       <RHFInput<FormValues>
         name="password"
         label="Password"
         placeholder="********"
         className="relative"
+        isRequired
       >
         <Link
           href={COMPONENT_ROUTES.auth.forgotPassword.v4}

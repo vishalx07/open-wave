@@ -1,7 +1,8 @@
 import { MailIcon } from "lucide-react";
 import { Link } from "@jamsr-ui/next";
-import { Button, Card, CardContent, Text } from "@jamsr-ui/react";
+import { Card, CardContent, Text } from "@jamsr-ui/react";
 import { DummyLogo } from "@/components/dummy-logo";
+import { Form } from "./_components/form";
 import { TopHeading } from "./_components/top-heading";
 
 export default function page() {
@@ -16,18 +17,20 @@ export default function page() {
           <TopHeading
             icon={<MailIcon />}
             heading="Verify your email"
+            subHeading={
+              <>
+                A verification code has been sent to your email address ending
+                with <strong className="text-white/80">****@gmail.com</strong>.
+                Please enter the code below to complete verification.{" "}
+              </>
+            }
           />
-          <Text className="text-foreground-secondary">
-            Account activation link sent to your email address:
-            <Link href={"#"}> john.doe@email.com </Link>
-            Please follow the link inside to continue.
-          </Text>
-          <Button color="primary">Verify Email</Button>
+          <Form />
           <Text
             variant="body1"
-            className="text-foreground-secondary text-center"
+            className="text-muted-foreground text-center"
           >
-            Didn&apos;t get the mail?
+            Didn&apos;t get the code?
             <Link href="#"> Resend</Link>
           </Text>
         </CardContent>

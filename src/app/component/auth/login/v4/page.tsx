@@ -45,29 +45,6 @@ export default function page() {
         <Divider className="my-8">or</Divider>
         {/* Main Form */}
         <Form />
-
-        <Text
-          variant="paragraph2"
-          className="!text-foreground-secondary mt-8 text-center"
-        >
-          By signing in, you agree to our{" "}
-          <Link
-            href="#"
-            className="text-sm text-inherit"
-            underline="always"
-          >
-            Terms{" "}
-          </Link>
-          and
-          <Link
-            href="#"
-            className="text-sm text-inherit"
-            underline="always"
-          >
-            {" "}
-            Privacy Policy
-          </Link>
-        </Text>
       </main>
     </div>
   );

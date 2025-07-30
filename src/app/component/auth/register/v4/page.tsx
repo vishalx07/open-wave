@@ -31,7 +31,7 @@ export default function page() {
             variant="h2"
             className="mt-6 text-3xl leading-10 font-[400]"
           >
-            Create a OpenWave Account
+            Create an OpenWave Account
           </Text>
           <span className="text-foreground-secondary text-md font-normal">
             Already have an account?
@@ -53,7 +53,7 @@ export default function page() {
           By signing up, you agree to our{" "}
           <Link
             href="#"
-            className="text-sm text-inherit"
+            className="text-sm"
             underline="always"
           >
             Terms{" "}
@@ -61,7 +61,7 @@ export default function page() {
           and
           <Link
             href="#"
-            className="text-sm text-inherit"
+            className="text-sm"
             underline="always"
           >
             {" "}

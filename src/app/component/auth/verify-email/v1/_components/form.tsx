@@ -44,26 +44,25 @@ export const Form = () => {
         fieldset: "flex flex-col gap-4",
       }}
     >
-      <RHFOtpInput<FormValues>
+      <RHFOtpInput
         name="otp"
-        label="Enter your 6-digit verification code"
+        label="Type your 6 digit security code"
         classNames={{
+          label: "text-foreground",
           input: cn(
             "grow-1 h-14 font-semibold text-lg",
             !!errors.otp && "border-danger",
           ),
-          label: "text-foreground",
         }}
         radius="xl"
         numberOfDigits={6}
       />
+
       <Button
         color="primary"
-        radius="xl"
-        size="lg"
         type="submit"
       >
-        Verify My Account
+        Verify Email
       </Button>
     </RHFProvider>
   );

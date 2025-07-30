@@ -5,15 +5,13 @@ import { IconWrapper } from "./icon-wrapper";
 type Props = {
   icon: React.ReactNode;
   heading: string;
-  subHeading?: string;
+  subHeading?: string | React.ReactNode;
   className?: string;
 };
 
 export const TopHeading = ({ icon, heading, subHeading, className }: Props) => {
   return (
-    <div
-      className={cn("mb-4 flex w-full flex-col items-center gap-1", className)}
-    >
+    <div className={cn("flex w-full flex-col items-center gap-1", className)}>
       <div className="relative flex size-24 items-center justify-center rounded-full backdrop-blur-xl before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-b before:from-neutral-500 before:to-transparent before:opacity-10">
         <IconWrapper
           icon={icon}

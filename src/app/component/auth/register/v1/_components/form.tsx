@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { email, object, string } from "zod";
 import { Link } from "@jamsr-ui/next";
-import { Button, Checkbox, Text } from "@jamsr-ui/react";
+import { Button, Text } from "@jamsr-ui/react";
 import { RHFInput, RHFProvider } from "@jamsr-ui/rhf";
 import { Icons } from "@/components/icons";
 
@@ -71,23 +71,26 @@ export const Form = () => {
         startContent={<Icons.PasswordIcon />}
       />
 
-      <Text
-        variant="paragraph2"
-        className="text-muted-foreground mt-2"
-      >
-        I agree with the <Link href="#">Terms</Link> and{" "}
-        <Link href="#">Privacy Policy</Link>
-      </Text>
+      <div className="w-full grow">
+        <Text
+          variant="paragraph2"
+          className="text-muted-foreground mt-2"
+        >
+          I agree with the <Link href="#">Terms</Link> and{" "}
+          <Link href="#">Privacy Policy</Link>
+        </Text>
 
-      <Button
-        color="primary"
-        radius="xl"
-        size="lg"
-        className="drop-shadow-primary/50 mt-4 drop-shadow-lg"
-        type="submit"
-      >
-        Register
-      </Button>
+        <Button
+          color="primary"
+          radius="xl"
+          size="lg"
+          fullWidth
+          className="drop-shadow-primary/50 mt-2 drop-shadow-lg"
+          type="submit"
+        >
+          Register
+        </Button>
+      </div>
     </RHFProvider>
   );
 };
