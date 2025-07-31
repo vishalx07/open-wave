@@ -1,5 +1,11 @@
-import { CircleUser, LayoutGrid, Settings } from "lucide-react";
-import { APP_ROUTES } from "@/configs/routes";
+import {
+  CircleUser,
+  HeadphonesIcon,
+  LayoutGrid,
+  Settings,
+  ShieldIcon,
+} from "lucide-react";
+import { APP_ROUTES } from "@/configs/routes/app";
 import { type NavItem } from "./types";
 
 export const NAV_ITEMS: NavItem[] = [
@@ -87,11 +93,11 @@ export const NAV_ITEMS: NavItem[] = [
           },
           {
             title: "Teams",
-            url: APP_ROUTES.publicProfile.teams,
+            url: APP_ROUTES.publicProfile.teams.root,
           },
           {
-            title: "Network",
-            url: APP_ROUTES.publicProfile.network,
+            title: "Sales",
+            url: APP_ROUTES.publicProfile.sales.root,
           },
           {
             title: "Activity",
@@ -110,6 +116,128 @@ export const NAV_ITEMS: NavItem[] = [
             url: APP_ROUTES.publicProfile.empty,
           },
         ],
+      },
+      {
+        title: "Authentication",
+        icon: <ShieldIcon />,
+        url: APP_ROUTES.auth.root,
+        items: [
+          {
+            title: "Login",
+            url: APP_ROUTES.auth.login.root,
+            items: [
+              {
+                title: "Login v1",
+                url: APP_ROUTES.auth.login.v1,
+              },
+              {
+                title: "Login v2",
+                url: APP_ROUTES.auth.login.v2,
+              },
+              {
+                title: "Login v3",
+                url: APP_ROUTES.auth.login.v3,
+              },
+              {
+                title: "Login v4",
+                url: APP_ROUTES.auth.login.v4,
+              },
+            ],
+          },
+          {
+            title: "Register",
+            url: APP_ROUTES.auth.register.root,
+            items: [
+              {
+                title: "Register v1",
+                url: APP_ROUTES.auth.register.v1,
+              },
+              {
+                title: "Register v2",
+                url: APP_ROUTES.auth.register.v2,
+              },
+              {
+                title: "Register v4",
+                url: APP_ROUTES.auth.register.v4,
+              },
+            ],
+          },
+          {
+            title: "Verify Email",
+            url: APP_ROUTES.auth.verifyEmail.root,
+            items: [
+              {
+                title: "Verify Email 1",
+                url: APP_ROUTES.auth.verifyEmail.v1,
+              },
+              {
+                title: "Verify Email 2",
+                url: APP_ROUTES.auth.verifyEmail.v2,
+              },
+            ],
+          },
+          {
+            title: "Forgot Password",
+            url: APP_ROUTES.auth.forgotPassword.root,
+            items: [
+              {
+                title: "Forgot Password v1",
+                url: APP_ROUTES.auth.forgotPassword.v1,
+              },
+              {
+                title: "Forgot Password v2",
+                url: APP_ROUTES.auth.forgotPassword.v2,
+              },
+              {
+                title: "Forgot Password v4",
+                url: APP_ROUTES.auth.forgotPassword.v4,
+              },
+            ],
+          },
+          {
+            title: "Reset Password",
+            url: APP_ROUTES.auth.resetPassword.root,
+            items: [
+              {
+                title: "Reset Password v1",
+                url: APP_ROUTES.auth.resetPassword.v1,
+              },
+              {
+                title: "Reset Password v2",
+                url: APP_ROUTES.auth.resetPassword.v2,
+              },
+            ],
+          },
+          {
+            title: "Change Password",
+            url: APP_ROUTES.auth.changePassword.root,
+            items: [
+              {
+                title: "Change Password v1",
+                url: APP_ROUTES.auth.changePassword.v1,
+              },
+            ],
+          },
+          {
+            title: "2FA",
+            url: APP_ROUTES.auth.twoFA.root,
+            items: [
+              {
+                title: "2FA v1",
+                url: APP_ROUTES.auth.twoFA.v1,
+              },
+              {
+                title: "2FA v2",
+                url: APP_ROUTES.auth.twoFA.v2,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        title: "Support",
+        icon: <HeadphonesIcon />,
+        url: "#",
       },
       {
         title: "My Account",

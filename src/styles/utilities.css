@@ -14,15 +14,15 @@
 }
 
 @utility container {
-  @apply mx-auto w-full max-w-(--breakpoint-xl) px-4 lg:px-6;
+  @apply mx-auto w-full max-w-[1320px] px-4 lg:px-6;
 }
 
 @utility app-container {
-  @apply mx-auto w-full max-w-(--breakpoint-xl) p-4 pb-20! lg:p-6;
+  @apply mx-auto w-full max-w-[1320px] p-4 pb-20! lg:p-6;
 }
 
 @utility dashboard-container {
-  @apply mx-auto w-full max-w-(--breakpoint-2xl) p-4 pb-12!;
+  @apply mx-auto w-full max-w-[1320px] p-4 pb-12! lg:px-6;
 }
 
 @utility scrollbar-thin {
@@ -55,4 +55,11 @@
     mask-repeat: no-repeat;
     transform: translate(calc(12px * -1), calc(12px * -0.4));
   }
+}
+
+@utility button-shadow {
+  box-shadow:
+    0px 0px 4px #ffffff0f,
+    0px 1px 14px #ffffff1f,
+    0px 3px 32px #ffffff2e;
 }

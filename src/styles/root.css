@@ -1,9 +1,9 @@
 :root {
   /* ... */
-  --header-mobile-height: 64px;
-  --header-desktop-height: 72px;
+  --header-mobile-height: 60px;
+  --header-desktop-height: 70px;
   /* ... */
-  --dashboard-w: 272px;
+  --dashboard-w: 280px;
   --dashboard-mini-w: 80px;
   /* ... */
   --dashboard-item-h: 34px;
