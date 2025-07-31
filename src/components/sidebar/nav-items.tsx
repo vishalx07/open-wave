@@ -1,9 +1,4 @@
-import {
-  CircleUser,
-  HeadphonesIcon,
-  LayoutGrid,
-  ShieldIcon,
-} from "lucide-react";
+import { CircleUser, Headset, LayoutGrid, ShieldIcon } from "lucide-react";
 import { APP_ROUTES } from "@/configs/routes";
 import { type NavItem } from "./types";
 
@@ -209,8 +204,8 @@ export const NAV_ITEMS: NavItem[] = [
       },
       {
         title: "Support",
-        icon: <HeadphonesIcon />,
-        url: "#",
+        icon: <Headset />,
+        url: APP_ROUTES.support.root,
       },
       {
         title: "Level 4",
