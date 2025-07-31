@@ -1,7 +1,16 @@
+import { type Metadata } from "next";
+import { TerminalCodeBlock } from "@/components/terminal-code-blocks";
+import { COMPONENT_ROUTES } from "@/configs/routes/component";
+
+export const metadata: Metadata = {
+  title: "Forgot Password v1",
+};
+
 export default function page() {
   return (
-    <>
-      <div>page</div>
-    </>
+    <TerminalCodeBlock
+      iframeUrl={COMPONENT_ROUTES.auth.forgotPassword.v1}
+      className="h-dvh"
+    />
   );
-};
+}

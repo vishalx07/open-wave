@@ -1,11 +1,11 @@
-const route = <T extends string>(path: T) => `${path}` as const;
+const route = <T extends string>(path: T) => `/component${path}` as const;
 
 const publicProfile = <T extends string>(path: T) =>
-  route(`/public-profile${path}`);
+  route("/public-profile" + path);
 const profiles = <T extends string>(path: T) =>
-  publicProfile(`/profiles${path}`);
+  publicProfile("/profiles" + path);
 const projects = <T extends string>(path: T) =>
-  publicProfile(`/projects${path}`);
+  publicProfile("/projects" + path);
 
 const auth = <T extends string>(path: T) => route("/auth" + path);
 const login = <T extends string>(path: T) => auth("/login" + path);
@@ -16,8 +16,10 @@ const resetPassword = <T extends string>(path: T) =>
   auth("/reset-password" + path);
 const twoFA = <T extends string>(path: T) => auth("/2fa" + path);
 const verifyEmail = <T extends string>(path: T) => auth("/verify-email" + path);
+const changePassword = <T extends string>(path: T) =>
+  auth("/change-password" + path);
 
-export const APP_ROUTES = {
+export const COMPONENT_ROUTES = {
   home: route(""),
   dashboard: route("/dashboard"),
   publicProfile: {
@@ -41,14 +43,8 @@ export const APP_ROUTES = {
       "2Columns": projects("/2-columns"),
     },
     works: publicProfile("/works"),
-    teams: {
-      root: publicProfile("/teams"),
-      tab: (tab: string) => publicProfile(`/teams?tab=${tab}`),
-    },
-    sales: {
-      root: publicProfile("/sales"),
-      tab: (tab: string) => publicProfile(`/sales?tab=${tab}`),
-    },
+    teams: publicProfile("/teams"),
+    network: publicProfile("/network"),
     activity: publicProfile("/activity"),
     campaigns: {
       root: publicProfile("/campaigns"),
@@ -63,11 +59,15 @@ export const APP_ROUTES = {
       root: login(""),
       v1: login("/v1"),
       v2: login("/v2"),
+      v3: login("/v3"),
+      v4: login("/v4"),
     },
     register: {
       root: register(""),
       v1: register("/v1"),
       v2: register("/v2"),
+      v3: register("/v3"),
+      v4: register("/v4"),
     },
     verifyEmail: {
       root: verifyEmail(""),
@@ -78,11 +78,17 @@ export const APP_ROUTES = {
       root: forgotPassword(""),
       v1: forgotPassword("/v1"),
       v2: forgotPassword("/v2"),
+      v3: forgotPassword("/v3"),
+      v4: forgotPassword("/v4"),
     },
     resetPassword: {
       root: resetPassword(""),
       v1: resetPassword("/v1"),
       v2: resetPassword("/v2"),
+    },
+    changePassword: {
+      root: changePassword(""),
+      v1: changePassword("/v1"),
     },
     twoFA: {
       root: twoFA("/2fa"),

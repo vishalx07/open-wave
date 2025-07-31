@@ -133,6 +133,14 @@ export const NAV_ITEMS: NavItem[] = [
                 title: "Login v2",
                 url: APP_ROUTES.auth.login.v2,
               },
+              {
+                title: "Login v3",
+                url: APP_ROUTES.auth.login.v3,
+              },
+              {
+                title: "Login v4",
+                url: APP_ROUTES.auth.login.v4,
+              },
             ],
           },
           {
@@ -146,6 +154,10 @@ export const NAV_ITEMS: NavItem[] = [
               {
                 title: "Register v2",
                 url: APP_ROUTES.auth.register.v2,
+              },
+              {
+                title: "Register v4",
+                url: APP_ROUTES.auth.register.v4,
               },
             ],
           },
@@ -175,6 +187,10 @@ export const NAV_ITEMS: NavItem[] = [
                 title: "Forgot Password v2",
                 url: APP_ROUTES.auth.forgotPassword.v2,
               },
+              {
+                title: "Forgot Password v4",
+                url: APP_ROUTES.auth.forgotPassword.v4,
+              },
             ],
           },
           {
@@ -188,6 +204,16 @@ export const NAV_ITEMS: NavItem[] = [
               {
                 title: "Reset Password v2",
                 url: APP_ROUTES.auth.resetPassword.v2,
+              },
+            ],
+          },
+          {
+            title: "Change Password",
+            url: APP_ROUTES.auth.changePassword.root,
+            items: [
+              {
+                title: "Change Password v1",
+                url: APP_ROUTES.auth.changePassword.v1,
               },
             ],
           },
