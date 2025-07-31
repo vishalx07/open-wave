@@ -1,5 +1,11 @@
-import { CircleUser, Headset, LayoutGrid, ShieldIcon } from "lucide-react";
-import { APP_ROUTES } from "@/configs/routes";
+import {
+  CircleUser,
+  Headset,
+  LayoutGrid,
+  Settings,
+  ShieldIcon,
+} from "lucide-react";
+import { APP_ROUTES } from "@/configs/routes/app";
 import { type NavItem } from "./types";
 
 export const NAV_ITEMS: NavItem[] = [
@@ -128,6 +134,14 @@ export const NAV_ITEMS: NavItem[] = [
                 title: "Login v2",
                 url: APP_ROUTES.auth.login.v2,
               },
+              {
+                title: "Login v3",
+                url: APP_ROUTES.auth.login.v3,
+              },
+              {
+                title: "Login v4",
+                url: APP_ROUTES.auth.login.v4,
+              },
             ],
           },
           {
@@ -141,6 +155,10 @@ export const NAV_ITEMS: NavItem[] = [
               {
                 title: "Register v2",
                 url: APP_ROUTES.auth.register.v2,
+              },
+              {
+                title: "Register v4",
+                url: APP_ROUTES.auth.register.v4,
               },
             ],
           },
@@ -170,6 +188,10 @@ export const NAV_ITEMS: NavItem[] = [
                 title: "Forgot Password v2",
                 url: APP_ROUTES.auth.forgotPassword.v2,
               },
+              {
+                title: "Forgot Password v4",
+                url: APP_ROUTES.auth.forgotPassword.v4,
+              },
             ],
           },
           {
@@ -183,6 +205,16 @@ export const NAV_ITEMS: NavItem[] = [
               {
                 title: "Reset Password v2",
                 url: APP_ROUTES.auth.resetPassword.v2,
+              },
+            ],
+          },
+          {
+            title: "Change Password",
+            url: APP_ROUTES.auth.changePassword.root,
+            items: [
+              {
+                title: "Change Password v1",
+                url: APP_ROUTES.auth.changePassword.v1,
               },
             ],
           },
@@ -208,19 +240,167 @@ export const NAV_ITEMS: NavItem[] = [
         url: APP_ROUTES.support.root,
       },
       {
-        title: "Level 4",
-        icon: <LayoutGrid />,
-        url: "#",
-      },
-      {
-        title: "Level 5",
-        icon: <LayoutGrid />,
-        url: "#",
-      },
-      {
-        title: "Level 6",
-        icon: <LayoutGrid />,
-        url: "#",
+        title: "My Account",
+        url: APP_ROUTES.myAccount.root,
+        icon: <Settings />,
+        items: [
+          {
+            title: "Account",
+            url: APP_ROUTES.myAccount.account.root,
+            items: [
+              {
+                title: "Get Started",
+                url: APP_ROUTES.myAccount.account.getStarted,
+              },
+              {
+                title: "User Profile",
+                url: "#",
+              },
+              {
+                title: "Company Profile",
+                url: "#",
+              },
+              {
+                title: "Settings - With Sidebar",
+                url: "#",
+              },
+              {
+                title: "Settings - Enterprise",
+                url: "#",
+              },
+              {
+                title: "Settings - Plain",
+                url: "#",
+              },
+              {
+                title: "Settings - Modal",
+                url: "#",
+              },
+            ],
+          },
+          {
+            title: "Billing",
+            url: APP_ROUTES.myAccount.billing.root,
+            items: [
+              {
+                title: "Billing - Basic",
+                url: "#",
+              },
+              {
+                title: "Billing - Enterprise",
+                url: "#",
+              },
+              {
+                title: "Plans",
+                url: "#",
+              },
+              {
+                title: "Billing History",
+                url: "#",
+              },
+            ],
+          },
+          {
+            title: "Security",
+            url: APP_ROUTES.myAccount.security.root,
+            items: [
+              {
+                title: "Get Started",
+                url: "#",
+              },
+              {
+                title: "Security Overview",
+                url: "#",
+              },
+              {
+                title: "Allowed IP Addresses",
+                url: "#",
+              },
+              {
+                title: "Privacy Settings",
+                url: "#",
+              },
+              {
+                title: "Device Management",
+                url: "#",
+              },
+              {
+                title: "Backup & Recovery",
+                url: "#",
+              },
+              {
+                title: "Current Sessions",
+                url: "#",
+              },
+              {
+                title: "Security Log",
+                url: "#",
+              },
+            ],
+          },
+          {
+            title: "Members & Roles",
+            url: APP_ROUTES.myAccount.members.root,
+            items: [
+              {
+                title: "Teams Starter",
+                url: "#",
+              },
+              {
+                title: "Teams",
+                url: "#",
+              },
+              {
+                title: "Team Info",
+                url: "#",
+              },
+              {
+                title: "Members Starter",
+                url: "#",
+              },
+              {
+                title: "Team Members",
+                url: "#",
+              },
+              {
+                title: "Import Members",
+                url: "#",
+              },
+              {
+                title: "Roles",
+                url: "#",
+              },
+              {
+                title: "Permissions - Toggler",
+                url: "#",
+              },
+              {
+                title: "Permissions - Check",
+                url: "#",
+              },
+            ],
+          },
+          {
+            title: "Integrations",
+            url: "#",
+          },
+          {
+            title: "API Keys",
+            url: "#",
+          },
+          {
+            title: "Appearance",
+            url: "#",
+          },
+          {
+            title: "Invite a Friend",
+            url: "#",
+          },
+          {
+            title: "Activity",
+            url: "#",
+          },
+        ],
       },
     ],
   },

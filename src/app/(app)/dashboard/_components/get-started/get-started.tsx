@@ -1,5 +1,5 @@
 import { Avatar, Card, CardContent, CardFooter, Link } from "@jamsr-ui/react";
-import { APP_ROUTES } from "@/configs/routes";
+import { COMPONENT_ROUTES } from "@/configs/routes/component";
 
 const USERS = [
   "/images/user1.png",
@@ -28,7 +28,7 @@ export const GetStarted = () => {
           <h2 className="text-mono text-xl font-semibold">
             Connect Today & Join <br /> the{" "}
             <Link
-              href={APP_ROUTES.home}
+              href={COMPONENT_ROUTES.home}
               underline="never"
             >
               KeenThemes Network
@@ -42,7 +42,7 @@ export const GetStarted = () => {
         </div>
       </CardContent>
       <CardFooter className="border-divider flex min-h-14 items-center justify-center border-t py-0">
-        <Link href={APP_ROUTES.home}>Get Started</Link>
+        <Link href={COMPONENT_ROUTES.home}>Get Started</Link>
       </CardFooter>
     </Card>
   );
