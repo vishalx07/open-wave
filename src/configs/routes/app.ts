@@ -26,7 +26,11 @@ const members = <T extends string>(path: T) => myAccount("/members" + path);
 
 export const APP_ROUTES = {
   home: route(""),
-  dashboard: route("/dashboard"),
+  dashboard: {
+    root: route("/dashboard"),
+    v1: route("/dashboard/v1"),
+    v2: route("/dashboard/v2"),
+  },
   login: route("/login"),
   register: route("/register"),
   publicProfile: {
