@@ -20,7 +20,6 @@ const changePassword = <T extends string>(path: T) =>
   auth("/change-password" + path);
 
 const myAccount = <T extends string>(path: T) => route("/my-account" + path);
-const account = <T extends string>(path: T) => myAccount("/account" + path);
 const billing = <T extends string>(path: T) => myAccount("/billing" + path);
 const security = <T extends string>(path: T) => myAccount("/security" + path);
 const members = <T extends string>(path: T) => myAccount("/members" + path);
@@ -112,16 +111,7 @@ export const APP_ROUTES = {
   },
   myAccount: {
     root: myAccount(""),
-    account: {
-      root: account(""),
-      getStarted: account("/get-started"),
-      userProfile: account("/user-profile"),
-      companyProfile: account("/company-profile"),
-      settingsSidebar: account("/settings-sidebar"),
-      settingsEnterprise: account("/settings-enterprise"),
-      settingsPlain: account("/settings-plain"),
-      settingsModal: account("/settings-modal"),
-    },
+    account: myAccount("/account"),
     billing: {
       root: billing(""),
       basic: billing("/basic"),

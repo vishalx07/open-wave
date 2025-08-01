@@ -246,37 +246,7 @@ export const NAV_ITEMS: NavItem[] = [
         items: [
           {
             title: "Account",
-            url: APP_ROUTES.myAccount.account.root,
-            items: [
-              {
-                title: "Get Started",
-                url: APP_ROUTES.myAccount.account.getStarted,
-              },
-              {
-                title: "User Profile",
-                url: "#",
-              },
-              {
-                title: "Company Profile",
-                url: "#",
-              },
-              {
-                title: "Settings - With Sidebar",
-                url: "#",
-              },
-              {
-                title: "Settings - Enterprise",
-                url: "#",
-              },
-              {
-                title: "Settings - Plain",
-                url: "#",
-              },
-              {
-                title: "Settings - Modal",
-                url: "#",
-              },
-            ],
+            url: APP_ROUTES.myAccount.account,
           },
           {
             title: "Billing",
