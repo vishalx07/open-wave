@@ -1,3 +1,13 @@
+import { type Route } from "next";
+
+export type TabType = "all" | "new" | "active" | "closed";
+
+export type Tabs = {
+  label: string;
+  value: TabType;
+  href: Route;
+}[];
+
 export type TicketStatus = "new" | "active" | "closed";
 
 export interface HelpCenterTicket {

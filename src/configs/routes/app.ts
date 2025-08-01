@@ -157,4 +157,10 @@ export const APP_ROUTES = {
     inviteAFriend: myAccount("/invite-a-friend"),
     activity: myAccount("/activity"),
   },
+  support: {
+    root: route("/support"),
+    tab: (tab: string) => route(`/support?tab=${tab}`),
+    ticket: (id: string, tab?: string) =>
+      route(`/support/${id}${tab ? `?tab=${tab}` : ""}`),
+  },
 };

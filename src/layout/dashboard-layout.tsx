@@ -9,7 +9,7 @@ export const DashboardLayout = ({ children }: Props) => {
   return (
     <div className="light:bg-default-100 flex h-full">
       <Sidebar />
-      <div className="flex grow flex-col">
+      <div className="flex min-h-dvh grow flex-col">
         <Header />
         <div className="dashboard-container">{children}</div>
       </div>

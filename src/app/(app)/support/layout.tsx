@@ -8,15 +8,15 @@ type Props = {
 export default async function layout({ children }: Props) {
   return (
     <Card className="h-full">
-      <CardContent className="flex h-full w-full gap-4">
+      <CardContent className="absolute inset-0 flex size-full gap-4">
         <TicketList />
 
         <Divider
           orientation="vertical"
-          variant="gradient"
+          className="-my-4 max-md:hidden"
         />
 
-        {children}
+        <div className="size-full max-md:hidden">{children}</div>
       </CardContent>
     </Card>
   );

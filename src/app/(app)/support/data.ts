@@ -1,4 +1,36 @@
-import type { HelpCenterMessage, HelpCenterTicket } from "./types";
+import { APP_ROUTES } from "@/configs/routes";
+import type { HelpCenterMessage, HelpCenterTicket, Tabs } from "./types";
+
+export const TABS: Tabs = [
+  {
+    label: "All",
+    value: "all",
+    href: APP_ROUTES.support.tab("all"),
+  },
+  {
+    label: "New",
+    value: "new",
+    href: APP_ROUTES.support.root,
+  },
+  {
+    label: "Active",
+    value: "active",
+    href: APP_ROUTES.support.tab("active"),
+  },
+  {
+    label: "Closed",
+    value: "closed",
+    href: APP_ROUTES.support.tab("closed"),
+  },
+];
+
+export const TICKET_CATEGORIES: string[] = [
+  "Account",
+  "Billing",
+  "General",
+  "Deposit",
+  "Withdrawal",
+];
 
 export const TICKET_LIST: HelpCenterTicket[] = [
   {
@@ -36,7 +68,7 @@ export const TICKET_LIST: HelpCenterTicket[] = [
     lastMessage:
       "The discrepancy was due to a duplicate charge. We've issued a refund.",
     lastRepliedAt: "5 days ago",
-    closedAt: "11 Jun 2025",
+    closedAt: "11 Jun 2025 11:58 AM",
   },
   {
     id: "TCK-2025-005",
@@ -55,7 +87,7 @@ export const TICKET_LIST: HelpCenterTicket[] = [
     lastMessage:
       "Your account and associated data have been permanently removed.",
     lastRepliedAt: "1 week ago",
-    closedAt: "22 May 2025",
+    closedAt: "22 May 2025 05:12 PM",
   },
   {
     id: "TCK-2025-007",
@@ -102,6 +134,39 @@ export const TICKET_CONVERSATIONS: HelpCenterMessage[] = [
     message:
       "We're checking with our email provider to confirm delivery issues.",
     timestamp: "2025-07-28T10:20:00Z",
+  },
+  {
+    ticketId: "TCK-2025-001",
+    sender: "support",
+    message:
+      "We've verified that the reset email was sent but may have landed in spam. Can you check your spam or junk folder?",
+    timestamp: "2025-07-28T10:35:00Z",
+  },
+  {
+    ticketId: "TCK-2025-001",
+    sender: "user",
+    message: "You're right, I found it in my spam folder. Thanks!",
+    timestamp: "2025-07-28T10:37:00Z",
+  },
+  {
+    ticketId: "TCK-2025-001",
+    sender: "support",
+    message:
+      "Great! Please let us know if you're able to complete the reset successfully.",
+    timestamp: "2025-07-28T10:38:00Z",
+  },
+  {
+    ticketId: "TCK-2025-001",
+    sender: "user",
+    message: "Password reset worked. All good now.",
+    timestamp: "2025-07-28T10:40:00Z",
+  },
+  {
+    ticketId: "TCK-2025-001",
+    sender: "support",
+    message:
+      "Happy to hear that! Let us know if you need help with anything else.",
+    timestamp: "2025-07-28T10:42:00Z",
   },
 
   // TCK-2025-002: Account locked
