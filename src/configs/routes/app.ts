@@ -28,6 +28,8 @@ const members = <T extends string>(path: T) => myAccount("/members" + path);
 export const APP_ROUTES = {
   home: route(""),
   dashboard: route("/dashboard"),
+  login: route("/login"),
+  register: route("/register"),
   publicProfile: {
     root: publicProfile(""),
     profiles: {

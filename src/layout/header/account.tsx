@@ -1,4 +1,5 @@
 import NextLink from "next/link";
+import { useRouter } from "next/navigation";
 import { Moon } from "lucide-react";
 import { Link } from "@jamsr-ui/next";
 import {
@@ -10,10 +11,12 @@ import {
   MenuItem,
   Switch,
 } from "@jamsr-ui/react";
+import { APP_ROUTES } from "@/configs/routes";
 import { DATA } from "./data";
 
 export const Account = () => {
   const { user, items } = DATA;
+  const router = useRouter();
   return (
     <Menu
       triggerOn="hover"
@@ -110,6 +113,7 @@ export const Account = () => {
           fullWidth
           size="sm"
           variant="outlined"
+          onClick={() => router.push(APP_ROUTES.login)}
         >
           Logout
         </Button>
