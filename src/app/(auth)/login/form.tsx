@@ -41,7 +41,7 @@ export const Form = () => {
       password === APP_CONFIG.login.password
     ) {
       toast.success("Login successful");
-      router.push(APP_ROUTES.dashboard);
+      router.push(APP_ROUTES.dashboard.v1);
     } else {
       toast.error("Invalid email or password");
     }

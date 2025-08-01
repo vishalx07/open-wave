@@ -22,7 +22,7 @@ export const ThemeProvider = ({ children }: Props) => {
           radius: "2xl",
           classNames: /** @tw */ {
             th: "bg-content2 text-foreground-secondary",
-            td: "first:rounded-l-xl last:rounded-r-xl",
+            td: "",
           },
         }}
         iconButton={{
