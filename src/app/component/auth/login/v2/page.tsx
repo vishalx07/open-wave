@@ -1,7 +1,7 @@
 import { type Metadata } from "next";
 import { Button, Divider, Link, Text } from "@jamsr-ui/react";
 import { DummyLogo } from "@/components/dummy-logo";
-import { Icons } from "@/components/icons";
+import { Logos } from "@/configs/icon";
 import { COMPONENT_ROUTES } from "@/configs/routes/component";
 import { Form } from "./form";
 
@@ -28,7 +28,7 @@ export default function page() {
               variant="outlined"
               radius="xl"
               fullWidth
-              startContent={<Icons.GoogleIcon className="size-5" />}
+              startContent={<Logos.Google className="size-5" />}
             >
               Continue with Google
             </Button>
@@ -36,7 +36,7 @@ export default function page() {
               variant="outlined"
               radius="xl"
               fullWidth
-              startContent={<Icons.GithubIcon />}
+              startContent={<Logos.Github className="size-5" />}
             >
               Continue with Github
             </Button>

@@ -9,7 +9,7 @@ import {
   Text,
 } from "@jamsr-ui/react";
 import { DummyLogo } from "@/components/dummy-logo";
-import { Icons } from "@/components/icons";
+import { Logos } from "@/configs/icon";
 import { COMPONENT_ROUTES } from "@/configs/routes/component";
 import { Form } from "./_components/form";
 import { TopHeading } from "./_components/top-heading";
@@ -34,7 +34,7 @@ const page = () => {
           <Button
             variant="flat"
             radius="xl"
-            startContent={<Icons.GoogleIcon />}
+            startContent={<Logos.Google className="size-5" />}
           >
             Continue with Google
           </Button>
