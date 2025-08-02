@@ -16,16 +16,16 @@ export const NAV_ITEMS: NavItem[] = [
         title: "Dashboard",
         icon: <LayoutGrid />,
         url: APP_ROUTES.dashboard.root,
-        items: [
-          {
-            title: "Dashboard v1",
-            url: APP_ROUTES.dashboard.v1,
-          },
-          {
-            title: "Dashboard v2",
-            url: APP_ROUTES.dashboard.v2,
-          },
-        ],
+      },
+      {
+        title: "Finance",
+        icon: <LayoutGrid />,
+        url: APP_ROUTES.dashboard.finance,
+      },
+      {
+        title: "HR Manager",
+        icon: <LayoutGrid />,
+        url: APP_ROUTES.dashboard.hrManager,
       },
     ],
   },
