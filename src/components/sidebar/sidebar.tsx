@@ -17,7 +17,7 @@ export const Sidebar = () => {
         onMouseEnter={onHovered}
         onMouseLeave={onCloseHovered}
         className={cn(
-          "border-divider relative shrink-0 overflow-hidden border-r transition-[width] duration-300 max-lg:hidden",
+          "border-divider relative shrink-0 border-r transition-[width] duration-300 max-lg:hidden",
           isMini
             ? isHovered
               ? "w-(--dashboard-w)"
