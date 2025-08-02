@@ -16,3 +16,8 @@ export function fTime(date: InputValue, newFormat?: string) {
   const fm = newFormat || "hh:mm a";
   return date ? dayjs(new Date(date)).format(fm) : "_";
 }
+
+export function fMonthYear(date: InputValue, newFormat?: string) {
+  const fm = newFormat || "MMMM YYYY";
+  return date ? dayjs(new Date(date)).format(fm) : "_";
+}

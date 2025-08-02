@@ -54,14 +54,14 @@ export const Form = () => {
         label="New Password"
         placeholder="Enter your new password"
         isSecuredText
-        startContent={<Icons.Password />}
+        startContent={<Icons.Lock />}
       />
       <RHFInput<FormValues>
         name="confirmPassword"
         label="Confirm Password"
         placeholder="Confirm your password"
         isSecuredText
-        startContent={<Icons.Password />}
+        startContent={<Icons.Lock />}
       />
 
       <Button

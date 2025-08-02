@@ -68,7 +68,7 @@ export const Form = () => {
         label="Password"
         placeholder="Enter your password"
         isSecuredText
-        startContent={<Icons.Password />}
+        startContent={<Icons.Lock />}
       />
 
       <div className="w-full grow">
