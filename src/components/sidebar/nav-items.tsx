@@ -1,5 +1,6 @@
 import {
   CircleUser,
+  CreditCardIcon,
   HeadphonesIcon,
   LayoutGrid,
   Settings,
@@ -411,6 +412,11 @@ export const NAV_ITEMS: NavItem[] = [
             url: "#",
           },
         ],
+      },
+      {
+        title: "Wallet",
+        url: APP_ROUTES.wallet.root,
+        icon: <CreditCardIcon />,
       },
     ],
   },

@@ -25,6 +25,8 @@ const billing = <T extends string>(path: T) => myAccount("/billing" + path);
 const security = <T extends string>(path: T) => myAccount("/security" + path);
 const members = <T extends string>(path: T) => myAccount("/members" + path);
 
+const wallet = <T extends string>(path: T) => route("/wallet" + path);
+
 export const APP_ROUTES = {
   home: route(""),
   dashboard: {
@@ -162,5 +164,12 @@ export const APP_ROUTES = {
     appearance: myAccount("/appearance"),
     inviteAFriend: myAccount("/invite-a-friend"),
     activity: myAccount("/activity"),
+  },
+  wallet: {
+    root: wallet(""),
+    deposit: wallet("/deposit"),
+    withdraw: wallet("/withdraw"),
+    send: wallet("/send"),
+    request: wallet("/request"),
   },
 };
