@@ -30,7 +30,7 @@ export const TeamMeeting = () => {
           </div>
           <Avatar
             size="sm"
-            src={"/svg/zoom.svg"}
+            src={"/icons/logos/zoom.svg"}
             alt=""
           />
         </div>

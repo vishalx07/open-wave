@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { object, string } from "zod";
 import { Button } from "@jamsr-ui/react";
 import { RHFInput, RHFProvider } from "@jamsr-ui/rhf";
-import { Icons } from "@/components/icons";
+import { Icons } from "@/configs/icon";
 
 type FormValues = {
   newPassword: string;
@@ -54,14 +54,14 @@ export const Form = () => {
         label="New Password"
         placeholder="Enter your new password"
         isSecuredText
-        startContent={<Icons.PasswordIcon />}
+        startContent={<Icons.Password />}
       />
       <RHFInput<FormValues>
         name="confirmPassword"
         label="Confirm Password"
         placeholder="Confirm your password"
         isSecuredText
-        startContent={<Icons.PasswordIcon />}
+        startContent={<Icons.Password />}
       />
 
       <Button

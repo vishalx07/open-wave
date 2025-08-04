@@ -28,8 +28,8 @@ export const APP_ROUTES = {
   home: route(""),
   dashboard: {
     root: route("/dashboard"),
-    v1: route("/dashboard/v1"),
-    v2: route("/dashboard/v2"),
+    finance: route("/finance"),
+    hrManager: route("/hr-manager"),
   },
   login: route("/login"),
   register: route("/register"),

@@ -1,5 +1,5 @@
-import Verified from "~/svg/verified.svg";
 import { Avatar } from "@jamsr-ui/react";
+import { Icons } from "@/configs/icon";
 import { PROFILE } from "./data";
 
 export const Profile = () => {
@@ -26,7 +26,7 @@ export const Profile = () => {
           <h3 className="text-mono text-lg leading-5 font-semibold">
             {PROFILE.name}
           </h3>
-          <Verified className="text-primary" />
+          <Icons.Verified className="text-primary" />
         </div>
 
         <div className="flex flex-wrap justify-center gap-1 lg:gap-4.5">

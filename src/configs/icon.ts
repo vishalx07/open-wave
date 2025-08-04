@@ -10,13 +10,15 @@ import Microsoft from "~/icons/logos/microsoft.svg";
 import TikTok from "~/icons/logos/tiktok.svg";
 import Youtube from "~/icons/logos/youtube.svg";
 import Zoom from "~/icons/logos/zoom.svg";
-import MailIcon from "~/icons/mail.svg";
-import UserIcon from "~/icons/user.svg";
+import Mail from "~/icons/mail.svg";
+import User from "~/icons/user.svg";
+import Verified from "~/icons/verified.svg";
 
 export const Icons = {
-  MailIcon,
+  Mail,
   Password,
-  UserIcon,
+  User,
+  Verified,
 };
 
 export const Logos = {
