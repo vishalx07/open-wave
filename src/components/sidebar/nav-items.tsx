@@ -51,12 +51,12 @@ export const NAV_ITEMS: NavItem[] = [
       {
         title: "All Members",
         icon: <Users />,
-        url: APP_ROUTES.profile.allMembers,
+        url: APP_ROUTES.allMembers.root,
       },
       {
         title: "Genealogy",
         icon: <Icons.Genealogy />,
-        url: APP_ROUTES.profile.genealogy,
+        url: APP_ROUTES.genealogy,
       },
       {
         title: "Authentication",

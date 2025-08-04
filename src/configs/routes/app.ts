@@ -39,9 +39,12 @@ export const APP_ROUTES = {
         tab: (tab: string) => membersProfile(`/sales?tab=${tab}`),
       },
     },
-    allMembers: profile("/all-members"),
-    genealogy: profile("/genealogy"),
   },
+  allMembers: {
+    root: route("/all-members"),
+    tab: (tab: string) => route(`/all-members?tab=${tab}`),
+  },
+  genealogy: route("/genealogy"),
   auth: {
     root: route("/auth"),
     login: {
