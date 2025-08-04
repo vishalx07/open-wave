@@ -33,7 +33,7 @@ export const Account = () => {
           <TableRow>
             <TableCell>Photo</TableCell>
             <TableCell>150x150px JPEG, PNG Image</TableCell>
-            <TableCell>
+            <TableCell className="flex items-center justify-center">
               <Avatar
                 src={ACCOUNT.avatarUrl}
                 alt={ACCOUNT.name}

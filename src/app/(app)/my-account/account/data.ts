@@ -1,5 +1,6 @@
 import type {
   AccountProfile,
+  PermissionsType,
   SocialProvider,
   SocialSignIn,
   TrustedDevice,
@@ -14,6 +15,29 @@ export const ACCOUNT: AccountProfile = {
   signInWith: ["google", "facebook", "apple"],
   referralLink: "https://studio.co/1006090",
 };
+
+export const PERMISSIONS: PermissionsType[] = [
+  {
+    label: "Deposit",
+    description: "Deposits are allowed",
+    allowed: true,
+  },
+  {
+    label: "Withdraw",
+    description: "Withdraws are allowed",
+    allowed: true,
+  },
+  {
+    label: "Peer Transfer",
+    description: "Peer Transfers are not allowed",
+    allowed: false,
+  },
+  {
+    label: "Ticket",
+    description: "Tickets are allowed",
+    allowed: true,
+  },
+];
 
 export const CONNECTED_SOCIAL_PROVIDERS: SocialSignIn[] = [
   {

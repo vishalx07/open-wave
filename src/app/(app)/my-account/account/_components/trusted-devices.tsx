@@ -1,6 +1,8 @@
+"use client";
+
 import { LogOut } from "lucide-react";
-import { Link } from "@jamsr-ui/next";
 import {
+  Button,
   Card,
   CardHeader,
   IconButton,
@@ -9,15 +11,45 @@ import {
   TableCell,
   TableRow,
   Text,
+  Tooltip,
+  useConfirmation,
 } from "@jamsr-ui/react";
 import { Logos } from "@/configs/icon";
 import { TRUSTED_DEVICES } from "../data";
 
 export const TrustedDevices = () => {
+  const { confirm } = useConfirmation();
+
+  const handleLogoutAll = () =>
+    confirm({
+      message: "Are you sure you want to logout all devices?",
+      title: "Logout All",
+      onConfirm() {},
+      onCancel() {},
+    });
+
+  const handleLogout = () =>
+    confirm({
+      message: "Are you sure you want to logout this device?",
+      title: "Logout",
+      onConfirm() {},
+      onCancel() {},
+    });
+
   return (
     <Card>
       <CardHeader
-        heading="Account"
+        heading="Login Sessions"
+        endContent={
+          <Button
+            size="sm"
+            variant="outlined"
+            startContent={<LogOut size={16} />}
+            onClick={handleLogoutAll}
+          >
+            Logout All
+          </Button>
+        }
         className="border-divider border-b p-4"
       />
       <Table
@@ -56,28 +88,25 @@ export const TrustedDevices = () => {
                   </div>
                 </TableCell>
                 <TableCell>
-                  <IconButton
-                    label="Logout"
-                    size="sm"
-                    variant="light"
+                  <Tooltip
+                    showArrow
+                    title="Logout this device"
                   >
-                    <LogOut size={16} />
-                  </IconButton>
+                    <IconButton
+                      label="Logout"
+                      size="sm"
+                      variant="light"
+                      onClick={handleLogout}
+                    >
+                      <LogOut size={16} />
+                    </IconButton>
+                  </Tooltip>
                 </TableCell>
               </TableRow>
             );
           })}
         </TableBody>
       </Table>
-      <div className="flex items-center justify-center p-4">
-        <Link
-          href={"#"}
-          underline="always"
-          variant="paragraph2"
-        >
-          Manage Trusted Devices
-        </Link>
-      </div>
     </Card>
   );
 };
