@@ -8,6 +8,12 @@ export type AccountProfile = {
   referralLink: string;
 };
 
+export type PermissionsType = {
+  label: string;
+  description: string;
+  allowed: boolean;
+};
+
 export type SocialProvider =
   | "google"
   | "linkedIn"
