@@ -1,7 +1,7 @@
 export type AccountProfile = {
   avatarUrl: string;
   name: string;
-  availability: string;
+  status: string;
   email: string;
   passwordLastChanged: string;
   signInWith: string[];

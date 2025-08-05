@@ -19,7 +19,9 @@ export const AlertBox = () => {
           </div>
           <div className="space-y-1.5">
             <div className="flex flex-wrap items-center gap-2.5">
-              <Text variant="body1">Upgrade your business info</Text>
+              <Text variant="body1">
+                Upgrade your account to the Business Plan
+              </Text>
               <Chip
                 size="sm"
                 radius="md"
@@ -30,10 +32,8 @@ export const AlertBox = () => {
               </Chip>
             </div>
             <Text variant="paragraph2">
-              Elevate business information for a standout profile. Utilize
-              premium features, ensuring success with enhanced details.
-              <br />
-              Upgrade now for heightened visibility and broader impact.
+              Unlock advanced features, enhanced visibility, and greater growth
+              potential. Stand out and take your business to the next level.
             </Text>
           </div>
         </div>

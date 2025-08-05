@@ -59,7 +59,7 @@ export const Account = () => {
                 variant="flat"
                 color="success"
               >
-                {ACCOUNT.availability}
+                {ACCOUNT.status}
               </Chip>
             </TableCell>
             <TableCell className="text-center">
@@ -78,9 +78,7 @@ export const Account = () => {
             <TableCell>
               Password last changed {ACCOUNT.passwordLastChanged}
             </TableCell>
-            <TableCell className="text-center">
-              {EditButton("Edit Password")}
-            </TableCell>
+            <TableCell className="text-center"></TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Sign-in with</TableCell>
@@ -103,9 +101,7 @@ export const Account = () => {
                 })}
               </div>
             </TableCell>
-            <TableCell className="text-center">
-              {EditButton("Edit Sing-in")}
-            </TableCell>
+            <TableCell className="text-center"></TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Referral Link</TableCell>
@@ -118,9 +114,7 @@ export const Account = () => {
                 />
               </div>
             </TableCell>
-            <TableCell className="text-center">
-              {EditButton("Edit Name")}
-            </TableCell>
+            <TableCell className="text-center"></TableCell>
           </TableRow>
         </TableBody>
       </Table>
