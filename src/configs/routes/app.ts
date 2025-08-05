@@ -17,7 +17,7 @@ const changePassword = <T extends string>(path: T) =>
   auth("/change-password" + path);
 
 export const APP_ROUTES = {
-  home: route(""),
+  home: route("/"),
   dashboard: {
     root: route("/dashboard"),
     finance: route("/finance"),
