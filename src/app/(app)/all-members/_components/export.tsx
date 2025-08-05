@@ -1,7 +1,7 @@
 import { Share } from "lucide-react";
 import { Button } from "@jamsr-ui/react";
+import { fDateTime } from "@/utils/time";
 import { TEAM_DATA } from "../data";
-import { COLUMNS } from "./columns";
 
 export const Export = () => {
   return (
@@ -19,32 +19,31 @@ export const Export = () => {
 
 // convert to CSV
 function exportTableToCSV() {
-  const filename = "table";
+  const filename = "all-members";
 
   // Extract headers from column definitions
-  const headers = COLUMNS.map((column) =>
-    typeof column.header === "string" ? column.header : "",
-  );
+  const headers = [
+    { key: "fullname", label: "Fullname" },
+    { key: "email", label: "Email" },
+    { key: "userId", label: "User ID" },
+    { key: "username", label: "Username" },
+    { key: "country", label: "Country" },
+    { key: "phoneNumber", label: "Phone Number" },
+    { key: "status", label: "Status" },
+    { key: "plans", label: "Plans" },
+    { key: "createdAt", label: "Created At" },
+  ] as const;
 
   // Extract rows
   const rows = TEAM_DATA.map((row) => {
-    return COLUMNS.map((column) => {
-      const key = column.accessorKey as keyof typeof row;
+    return headers.map((header) => {
+      const key = header.key;
 
-      // Special handling for each key type
       switch (key) {
         case "createdAt":
-          return row.createdAt;
+          return fDateTime(row.createdAt);
         case "plans":
-          return row.plans.length > 0 ? row.plans.join("; ") : "No plans";
-        case "status":
-        case "fullname":
-        case "username":
-        case "userId":
-        case "email":
-        case "country":
-        case "phoneNumber":
-          return row[key];
+          return row.plans.length > 0 ? row.plans.join(", ") : "No plans";
         default:
           return row[key] ?? "";
       }
@@ -53,7 +52,7 @@ function exportTableToCSV() {
 
   // Combine headers and rows into CSV string
   const csvContent = [
-    headers.join(","),
+    headers.map((header) => header.label).join(","),
     ...rows.map((row) =>
       row
         .map((cell) => {
