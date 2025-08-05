@@ -1,4 +1,5 @@
 import {
+  CircleQuestionMark,
   CircleUser,
   Crown,
   HeadphonesIcon,
@@ -186,6 +187,11 @@ export const NAV_ITEMS: NavItem[] = [
   {
     title: "APPS",
     items: [
+      {
+        title: "FAQs",
+        icon: <CircleQuestionMark />,
+        url: APP_ROUTES.faqs,
+      },
       {
         title: "Support",
         icon: <HeadphonesIcon />,

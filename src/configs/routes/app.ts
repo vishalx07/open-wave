@@ -89,4 +89,5 @@ export const APP_ROUTES = {
       v2: twoFA("/v2"),
     },
   },
+  faqs: route("/faqs"),
 };
