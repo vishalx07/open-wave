@@ -14,6 +14,7 @@ import {
 import { cn } from "@/lib/tw-merge";
 import { TABS, TEAM_DATA } from "../data";
 import { COLUMNS } from "./columns";
+import { Export } from "./export";
 
 type Props = {
   tab?: string;
@@ -75,6 +76,9 @@ export const Table = ({ tab }: Props) => {
           base: "gap-4 px-0 py-4",
           td: "border-dashed first:pl-4",
         }}
+        paginationProps={{
+          className: "px-4",
+        }}
         tableProps={{
           topContent: (
             <div className="flex items-center justify-between gap-4 px-4">
@@ -89,14 +93,8 @@ export const Table = ({ tab }: Props) => {
               />
 
               <div className="flex items-center justify-end gap-3">
-                {/* <StatusFilter />
-                  <PlansFilter /> */}
-                <Button
-                  variant="flat"
-                  startContent={<Share size={16} />}
-                >
-                  Export
-                </Button>
+                <Export />
+
                 <Button
                   variant="flat"
                   startContent={<SlidersHorizontal size={16} />}
@@ -106,9 +104,6 @@ export const Table = ({ tab }: Props) => {
               </div>
             </div>
           ),
-        }}
-        paginationProps={{
-          className: "px-4",
         }}
       />
     </Card>
