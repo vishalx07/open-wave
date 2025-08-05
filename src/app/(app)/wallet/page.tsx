@@ -1,9 +1,14 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowDownLeftIcon, ArrowUpRightIcon, PlusIcon } from "lucide-react";
 import { Button, Card, Text } from "@jamsr-ui/react";
 import { APP_ROUTES } from "@/configs/routes";
 import { NavigationTabs } from "./_components/navigation-tabs";
 import { SummaryStats } from "./_components/summary-stats";
+
+export const metadata: Metadata = {
+  title: "Wallet",
+};
 
 export default function page() {
   return (
@@ -28,9 +33,9 @@ export default function page() {
             color="primary"
             startContent={<ArrowUpRightIcon size={16} />}
             as={Link}
-            href={APP_ROUTES.wallet.send}
+            href={APP_ROUTES.wallet.transfer}
           >
-            Send
+            Transfer
           </Button>
           <Button
             variant="outlined"
@@ -44,9 +49,9 @@ export default function page() {
             variant="outlined"
             startContent={<ArrowDownLeftIcon size={16} />}
             as={Link}
-            href={APP_ROUTES.wallet.request}
+            href={APP_ROUTES.wallet.withdraw}
           >
-            Request
+            withdraw
           </Button>
         </div>
       </div>

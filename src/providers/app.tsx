@@ -1,5 +1,6 @@
 "use client";
 
+import { NuqsAdapter } from "nuqs/adapters/next";
 import { ToastProvider } from "@jamsr-ui/react";
 import { ThemeProvider } from "@/theme";
 
@@ -10,7 +11,7 @@ type Props = {
 export const AppProvider = ({ children }: Props) => {
   return (
     <ThemeProvider>
-      {children}
+      <NuqsAdapter>{children}</NuqsAdapter>
       <ToastProvider />
     </ThemeProvider>
   );

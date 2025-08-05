@@ -1,6 +1,5 @@
-import { useState } from "react";
-import { CircleCheck, CirclePlus } from "lucide-react";
-import { Button, Chip, Menu, MenuItem } from "@jamsr-ui/react";
+import { FilterMenu } from "@/components/filter-menu";
+import { Icons } from "@/components/icons";
 import { TransactionCategory } from "../../types";
 
 const ITEMS: {
@@ -19,62 +18,35 @@ const ITEMS: {
     label: "Peer Transfer",
     value: TransactionCategory.PEER_TRANSFER,
   },
+  {
+    label: "Plan Purchase",
+    value: TransactionCategory.PLAN_PURCHASE,
+  },
+  {
+    label: "Referral Income",
+    value: TransactionCategory.REFERRAL_INCOME,
+  },
+  {
+    label: "ROI Income",
+    value: TransactionCategory.ROI_INCOME,
+  },
 ];
 
-export const CategoryFilter = () => {
-  const [selectedStatus, setSelectedStatus] = useState<TransactionCategory[]>();
+type Props = {
+  selectedValues: TransactionCategory[] | undefined;
+  onChange: (selectedValues: TransactionCategory[] | undefined) => void;
+};
 
+export const CategoryFilter = ({ selectedValues, onChange }: Props) => {
   return (
-    <Menu
-      placement="bottom"
-      trigger={
-        <Button
-          variant="outlined"
-          startContent={<CirclePlus size={16} />}
-          endContent={
-            <Chip
-              size="xs"
-              radius="md"
-              variant="flat"
-              className="min-w-5 p-0"
-              classNames={{
-                content: "p-0 w-full h-full items-center justify-center",
-              }}
-            >
-              {selectedStatus?.length ? selectedStatus.length : 0}
-            </Chip>
-          }
-          className="border-dashed"
-        >
-          Category
-        </Button>
-      }
-    >
-      {ITEMS.map((item) => {
-        const { label, value } = item;
-        return (
-          <MenuItem
-            key={value}
-            preventCloseOnClick
-            onClick={() => {
-              setSelectedStatus((prev) => {
-                if (prev?.includes(value)) {
-                  return prev.filter((item) => item !== value);
-                } else {
-                  return [...(prev ?? []), value];
-                }
-              });
-            }}
-            endContent={
-              selectedStatus?.includes(value) ? (
-                <CircleCheck className="size-4" />
-              ) : null
-            }
-          >
-            {label}
-          </MenuItem>
-        );
-      })}
-    </Menu>
+    <FilterMenu
+      label="Category"
+      items={ITEMS}
+      selectedValues={selectedValues}
+      onChange={onChange}
+      triggerProps={{
+        startContent: <Icons.PreferenceHorizontal className="size-4" />,
+      }}
+    />
   );
 };

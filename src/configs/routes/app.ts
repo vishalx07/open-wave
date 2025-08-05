@@ -169,7 +169,6 @@ export const APP_ROUTES = {
     root: wallet(""),
     deposit: wallet("/deposit"),
     withdraw: wallet("/withdraw"),
-    send: wallet("/send"),
-    request: wallet("/request"),
+    transfer: wallet("/transfer"),
   },
 };

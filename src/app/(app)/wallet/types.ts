@@ -39,6 +39,9 @@ export enum TransactionCategory {
   WITHDRAW,
   DEPOSIT,
   PEER_TRANSFER,
+  PLAN_PURCHASE,
+  REFERRAL_INCOME,
+  ROI_INCOME,
 }
 
 export type Transaction = {
@@ -51,6 +54,8 @@ export type Transaction = {
   category: TransactionCategory;
   userId: number;
   createdAt: string;
+  updatedAt?: string;
+  level?: number;
   paymentMethodDetails: {
     name: string;
     logo: string;
@@ -60,7 +65,7 @@ export type Transaction = {
 // Deposit
 export enum DepositStatus {
   PENDING,
-  SUCCESS,
+  CREDIT,
   FAILED,
 }
 
@@ -74,7 +79,7 @@ export enum DepositType {
 export type Deposit = {
   id: string;
   userId: number;
-  agentId: number;
+  agentId?: number;
   amount: number;
   charge: number;
   netAmount: number;
@@ -82,16 +87,19 @@ export type Deposit = {
   type: DepositType;
   message: string;
   transactionId: string;
-  methodName: string;
   createdAt: string;
   updatedAt?: string;
+  paymentMethodDetails: {
+    name: string;
+    logo: string;
+  };
 };
 
 // Withdrawal
 
 export enum WithdrawStatus {
   PENDING,
-  SUCCESS,
+  DEBIT,
   FAILED,
 }
 
@@ -104,7 +112,7 @@ export enum WithdrawType {
 export type Withdraw = {
   id: string;
   userId: number;
-  agentId: number;
+  agentId?: number;
   amount: number;
   charge: number;
   netAmount: number;
@@ -112,8 +120,11 @@ export type Withdraw = {
   type: WithdrawType;
   message: string;
   transactionId: string;
-  gasFee: number;
-  methodName: string;
+  gasFee?: number;
   createdAt: string;
-  updatedAt: string;
+  updatedAt?: string;
+  paymentMethodDetails: {
+    name: string;
+    logo: string;
+  };
 };

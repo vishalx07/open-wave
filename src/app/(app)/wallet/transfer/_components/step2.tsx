@@ -1,20 +1,15 @@
-import { ArrowDown, ChevronLeft, ChevronUp, HandCoins } from "lucide-react";
+import { useState } from "react";
+import { ChevronLeft, HandCoins } from "lucide-react";
 import { Avatar } from "@jamsr-ui/next";
-import {
-  Button,
-  Card,
-  CardContent,
-  CardHeader,
-  IconButton,
-  Input,
-  Text,
-} from "@jamsr-ui/react";
-import { SelectPaymentMethod } from "../../deposit/_components/select-payment-method";
+import { Button, Card, CardContent, CardHeader, Text } from "@jamsr-ui/react";
+import { NumberInput } from "@/components/number-input";
 
 type Props = {
   setStep: (step: number) => void;
 };
 export const Step2 = ({ setStep }: Props) => {
+  const [amount, setAmount] = useState("100");
+
   return (
     <div className="w-full max-w-lg">
       <Text
@@ -30,68 +25,54 @@ export const Step2 = ({ setStep }: Props) => {
           alt="apex"
           width={25}
           height={25}
-          size="sm"
         />
-        <span>Isabella Cruz</span>
+        <div className="flex flex-col text-sm">
+          <span>Isabella Cruz</span>
+          <span className="text-muted-foreground">@isabellacruz</span>
+        </div>
       </div>
       <div className="flex flex-col gap-6">
         {/* amount to send */}
-        <div className="relative flex flex-col gap-2">
-          <Card>
-            <CardHeader
-              heading="You pay"
+
+        <Card>
+          <CardHeader
+            heading="Amount"
+            classNames={{
+              heading: "text-foreground-secondary text-md !font-light",
+            }}
+          />
+          <CardContent className="pb-6">
+            <NumberInput
+              value={amount}
+              onValueChange={(e) => setAmount(e)}
               classNames={{
-                heading: "text-foreground-secondary text-md !font-light",
+                inputWrapper: "border-none p-0",
+                input: "border-none text-3xl p-0",
               }}
+              isInvalid={
+                parseInt(amount) > 10000 ||
+                parseInt(amount) % 1 !== 0 ||
+                parseInt(amount) < 1
+              }
+              errorMessage={
+                parseInt(amount) > 10000 ||
+                parseInt(amount) < 1 ||
+                parseInt(amount) % 1 !== 0
+                  ? "Amount must be within 1 USD - 10,000 USD"
+                  : ""
+              }
             />
-            <CardContent className="pb-6">
-              <Input
-                defaultValue="100"
-                classNames={{
-                  inputWrapper: "border-none p-0",
-                  input: "border-none text-3xl p-0",
-                }}
-                isNumberInput
-              />
-            </CardContent>
-          </Card>
-          <div className="bg-background absolute top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2 rounded-full p-1">
-            <IconButton
-              label="arrowdonw"
-              radius="full"
-            >
-              <ArrowDown />
-            </IconButton>
-          </div>
-          <Card className="bg-content2">
-            <CardHeader
-              heading="Recipient gets"
-              classNames={{
-                heading: "text-foreground-secondary text-md !font-light",
-              }}
-            />
-            <CardContent className="pb-6">
-              <Input
-                defaultValue="90.42"
-                classNames={{
-                  inputWrapper: "border-none p-0",
-                  input: "border-none text-3xl p-0",
-                }}
-                isNumberInput
-              />
-            </CardContent>
-          </Card>
+          </CardContent>
+        </Card>
+        {/* limit */}
+
+        <div className="border-divider bg-default/10 text-default-600 flex items-center justify-between rounded-xl border p-4 text-sm font-semibold">
+          <span> Limit </span>
+          <span className="flex items-center gap-2">1 USD - 10,000 USD</span>
         </div>
+
         {/* payment method */}
         <div className="flex flex-col">
-          <Text
-            variant="paragraph2"
-            className="pb-2 pl-3"
-          >
-            Paying with
-          </Text>
-          <SelectPaymentMethod />
-
           <Button
             variant="flat"
             startContent={
@@ -104,14 +85,14 @@ export const Step2 = ({ setStep }: Props) => {
             }
             radius="xl"
             size="lg"
-            className="mt-1 justify-start p-3"
+            className="mt-1 justify-start p-3 select-text"
             disableAnimation
             disableRipple
           >
             <div className="flex grow items-center justify-between gap-4">
-              <span className="text-muted-foreground">Includes fees</span>
-              <span className="text-primary flex items-center gap-2">
-                52.25 USD <ChevronUp size={16} />
+              <span className="text-muted-foreground">Charge</span>
+              <span className="text-danger flex items-center gap-2 font-semibold">
+                0.50%
               </span>
             </div>
           </Button>
@@ -128,41 +109,9 @@ export const Step2 = ({ setStep }: Props) => {
                   className="text-muted-foreground"
                   variant="paragraph"
                 >
-                  Conversion Fee
+                  Amount
                 </Text>
-                <Text variant="paragraph">0.47 USD (0.50%)</Text>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="relative after:absolute after:inset-y-0 after:start-5 after:h-full after:w-px after:-translate-x-[0.5px] after:bg-neutral-700">
-                <div className="relative z-10 flex size-10 items-center justify-center">
-                  <div className="size-2 rounded-full bg-neutral-700"></div>
-                </div>
-              </div>
-              <div className="flex grow items-center justify-between gap-4">
-                <Text
-                  className="text-muted-foreground"
-                  variant="paragraph"
-                >
-                  Amount after fee
-                </Text>
-                <Text variant="paragraph">90.42 USD</Text>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="relative after:absolute after:inset-y-0 after:start-5 after:h-full after:w-px after:-translate-x-[0.5px] after:bg-neutral-700">
-                <div className="relative z-10 flex size-10 items-center justify-center">
-                  <div className="size-2 rounded-full bg-neutral-700"></div>
-                </div>
-              </div>
-              <div className="flex grow items-center justify-between gap-4">
-                <Text
-                  className="text-muted-foreground"
-                  variant="paragraph"
-                >
-                  Exchange rate
-                </Text>
-                <Text variant="paragraph">1.00 EURO = 1.07589538 USD</Text>
+                <Text variant="paragraph">100 USD</Text>
               </div>
             </div>
 
@@ -177,12 +126,11 @@ export const Step2 = ({ setStep }: Props) => {
                   className="text-muted-foreground"
                   variant="paragraph"
                 >
-                  Our fee
+                  Charge
                 </Text>
-                <Text variant="paragraph">3 USD</Text>
+                <Text variant="paragraph">5 USD</Text>
               </div>
             </div>
-
             <div className="flex items-center gap-4">
               <div className="relative after:absolute after:inset-y-0 after:start-5 after:h-full after:w-px after:-translate-x-[0.5px] after:bg-neutral-700">
                 <div className="relative z-10 flex size-10 items-center justify-center">
@@ -194,9 +142,9 @@ export const Step2 = ({ setStep }: Props) => {
                   className="text-muted-foreground"
                   variant="paragraph"
                 >
-                  Total
+                  Payable Amount
                 </Text>
-                <Text variant="paragraph">52.25 USD</Text>
+                <Text variant="paragraph">105 USD</Text>
               </div>
             </div>
           </div>
@@ -210,7 +158,7 @@ export const Step2 = ({ setStep }: Props) => {
             radius="xl"
             onClick={() => setStep(3)}
           >
-            Continue
+            Proceed Transfer
           </Button>
           <Button
             fullWidth

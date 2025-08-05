@@ -28,7 +28,7 @@ const fees = [
 ];
 
 export const Step1 = ({ setStep }: Props) => {
-  const [amount, setAmount] = useState("10000");
+  const [amount, setAmount] = useState("100");
 
   return (
     <div className="w-full max-w-lg">
@@ -37,12 +37,12 @@ export const Step1 = ({ setStep }: Props) => {
         variant="h3"
         className="mb-6 text-center"
       >
-        Add money
+        Withdraw Money
       </Text>
       <div className="flex flex-col gap-6">
         <Card>
           <CardHeader
-            heading="Amount to add"
+            heading="Amount to withdraw"
             classNames={{
               heading: "text-foreground-secondary text-md !font-light",
             }}

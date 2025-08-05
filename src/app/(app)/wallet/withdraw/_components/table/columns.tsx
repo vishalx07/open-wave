@@ -8,33 +8,33 @@ import {
 } from "@jamsr-ui/react";
 import { cn } from "@/lib/tw-merge";
 import { fDateTime } from "@/utils/time";
-import { Deposit, DepositStatus } from "../../../types";
+import { Withdraw, WithdrawStatus } from "../../../types";
 
-const getColorByStatus = (status: DepositStatus): ChipProps["color"] => {
+const getColorByStatus = (status: WithdrawStatus): ChipProps["color"] => {
   switch (status) {
-    case DepositStatus.FAILED:
+    case WithdrawStatus.FAILED:
       return "danger";
-    case DepositStatus.CREDIT:
+    case WithdrawStatus.DEBIT:
       return "success";
-    case DepositStatus.PENDING:
+    case WithdrawStatus.PENDING:
       return "warning";
     default:
       return "default";
   }
 };
 
-const getClassNameByStatus = (status: DepositStatus) => {
+const getClassNameByStatus = (status: WithdrawStatus) => {
   switch (status) {
-    case DepositStatus.PENDING:
+    case WithdrawStatus.PENDING:
       return { text: "text-yellow-600", bg: "bg-yellow-50" };
-    case DepositStatus.FAILED:
+    case WithdrawStatus.FAILED:
       return { text: "text-foreground-secondary", bg: "bg-gray-50" };
-    case DepositStatus.CREDIT:
+    case WithdrawStatus.DEBIT:
       return { text: "text-green-600", bg: "bg-green-50" };
   }
 };
 
-export const columns: ColumnDef<Deposit>[] = [
+export const columns: ColumnDef<Withdraw>[] = [
   {
     header: "#",
     cell: ({ row }) => {
@@ -48,7 +48,7 @@ export const columns: ColumnDef<Deposit>[] = [
     accessorKey: "transactionId",
     cell: ({ row }) => {
       const { transactionId } = row.original;
-      return <Link href={"#"}>#{transactionId}</Link>;
+      return <Link href="#">#{transactionId}</Link>;
     },
     minSize: 150,
   },
@@ -57,7 +57,7 @@ export const columns: ColumnDef<Deposit>[] = [
     accessorKey: "amount",
     cell: ({ row: { original } }) => {
       const { amount, status } = original;
-      const isFailed = status === DepositStatus.FAILED;
+      const isFailed = status === WithdrawStatus.FAILED;
       const color = getClassNameByStatus(status);
       return (
         <Text
@@ -81,7 +81,7 @@ export const columns: ColumnDef<Deposit>[] = [
     accessorKey: "charge",
     cell: ({ row: { original } }) => {
       const { charge, status } = original;
-      const isFailed = status === DepositStatus.FAILED;
+      const isFailed = status === WithdrawStatus.FAILED;
       return (
         <Text
           className={cn("text-foreground-secondary", {
@@ -99,7 +99,7 @@ export const columns: ColumnDef<Deposit>[] = [
     accessorKey: "netAmount",
     cell: ({ row: { original } }) => {
       const { netAmount, status } = original;
-      const isFailed = status === DepositStatus.FAILED;
+      const isFailed = status === WithdrawStatus.FAILED;
       return (
         <Text
           variant="paragraph"
@@ -118,7 +118,7 @@ export const columns: ColumnDef<Deposit>[] = [
     accessorKey: "methodName",
     cell: ({ row: { original } }) => {
       const { paymentMethodDetails, status, message } = original;
-      const isFailed = status === DepositStatus.FAILED;
+      const isFailed = status === WithdrawStatus.FAILED;
       return (
         <div
           className={cn(
@@ -143,6 +143,7 @@ export const columns: ColumnDef<Deposit>[] = [
     size: 250,
   },
   {
+    id: "status",
     header: "status",
     accessorKey: "status",
     cell: ({ row }) => {
@@ -152,15 +153,15 @@ export const columns: ColumnDef<Deposit>[] = [
           size="sm"
           variant="flat"
           color={getColorByStatus(status)}
-          className="opacity-80"
+          className="opacity-90"
         >
-          {DepositStatus[status]}
+          {WithdrawStatus[status]}
         </Chip>
       );
     },
   },
   {
-    header: "Requested At",
+    header: "Created At",
     accessorKey: "createdAt",
     cell: ({ row: { original } }) => (
       <Text
@@ -174,7 +175,7 @@ export const columns: ColumnDef<Deposit>[] = [
     size: 180,
   },
   {
-    header: "Proceed At",
+    header: "Updated At",
     accessorKey: "updatedAt",
     cell: ({ row: { original } }) => (
       <Text

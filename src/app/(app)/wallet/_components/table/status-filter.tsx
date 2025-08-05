@@ -1,84 +1,83 @@
-import { useState } from "react";
-import { CircleCheck, CirclePlus } from "lucide-react";
-import { Button, Chip, Menu, MenuItem } from "@jamsr-ui/react";
-import { TransactionStatus } from "../../types";
+import { useMemo } from "react";
+import { FilterMenu } from "@/components/filter-menu";
+import { TransactionCategory, TransactionStatus } from "../../types";
 
-const ITEMS: {
-  label: string;
-  value: TransactionStatus;
-}[] = [
-  {
-    label: "Credit",
-    value: TransactionStatus.CREDIT,
-  },
-  {
-    label: "Debit",
-    value: TransactionStatus.DEBIT,
-  },
-  {
-    label: "Pending",
-    value: TransactionStatus.PENDING,
-  },
-  {
-    label: "Failed",
-    value: TransactionStatus.FAILED,
-  },
+// Constants
+const STATUS_ITEMS: { label: string; value: TransactionStatus }[] = [
+  { label: "Credit", value: TransactionStatus.CREDIT },
+  { label: "Debit", value: TransactionStatus.DEBIT },
+  { label: "Pending", value: TransactionStatus.PENDING },
+  { label: "Failed", value: TransactionStatus.FAILED },
 ];
 
-export const StatusFilter = () => {
-  const [selectedStatus, setSelectedStatus] = useState<TransactionStatus[]>();
+// Types
+type Props = {
+  categoryFilter: TransactionCategory[] | undefined;
+  selectedValues: TransactionStatus[] | undefined;
+  onChange: (selectedValues: TransactionStatus[] | undefined) => void;
+};
+
+// Helpers
+const filterStatusItems = (
+  categoryFilter: TransactionCategory[] | undefined,
+) => {
+  if (!categoryFilter) return STATUS_ITEMS;
+
+  return STATUS_ITEMS.filter((item) => {
+    switch (item.value) {
+      case TransactionStatus.CREDIT:
+        return (
+          categoryFilter.includes(TransactionCategory.DEPOSIT) ||
+          categoryFilter.includes(TransactionCategory.PEER_TRANSFER)
+        );
+      case TransactionStatus.DEBIT:
+        return (
+          categoryFilter.includes(TransactionCategory.WITHDRAW) ||
+          categoryFilter.includes(TransactionCategory.PEER_TRANSFER)
+        );
+      default:
+        return true;
+    }
+  });
+};
+
+const isStatusFilterDisabled = (
+  categoryFilter: TransactionCategory[] | undefined,
+): boolean => {
+  if (!categoryFilter) return false;
+
+  const includesOnlyNonFilterableCategories =
+    (categoryFilter.includes(TransactionCategory.PLAN_PURCHASE) ||
+      categoryFilter.includes(TransactionCategory.REFERRAL_INCOME) ||
+      categoryFilter.includes(TransactionCategory.ROI_INCOME)) &&
+    !categoryFilter.includes(TransactionCategory.PEER_TRANSFER) &&
+    !categoryFilter.includes(TransactionCategory.DEPOSIT) &&
+    !categoryFilter.includes(TransactionCategory.WITHDRAW);
+
+  return includesOnlyNonFilterableCategories;
+};
+
+export const StatusFilter = ({
+  selectedValues,
+  onChange,
+  categoryFilter,
+}: Props) => {
+  const items = useMemo(
+    () => filterStatusItems(categoryFilter),
+    [categoryFilter],
+  );
+  const isDisabled = useMemo(
+    () => isStatusFilterDisabled(categoryFilter),
+    [categoryFilter],
+  );
 
   return (
-    <Menu
-      placement="bottom"
-      trigger={
-        <Button
-          variant="outlined"
-          startContent={<CirclePlus size={16} />}
-          endContent={
-            <Chip
-              size="xs"
-              radius="md"
-              variant="flat"
-              className="min-w-5 p-0"
-              classNames={{
-                content: "p-0 w-full h-full items-center justify-center",
-              }}
-            >
-              {selectedStatus?.length ? selectedStatus.length : 0}
-            </Chip>
-          }
-          className="border-dashed"
-        >
-          Status
-        </Button>
-      }
-    >
-      {ITEMS.map((item) => {
-        const { label, value } = item;
-        return (
-          <MenuItem
-            key={value}
-            preventCloseOnClick
-            onClick={() => {
-              setSelectedStatus((prev) => {
-                if (prev?.includes(value)) {
-                  return prev.filter((item) => item !== value);
-                } else {
-                  return [...(prev ?? []), value];
-                }
-              });
-            }}
-            endContent={
-              selectedStatus?.includes(value) ? (
-                <CircleCheck className="size-4" />
-              ) : null
-            }
-          >
-            {label}
-          </MenuItem>
-        );
-      })}
-    </Menu>
+    <FilterMenu
+      label="Status"
+      items={items}
+      selectedValues={selectedValues}
+      onChange={onChange}
+      triggerProps={{ disabled: isDisabled }}
+    />
   );
 };

@@ -1,4 +1,3 @@
-import React from "react";
 import { CheckIcon, ChevronRightIcon } from "lucide-react";
 import { Button, Text } from "@jamsr-ui/react";
 
@@ -44,7 +43,7 @@ export const Success = ({ setStep }: Props) => {
             onClick={() => setStep(1)}
             endContent={<ChevronRightIcon size={18} />}
           >
-            Add another money
+            Withdraw another money
           </Button>
         </div>
       </div>

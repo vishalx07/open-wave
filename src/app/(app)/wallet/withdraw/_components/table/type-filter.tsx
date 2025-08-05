@@ -1,31 +1,27 @@
 import { FilterMenu } from "@/components/filter-menu";
-import { DepositType } from "../../../types";
+import { WithdrawType } from "../../../types";
 
 const ITEMS: {
   label: string;
-  value: DepositType;
+  value: WithdrawType;
 }[] = [
   {
-    label: "Instant",
-    value: DepositType.INSTANT,
-  },
-  {
     label: "Manual",
-    value: DepositType.MANUAL,
+    value: WithdrawType.MANUAL,
   },
   {
     label: "Admin",
-    value: DepositType.ADMIN,
+    value: WithdrawType.ADMIN,
   },
   {
-    label: "Received",
-    value: DepositType.RECEIVED,
+    label: "Transferred",
+    value: WithdrawType.TRANSFERRED,
   },
 ];
 
 type Props = {
-  selectedValues: DepositType[] | undefined;
-  onChange: (selectedValues: DepositType[] | undefined) => void;
+  selectedValues: WithdrawType[] | undefined;
+  onChange: (selectedValues: WithdrawType[] | undefined) => void;
 };
 
 export const TypeFilter = ({ selectedValues, onChange }: Props) => {

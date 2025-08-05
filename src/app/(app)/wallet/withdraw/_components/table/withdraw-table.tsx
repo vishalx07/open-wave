@@ -4,43 +4,41 @@ import { useState } from "react";
 import { useQueryState } from "nuqs";
 import { DataTable } from "@jamsr-ui/react";
 import { SearchTable } from "@/components/search-table";
-import { mockDeposits } from "../../../_mock/deposits";
-import { DepositStatus, DepositType } from "../../../types";
+import { mockWithdrawals } from "../../../_mock/withdraw";
+import { WithdrawStatus, WithdrawType } from "../../../types";
 import { columns } from "./columns";
 import { StatusFilter } from "./status-filter";
 import { TypeFilter } from "./type-filter";
 
-export const DepositHistoryTable = () => {
-  const [typeFilter, settypeFilter] = useState<DepositType[]>();
-  const [statusFilter, setStatusFilter] = useState<DepositStatus[]>();
+export const WithdrawHistoryTable = () => {
+  const [typeFilter, settypeFilter] = useState<WithdrawType[]>();
+  const [statusFilter, setStatusFilter] = useState<WithdrawStatus[]>();
   const [q] = useQueryState("q");
 
   const filterData = () => {
-    return mockDeposits.filter((deposit) => {
-      const machesType = typeFilter ? typeFilter.includes(deposit.type) : true;
+    return mockWithdrawals.filter((withdraw) => {
+      const machesType = typeFilter ? typeFilter.includes(withdraw.type) : true;
       const matchesStatus = statusFilter
-        ? statusFilter.includes(deposit.status)
+        ? statusFilter.includes(withdraw.status)
         : true;
 
       const matchesSearch = q
-        ? deposit.message
+        ? withdraw.message
             .toLowerCase()
             .trim()
             .includes(q.toLowerCase().trim()) ||
-          deposit.id.toLowerCase().includes(q.toLowerCase()) ||
-          deposit.paymentMethodDetails.name
+          withdraw.id.toLowerCase().includes(q.toLowerCase()) ||
+          withdraw.paymentMethodDetails.name
             .toLowerCase()
             .trim()
             .includes(q.toLowerCase().trim()) ||
-          deposit.amount.toString().includes(q.toLowerCase()) ||
-          deposit.netAmount.toString().includes(q.toLowerCase()) ||
-          deposit.charge.toString().includes(q.toLowerCase())
+          withdraw.amount.toString().includes(q.toLowerCase()) ||
+          withdraw.netAmount.toString().includes(q.toLowerCase()) ||
+          withdraw.charge.toString().includes(q.toLowerCase())
         : true;
-
       return machesType && matchesStatus && matchesSearch;
     });
   };
-
   return (
     <DataTable
       data={filterData()}

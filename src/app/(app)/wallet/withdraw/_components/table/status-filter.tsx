@@ -1,27 +1,27 @@
 import { FilterMenu } from "@/components/filter-menu";
-import { DepositStatus } from "../../../types";
+import { WithdrawStatus } from "../../../types";
 
 const ITEMS: {
   label: string;
-  value: DepositStatus;
+  value: WithdrawStatus;
 }[] = [
   {
-    label: "Credit",
-    value: DepositStatus.CREDIT,
+    label: "Debit",
+    value: WithdrawStatus.DEBIT,
   },
   {
     label: "Pending",
-    value: DepositStatus.PENDING,
+    value: WithdrawStatus.PENDING,
   },
   {
     label: "Failed",
-    value: DepositStatus.FAILED,
+    value: WithdrawStatus.FAILED,
   },
 ];
 
 type Props = {
-  selectedValues: DepositStatus[] | undefined;
-  onChange: (selectedValues: DepositStatus[] | undefined) => void;
+  selectedValues: WithdrawStatus[] | undefined;
+  onChange: (selectedValues: WithdrawStatus[] | undefined) => void;
 };
 
 export const StatusFilter = ({ selectedValues, onChange }: Props) => {

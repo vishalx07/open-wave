@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { CheckIcon, ChevronRightIcon } from "lucide-react";
 import { Button, Text } from "@jamsr-ui/react";
+import { APP_ROUTES } from "@/configs/routes";
 
 type Props = {
   setStep: (step: number) => void;
@@ -18,14 +20,14 @@ export const Success = ({ setStep }: Props) => {
             variant="h3"
             className="mb-2"
           >
-            Your transfer is on the way
+            Your transfer is successfull
           </Text>
           <Text
             variant="paragraph"
             className="text-foreground-secondary"
           >
-            We've scheduled a transfer of 52.25 USD to your Preline balance.
-            This transfer will be sent from your USD Debit Card.
+            Your payment has been successfully transferred to the recipient's
+            wallet.
           </Text>
         </div>
         <div className="flex gap-4">
@@ -33,8 +35,10 @@ export const Success = ({ setStep }: Props) => {
             radius="xl"
             color="primary"
             size="lg"
+            as={Link}
+            href={APP_ROUTES.wallet.root}
           >
-            Manage your transfers
+            View transaction details
           </Button>
           <Button
             radius="xl"
@@ -43,7 +47,7 @@ export const Success = ({ setStep }: Props) => {
             onClick={() => setStep(1)}
             endContent={<ChevronRightIcon size={18} />}
           >
-            Add another money
+            Make another transfer
           </Button>
         </div>
       </div>
