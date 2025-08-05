@@ -1,5 +1,5 @@
 import { FilterMenu } from "@/components/filter-menu";
-import { Icons } from "@/components/icons";
+import { Icons } from "@/configs/icon";
 import { TransactionCategory } from "../../types";
 
 const ITEMS: {

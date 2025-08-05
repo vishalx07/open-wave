@@ -8,6 +8,7 @@ import Lock from "~/icons/lock.svg";
 import Mail from "~/icons/mail.svg";
 import Minus from "~/icons/minus-circle.svg";
 import Play from "~/icons/play.svg";
+import PreferenceHorizontal from "~/icons/preference-horizontal.svg";
 import ShareOutlined from "~/icons/share-outlined.svg";
 import Star from "~/icons/star.svg";
 import User from "~/icons/user.svg";
@@ -24,6 +25,7 @@ export const Icons = {
   Mail,
   Minus,
   Play,
+  PreferenceHorizontal,
   ShareOutlined,
   Star,
   Lock,
