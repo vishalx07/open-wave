@@ -1,0 +1,71 @@
+"use client";
+
+import { useState } from "react";
+import NextLink from "next/link";
+import { OctagonAlert } from "lucide-react";
+import RoundedHexagon from "~/svg/rounded-hexagon.svg";
+import { Button, Chip, Text } from "@jamsr-ui/react";
+import { APP_ROUTES } from "@/configs/routes";
+import { cn } from "@/lib/tw-merge";
+
+export const AlertBox = () => {
+  const [skip, setSkip] = useState(false);
+
+  return (
+    <div
+      className={cn(
+        "border-divider black/5 mb-5 flex flex-col items-stretch rounded-xl border lg:mb-7.5",
+        skip && "hidden",
+      )}
+    >
+      <div
+        style={{ backgroundImage: "url(/images/bg-5-dark.png)" }}
+        className="flex grow flex-wrap items-center justify-between gap-2 bg-[length:660px_310px] [background-position:121%_41%] bg-no-repeat p-5 sm:flex-wrap rtl:[background-position:-30%_41%]"
+      >
+        <div className="flex items-center gap-4">
+          <div className="relative size-[50px] shrink-0">
+            <RoundedHexagon className="h-full w-full fill-orange-50 stroke-orange-200 dark:fill-orange-950/30 dark:stroke-orange-950" />
+            <OctagonAlert
+              size={20}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-orange-400"
+            />
+          </div>
+          <div className="space-y-1.5">
+            <div className="flex flex-wrap items-center gap-2.5">
+              <Text variant="body1">
+                Upgrade your account to the Business Plan
+              </Text>
+              <Chip
+                size="sm"
+                radius="md"
+                variant="flat"
+                className="text-foreground-secondary"
+              >
+                16 days left
+              </Chip>
+            </div>
+            <Text variant="paragraph2">
+              Unlock advanced features, enhanced visibility, and greater growth
+              potential. Stand out and take your business to the next level.
+            </Text>
+          </div>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <Button
+            variant="light"
+            onClick={() => setSkip(true)}
+          >
+            Skip
+          </Button>
+          <Button
+            color="primary"
+            as={NextLink}
+            href={APP_ROUTES.plans}
+          >
+            Upgrade Now
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};

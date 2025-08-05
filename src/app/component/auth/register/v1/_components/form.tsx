@@ -6,7 +6,7 @@ import { email, object, string } from "zod";
 import { Link } from "@jamsr-ui/next";
 import { Button, Text } from "@jamsr-ui/react";
 import { RHFInput, RHFProvider } from "@jamsr-ui/rhf";
-import { Icons } from "@/components/icons";
+import { Icons } from "@/configs/icon";
 
 type FormValues = {
   fullName: string;
@@ -55,20 +55,20 @@ export const Form = () => {
         name="fullName"
         label="Full Name"
         placeholder="Enter your full name"
-        startContent={<Icons.UserIcon />}
+        startContent={<Icons.User />}
       />
       <RHFInput<FormValues>
         name="email"
         label="Email"
         placeholder="Enter your email"
-        startContent={<Icons.MailIcon />}
+        startContent={<Icons.Mail />}
       />
       <RHFInput<FormValues>
         name="password"
         label="Password"
         placeholder="Enter your password"
         isSecuredText
-        startContent={<Icons.PasswordIcon />}
+        startContent={<Icons.Lock />}
       />
 
       <div className="w-full grow">

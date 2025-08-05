@@ -1,11 +1,8 @@
 const route = <T extends string>(path: T) => `${path}` as const;
 
-const publicProfile = <T extends string>(path: T) =>
-  route(`/public-profile${path}`);
-const profiles = <T extends string>(path: T) =>
-  publicProfile(`/profiles${path}`);
-const projects = <T extends string>(path: T) =>
-  publicProfile(`/projects${path}`);
+const profile = <T extends string>(path: T) => route(`/profile${path}`);
+const membersProfile = <T extends string>(path: T) =>
+  profile(`/members-profile${path}`);
 
 const auth = <T extends string>(path: T) => route("/auth" + path);
 const login = <T extends string>(path: T) => auth("/login" + path);
@@ -19,60 +16,38 @@ const verifyEmail = <T extends string>(path: T) => auth("/verify-email" + path);
 const changePassword = <T extends string>(path: T) =>
   auth("/change-password" + path);
 
-const myAccount = <T extends string>(path: T) => route("/my-account" + path);
-const account = <T extends string>(path: T) => myAccount("/account" + path);
-const billing = <T extends string>(path: T) => myAccount("/billing" + path);
-const security = <T extends string>(path: T) => myAccount("/security" + path);
-const members = <T extends string>(path: T) => myAccount("/members" + path);
-
 const wallet = <T extends string>(path: T) => route("/wallet" + path);
 
 export const APP_ROUTES = {
-  home: route(""),
+  home: route("/"),
   dashboard: {
     root: route("/dashboard"),
-    v1: route("/dashboard/v1"),
-    v2: route("/dashboard/v2"),
+    finance: route("/finance"),
+    hrManager: route("/hr-manager"),
   },
   login: route("/login"),
   register: route("/register"),
-  publicProfile: {
-    root: publicProfile(""),
-    profiles: {
-      root: profiles(""),
-      default: profiles("/default"),
-      creator: profiles("/creator"),
-      company: profiles("/company"),
-      nft: profiles("/nft"),
-      blogger: profiles("/blogger"),
-      crm: profiles("/crm"),
-      gamer: profiles("/gamer"),
-      feeds: profiles("/feeds"),
-      plain: profiles("/plain"),
-      modal: profiles("/modal"),
+  profile: {
+    root: profile(""),
+    myProfile: profile("/my-profile"),
+    membersProfile: {
+      root: membersProfile(""),
+      teams: {
+        root: membersProfile("/teams"),
+        tab: (tab: string) => membersProfile(`/teams?tab=${tab}`),
+      },
+      sales: {
+        root: membersProfile("/sales"),
+        tab: (tab: string) => membersProfile(`/sales?tab=${tab}`),
+      },
     },
-    projects: {
-      root: projects(""),
-      "3Columns": projects("/3-columns"),
-      "2Columns": projects("/2-columns"),
-    },
-    works: publicProfile("/works"),
-    teams: {
-      root: publicProfile("/teams"),
-      tab: (tab: string) => publicProfile(`/teams?tab=${tab}`),
-    },
-    sales: {
-      root: publicProfile("/sales"),
-      tab: (tab: string) => publicProfile(`/sales?tab=${tab}`),
-    },
-    activity: publicProfile("/activity"),
-    campaigns: {
-      root: publicProfile("/campaigns"),
-      card: publicProfile("/campaigns/card"),
-      list: publicProfile("/campaigns/list"),
-    },
-    empty: publicProfile("/empty"),
   },
+  allMembers: {
+    root: route("/all-members"),
+    tab: (tab: string) => route(`/all-members?tab=${tab}`),
+  },
+  genealogy: route("/genealogy"),
+  plans: route("/plans"),
   auth: {
     root: route("/auth"),
     login: {
@@ -115,55 +90,6 @@ export const APP_ROUTES = {
       v1: twoFA("/v1"),
       v2: twoFA("/v2"),
     },
-  },
-  myAccount: {
-    root: myAccount(""),
-    account: {
-      root: account(""),
-      getStarted: account("/get-started"),
-      userProfile: account("/user-profile"),
-      companyProfile: account("/company-profile"),
-      settingsSidebar: account("/settings-sidebar"),
-      settingsEnterprise: account("/settings-enterprise"),
-      settingsPlain: account("/settings-plain"),
-      settingsModal: account("/settings-modal"),
-    },
-    billing: {
-      root: billing(""),
-      basic: billing("/basic"),
-      enterprise: billing("/enterprise"),
-      plans: billing("/plans"),
-      billingHistory: billing("/billing-history"),
-    },
-    security: {
-      root: security(""),
-      getStarted: security("/get-started"),
-      overview: security("/overview"),
-      allowedIPAddresses: security("/allowed-ip-addresses"),
-      privacySettings: security("/privacy-settings"),
-      deviceManagement: security("/device-management"),
-      backupAndRestore: security("/backup-and-restore"),
-      currentSessions: security("/current-sessions"),
-      securityLog: security("/security-log"),
-    },
-    members: {
-      root: members(""),
-      teamsStater: members("/teams-starter"),
-      teams: members("/teams"),
-      teamInfo: members("/team-info"),
-      membersStarter: members("/members-starter"),
-      teamMembers: members("/team-members"),
-      importMembers: members("/import-members"),
-      roles: members("/roles"),
-      permissionsToggler: members("/permissions-toggler"),
-      permissionsCheck: members("/permissions-check"),
-    },
-    integrations: myAccount("/integrations"),
-    notifications: myAccount("/notifications"),
-    apiKeys: myAccount("/api-keys"),
-    appearance: myAccount("/appearance"),
-    inviteAFriend: myAccount("/invite-a-friend"),
-    activity: myAccount("/activity"),
   },
   wallet: {
     root: wallet(""),

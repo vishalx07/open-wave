@@ -16,7 +16,7 @@ export const Header = () => {
   const { onOpen } = useSidebarMobile();
 
   return (
-    <header className="border-divider h-(--header-mobile-height) border-b lg:h-(--header-desktop-height)">
+    <header className="border-divider z-header bg-background sticky top-0 h-(--header-mobile-height) border-b lg:h-(--header-desktop-height)">
       <div className="container flex h-full items-center justify-between">
         <div className="lg:hidden">
           <IconButton

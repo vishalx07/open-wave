@@ -6,7 +6,7 @@ import { email, object, string } from "zod";
 import { Link } from "@jamsr-ui/next";
 import { Button } from "@jamsr-ui/react";
 import { RHFInput, RHFProvider } from "@jamsr-ui/rhf";
-import { Icons } from "@/components/icons";
+import { Icons } from "@/configs/icon";
 import { COMPONENT_ROUTES } from "@/configs/routes";
 
 type FormValues = {
@@ -51,14 +51,14 @@ export const Form = () => {
         name="email"
         label="Email"
         placeholder="Enter your email"
-        startContent={<Icons.MailIcon />}
+        startContent={<Icons.Mail />}
       />
       <RHFInput<FormValues>
         name="password"
         label="Password"
         placeholder="Enter your password"
         isSecuredText
-        startContent={<Icons.PasswordIcon />}
+        startContent={<Icons.Lock />}
       />
 
       <Link

@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { email, object } from "zod";
 import { Button } from "@jamsr-ui/react";
 import { RHFInput, RHFProvider } from "@jamsr-ui/rhf";
-import { Icons } from "@/components/icons";
+import { Icons } from "@/configs/icon";
 
 type FormValues = {
   email: string;
@@ -46,7 +46,7 @@ export const Form = () => {
         name="email"
         label="Email"
         placeholder="Enter your email"
-        startContent={<Icons.MailIcon />}
+        startContent={<Icons.Mail />}
       />
 
       <Button
