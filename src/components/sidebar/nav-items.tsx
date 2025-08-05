@@ -191,7 +191,7 @@ export const NAV_ITEMS: NavItem[] = [
       {
         title: "FAQs",
         icon: <CircleQuestionMark />,
-        url: "#",
+        url: APP_ROUTES.faqs,
       },
       {
         title: "Support",
