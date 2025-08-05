@@ -7,13 +7,16 @@ import type {
 } from "./type";
 
 export const ACCOUNT: AccountProfile = {
-  avatarUrl: "/images/user3.png",
-  name: "Jason Tatum",
+  name: "Ethan Morgan",
+  userId: 1006047,
+  username: "ethanmorgan",
   status: "Active",
-  email: "jasontt@studio.co",
-  passwordLastChanged: "2 months ago",
+  email: "jasontt@gmail.com",
+  passwordLastChanged: "3 months ago",
+  activePlans: ["pro", "business"],
   signInWith: ["google", "facebook", "apple"],
-  referralLink: "https://studio.co/1006090",
+  referralId: 1006090,
+  createdAt: new Date("2023-07-17T17:30:00"),
 };
 
 export const PERMISSIONS: PermissionsType[] = [
@@ -29,7 +32,7 @@ export const PERMISSIONS: PermissionsType[] = [
   },
   {
     label: "Peer Transfer",
-    description: "Peer Transfers are not allowed",
+    description: "Peer Transfers are allowed",
     allowed: false,
   },
   {

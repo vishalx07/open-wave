@@ -1,11 +1,14 @@
 export type AccountProfile = {
-  avatarUrl: string;
   name: string;
+  userId: number;
+  username: string;
   status: string;
   email: string;
   passwordLastChanged: string;
+  activePlans: string[];
   signInWith: string[];
-  referralLink: string;
+  referralId: number;
+  createdAt: Date;
 };
 
 export type PermissionsType = {

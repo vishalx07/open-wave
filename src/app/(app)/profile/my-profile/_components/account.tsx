@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Copy, SquarePen } from "lucide-react";
+import { SquarePen } from "lucide-react";
 import {
   Avatar,
   Card,
@@ -12,9 +12,9 @@ import {
   TableBody,
   TableCell,
   TableRow,
-  toast,
 } from "@jamsr-ui/react";
 import { Logos } from "@/configs/icon";
+import { fDateTime } from "@/utils/time";
 import { ACCOUNT } from "../data";
 
 export const Account = () => {
@@ -29,7 +29,7 @@ export const Account = () => {
         variant="bordered"
         className="rounded-none"
         classNames={{
-          td: "p-4 text-foreground-secondary",
+          td: "p-4 text-foreground-secondary h-[65px]",
         }}
       >
         <TableBody>
@@ -40,7 +40,6 @@ export const Account = () => {
               <Avatar
                 src={ACCOUNT.avatarUrl}
                 alt={ACCOUNT.name}
-                size="xl"
                 className="mx-auto"
               />
             </TableCell>
@@ -55,6 +54,20 @@ export const Account = () => {
             </TableCell>
           </TableRow>
           <TableRow>
+            <TableCell>User Id</TableCell>
+            <TableCell>
+              <p>{ACCOUNT.userId}</p>
+            </TableCell>
+            <TableCell className="text-center"></TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Username</TableCell>
+            <TableCell>
+              <p>{ACCOUNT.username}</p>
+            </TableCell>
+            <TableCell className="text-center"></TableCell>
+          </TableRow>
+          <TableRow>
             <TableCell>Status</TableCell>
             <TableCell>
               <Chip
@@ -65,21 +78,39 @@ export const Account = () => {
                 {ACCOUNT.status}
               </Chip>
             </TableCell>
-            <TableCell className="text-center"></TableCell>
+            <TableCell className="text-center">
+              {EditButton("Edit Status")}
+            </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Email</TableCell>
             <TableCell>{ACCOUNT.email}</TableCell>
-            <TableCell className="text-center"></TableCell>
+            <TableCell className="text-center">
+              {EditButton("Edit Email")}
+            </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Password</TableCell>
+            <TableCell>Last changed {ACCOUNT.passwordLastChanged}</TableCell>
+            <TableCell className="text-center"></TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Plans</TableCell>
             <TableCell>
-              Password last changed {ACCOUNT.passwordLastChanged}
+              <div className="flex flex-wrap items-center gap-2.5">
+                {ACCOUNT.activePlans.map((item) => (
+                  <Chip
+                    key={item}
+                    size="sm"
+                    color="success"
+                    variant="dot"
+                  >
+                    {item}
+                  </Chip>
+                ))}
+              </div>
             </TableCell>
-            <TableCell className="text-center">
-              {EditButton("Edit Password")}
-            </TableCell>
+            <TableCell className="text-center"></TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Sign-in with</TableCell>
@@ -102,26 +133,16 @@ export const Account = () => {
                 })}
               </div>
             </TableCell>
-            <TableCell className="text-center">
-              {EditButton("Edit Sing-in")}
-            </TableCell>
+            <TableCell className="text-center"></TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>Referral Link</TableCell>
-            <TableCell>
-              <div className="flex items-center gap-2">
-                <p className="text-foreground">{ACCOUNT.referralLink}</p>
-                <Copy
-                  size={16}
-                  className="cursor-pointer"
-                  onClick={() =>
-                    toast.success("Referral link copied!", {
-                      position: "top-right",
-                    })
-                  }
-                />
-              </div>
-            </TableCell>
+            <TableCell>Referral Id</TableCell>
+            <TableCell>{ACCOUNT.referralId}</TableCell>
+            <TableCell className="text-center"></TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Members Since</TableCell>
+            <TableCell>{fDateTime(ACCOUNT.referralId)}</TableCell>
             <TableCell className="text-center"></TableCell>
           </TableRow>
         </TableBody>

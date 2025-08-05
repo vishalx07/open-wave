@@ -1,12 +1,23 @@
+"use client";
+
+import { useState } from "react";
 import NextLink from "next/link";
 import { OctagonAlert } from "lucide-react";
 import RoundedHexagon from "~/svg/rounded-hexagon.svg";
 import { Button, Chip, Text } from "@jamsr-ui/react";
 import { APP_ROUTES } from "@/configs/routes";
+import { cn } from "@/lib/tw-merge";
 
 export const AlertBox = () => {
+  const [skip, setSkip] = useState(false);
+
   return (
-    <div className="border-divider black/5 mb-5 flex flex-col items-stretch rounded-xl border lg:mb-7.5">
+    <div
+      className={cn(
+        "border-divider black/5 mb-5 flex flex-col items-stretch rounded-xl border lg:mb-7.5",
+        skip && "hidden",
+      )}
+    >
       <div
         style={{ backgroundImage: "url(/images/bg-5-dark.png)" }}
         className="flex grow flex-wrap items-center justify-between gap-2 bg-[length:660px_310px] [background-position:121%_41%] bg-no-repeat p-5 sm:flex-wrap rtl:[background-position:-30%_41%]"
@@ -41,13 +52,18 @@ export const AlertBox = () => {
         </div>
         <div className="flex items-center gap-1.5">
           <Button
+            variant="light"
+            onClick={() => setSkip(true)}
+          >
+            Skip
+          </Button>
+          <Button
             color="primary"
             as={NextLink}
             href={APP_ROUTES.plans}
           >
-            Start
+            Upgrade Now
           </Button>
-          <Button variant="light">Skip</Button>
         </div>
       </div>
     </div>

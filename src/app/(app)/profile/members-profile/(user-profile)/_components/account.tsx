@@ -1,7 +1,8 @@
+"use client";
+
 import React from "react";
-import { Copy, SquarePen } from "lucide-react";
+import { SquarePen } from "lucide-react";
 import {
-  Avatar,
   Card,
   CardHeader,
   Chip,
@@ -12,6 +13,7 @@ import {
   TableRow,
 } from "@jamsr-ui/react";
 import { Logos } from "@/configs/icon";
+import { fDateTime } from "@/utils/time";
 import { ACCOUNT } from "../data";
 
 export const Account = () => {
@@ -26,22 +28,10 @@ export const Account = () => {
         variant="bordered"
         className="rounded-none"
         classNames={{
-          td: "p-4 text-foreground-secondary",
+          td: "p-4 text-foreground-secondary h-[65px]",
         }}
       >
         <TableBody>
-          <TableRow>
-            <TableCell>Photo</TableCell>
-            <TableCell>150x150px JPEG, PNG Image</TableCell>
-            <TableCell className="flex items-center justify-center">
-              <Avatar
-                src={ACCOUNT.avatarUrl}
-                alt={ACCOUNT.name}
-                size="xl"
-                className="mx-auto"
-              />
-            </TableCell>
-          </TableRow>
           <TableRow>
             <TableCell>Name</TableCell>
             <TableCell>
@@ -52,7 +42,21 @@ export const Account = () => {
             </TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>Availability</TableCell>
+            <TableCell>User Id</TableCell>
+            <TableCell>
+              <p>{ACCOUNT.userId}</p>
+            </TableCell>
+            <TableCell className="text-center"></TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Username</TableCell>
+            <TableCell>
+              <p>{ACCOUNT.username}</p>
+            </TableCell>
+            <TableCell className="text-center"></TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Status</TableCell>
             <TableCell>
               <Chip
                 size="sm"
@@ -75,8 +79,24 @@ export const Account = () => {
           </TableRow>
           <TableRow>
             <TableCell>Password</TableCell>
+            <TableCell>Last changed {ACCOUNT.passwordLastChanged}</TableCell>
+            <TableCell className="text-center"></TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Plans</TableCell>
             <TableCell>
-              Password last changed {ACCOUNT.passwordLastChanged}
+              <div className="flex flex-wrap items-center gap-2.5">
+                {ACCOUNT.activePlans.map((item) => (
+                  <Chip
+                    key={item}
+                    size="sm"
+                    color="success"
+                    variant="dot"
+                  >
+                    {item}
+                  </Chip>
+                ))}
+              </div>
             </TableCell>
             <TableCell className="text-center"></TableCell>
           </TableRow>
@@ -104,16 +124,13 @@ export const Account = () => {
             <TableCell className="text-center"></TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>Referral Link</TableCell>
-            <TableCell>
-              <div className="flex items-center gap-2">
-                <p className="text-foreground">{ACCOUNT.referralLink}</p>
-                <Copy
-                  size={16}
-                  className="cursor-pointer"
-                />
-              </div>
-            </TableCell>
+            <TableCell>Referral Id</TableCell>
+            <TableCell>{ACCOUNT.referralId}</TableCell>
+            <TableCell className="text-center"></TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Members Since</TableCell>
+            <TableCell>{fDateTime(ACCOUNT.referralId)}</TableCell>
             <TableCell className="text-center"></TableCell>
           </TableRow>
         </TableBody>

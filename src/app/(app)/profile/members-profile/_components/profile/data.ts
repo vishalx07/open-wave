@@ -14,9 +14,9 @@ interface Profile {
 }
 
 export const PROFILE: Profile = {
-  name: "Jenny Klabber",
+  name: "Ethan Morgan",
   verified: true,
-  avatarUrl: "/images/user2.png",
+  avatarUrl: "/images/user3.png",
   details: [
     {
       name: "company",
@@ -30,7 +30,7 @@ export const PROFILE: Profile = {
     },
     {
       name: "email",
-      value: "jenny@kteam.com",
+      value: "jasontt@gmail.com",
       icon: Mail,
     },
   ],
