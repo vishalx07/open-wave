@@ -9,7 +9,7 @@ import type {
 export const ACCOUNT: AccountProfile = {
   avatarUrl: "/images/user3.png",
   name: "Jason Tatum",
-  availability: "Available now",
+  status: "Active",
   email: "jasontt@studio.co",
   passwordLastChanged: "2 months ago",
   signInWith: ["google", "facebook", "apple"],

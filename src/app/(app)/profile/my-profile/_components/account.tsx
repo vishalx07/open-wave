@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Copy, SquarePen } from "lucide-react";
 import {
@@ -10,6 +12,7 @@ import {
   TableBody,
   TableCell,
   TableRow,
+  toast,
 } from "@jamsr-ui/react";
 import { Logos } from "@/configs/icon";
 import { ACCOUNT } from "../data";
@@ -52,7 +55,7 @@ export const Account = () => {
             </TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>Availability</TableCell>
+            <TableCell>Status</TableCell>
             <TableCell>
               <Chip
                 size="sm"
@@ -62,23 +65,21 @@ export const Account = () => {
                 {ACCOUNT.status}
               </Chip>
             </TableCell>
-            <TableCell className="text-center">
-              {EditButton("Edit Status")}
-            </TableCell>
+            <TableCell className="text-center"></TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Email</TableCell>
             <TableCell>{ACCOUNT.email}</TableCell>
-            <TableCell className="text-center">
-              {EditButton("Edit Email")}
-            </TableCell>
+            <TableCell className="text-center"></TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Password</TableCell>
             <TableCell>
               Password last changed {ACCOUNT.passwordLastChanged}
             </TableCell>
-            <TableCell className="text-center"></TableCell>
+            <TableCell className="text-center">
+              {EditButton("Edit Password")}
+            </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Sign-in with</TableCell>
@@ -101,7 +102,9 @@ export const Account = () => {
                 })}
               </div>
             </TableCell>
-            <TableCell className="text-center"></TableCell>
+            <TableCell className="text-center">
+              {EditButton("Edit Sing-in")}
+            </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Referral Link</TableCell>
@@ -111,6 +114,11 @@ export const Account = () => {
                 <Copy
                   size={16}
                   className="cursor-pointer"
+                  onClick={() =>
+                    toast.success("Referral link copied!", {
+                      position: "top-right",
+                    })
+                  }
                 />
               </div>
             </TableCell>
