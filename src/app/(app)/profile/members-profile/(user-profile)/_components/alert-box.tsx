@@ -1,6 +1,8 @@
+import NextLink from "next/link";
 import { OctagonAlert } from "lucide-react";
 import RoundedHexagon from "~/svg/rounded-hexagon.svg";
 import { Button, Chip, Text } from "@jamsr-ui/react";
+import { APP_ROUTES } from "@/configs/routes";
 
 export const AlertBox = () => {
   return (
@@ -38,7 +40,13 @@ export const AlertBox = () => {
           </div>
         </div>
         <div className="flex items-center gap-1.5">
-          <Button color="primary">Start</Button>
+          <Button
+            color="primary"
+            as={NextLink}
+            href={APP_ROUTES.plans}
+          >
+            Start
+          </Button>
           <Button variant="light">Skip</Button>
         </div>
       </div>

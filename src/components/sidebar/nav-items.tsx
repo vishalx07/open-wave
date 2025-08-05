@@ -1,5 +1,6 @@
 import {
   CircleUser,
+  Crown,
   HeadphonesIcon,
   LayoutGrid,
   ShieldIcon,
@@ -57,6 +58,11 @@ export const NAV_ITEMS: NavItem[] = [
         title: "Genealogy",
         icon: <Icons.Genealogy />,
         url: APP_ROUTES.genealogy,
+      },
+      {
+        title: "Plans",
+        icon: <Crown />,
+        url: APP_ROUTES.plans,
       },
       {
         title: "Authentication",
