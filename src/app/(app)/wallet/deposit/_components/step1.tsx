@@ -55,15 +55,9 @@ export const Step1 = ({ setStep }: Props) => {
                 inputWrapper: "border-none p-0",
                 input: "border-none text-3xl p-0",
               }}
-              isInvalid={
-                parseInt(amount) > 10000 ||
-                parseInt(amount) % 1 !== 0 ||
-                parseInt(amount) < 1
-              }
+              isInvalid={Number(amount) > 10000 || Number(amount) < 1}
               errorMessage={
-                parseInt(amount) > 10000 ||
-                parseInt(amount) < 1 ||
-                parseInt(amount) % 1 !== 0
+                Number(amount) > 10000 || Number(amount) < 1
                   ? "Amount must be within 1 USD - 10,000 USD"
                   : ""
               }

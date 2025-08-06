@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useRef, useState } from "react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { Input, InputProps } from "@jamsr-ui/react";
 
 const formatWithCommas = (value: string): string => {
@@ -31,6 +31,9 @@ export const NumberInput = ({
     const raw = getRawValue(input.value);
 
     if (!/^\d*\.?\d*$/.test(raw)) return;
+
+    const [_, decimalPart] = raw.split(".");
+    if (decimalPart && decimalPart.length > 2) return;
 
     const prevCursor = input.selectionStart ?? 0;
     const prevLength = input.value.length;
