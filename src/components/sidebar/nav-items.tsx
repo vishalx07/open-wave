@@ -5,6 +5,7 @@ import {
   Crown,
   HeadphonesIcon,
   LayoutGrid,
+  Link,
   ShieldIcon,
   Users,
 } from "lucide-react";
@@ -60,6 +61,11 @@ export const NAV_ITEMS: NavItem[] = [
         title: "Genealogy",
         icon: <Icons.Genealogy />,
         url: APP_ROUTES.genealogy,
+      },
+      {
+        title: "Referrals",
+        icon: <Link />,
+        url: APP_ROUTES.referrals.root,
       },
       {
         title: "Plans",

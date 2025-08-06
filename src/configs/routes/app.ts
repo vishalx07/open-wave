@@ -47,6 +47,10 @@ export const APP_ROUTES = {
     tab: (tab: string) => route(`/all-members?tab=${tab}`),
   },
   genealogy: route("/genealogy"),
+  referrals: {
+    root: route("/referrals"),
+    tab: (tab: string) => route(`/referrals?tab=${tab}`),
+  },
   plans: route("/plans"),
   auth: {
     root: route("/auth"),
