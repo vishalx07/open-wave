@@ -1,20 +1,13 @@
 "use client";
 
 import NextLink from "next/link";
-import { SearchIcon, Share, SlidersHorizontal } from "lucide-react";
-import {
-  Button,
-  Card,
-  Chip,
-  DataTable,
-  Input,
-  Tab,
-  Tabs,
-} from "@jamsr-ui/react";
+import { SearchIcon } from "lucide-react";
+import { Card, Chip, DataTable, Input, Tab, Tabs } from "@jamsr-ui/react";
 import { cn } from "@/lib/tw-merge";
 import { TABS, TEAM_DATA } from "../data";
 import { COLUMNS } from "./columns";
-import { Export } from "./export";
+import { MoreActions } from "./more-actions";
+import { PlansFilter } from "./plans-filter";
 
 type Props = {
   tab?: string;
@@ -93,14 +86,8 @@ export const Table = ({ tab }: Props) => {
               />
 
               <div className="flex items-center justify-end gap-3">
-                <Export />
-
-                <Button
-                  variant="flat"
-                  startContent={<SlidersHorizontal size={16} />}
-                >
-                  Filter
-                </Button>
+                <PlansFilter />
+                <MoreActions />
               </div>
             </div>
           ),
