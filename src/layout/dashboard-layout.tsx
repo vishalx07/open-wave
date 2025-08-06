@@ -7,7 +7,7 @@ type Props = {
 
 export const DashboardLayout = ({ children }: Props) => {
   return (
-    <div className="light:bg-default-100 flex h-full">
+    <div className="light:bg-default-100 flex min-h-dvh">
       <Sidebar />
       <div className="flex grow flex-col">
         <Header />
