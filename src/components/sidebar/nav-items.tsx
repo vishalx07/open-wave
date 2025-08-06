@@ -3,7 +3,7 @@ import {
   CircleUser,
   CreditCardIcon,
   Crown,
-  HeadphonesIcon,
+  Headset,
   LayoutGrid,
   Link,
   ShieldIcon,

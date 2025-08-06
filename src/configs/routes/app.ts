@@ -102,4 +102,10 @@ export const APP_ROUTES = {
     withdraw: wallet("/withdraw"),
     transfer: wallet("/transfer"),
   },
+  support: {
+    root: route("/support"),
+    tab: (tab: string) => route(`/support?tab=${tab}`),
+    ticket: (id: string, tab?: string) =>
+      route(`/support/${id}${tab ? `?tab=${tab}` : ""}`),
+  },
 };

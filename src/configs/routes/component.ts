@@ -96,4 +96,8 @@ export const COMPONENT_ROUTES = {
       v2: twoFA("/v2"),
     },
   },
+  support: {
+    root: route("/support"),
+    ticket: (id: string) => route(`/support/${id}`),
+  },
 };
