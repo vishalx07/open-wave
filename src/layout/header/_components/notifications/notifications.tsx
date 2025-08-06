@@ -13,11 +13,21 @@ import {
   Text,
 } from "@jamsr-ui/react";
 import { cn } from "@/lib/tw-merge";
-import { TABS } from "./data";
+import { NOTIFICATIONS, TABS } from "./data";
+import { NotificationItem } from "./notification-item";
 
 export const Notifications = () => {
   const { isOpen, onClose, setIsOpen, onOpen } = useDisclosure();
-  const [activeTab, setActiveTab] = useState<"all" | "new" | "read">("new");
+  const [activeTab, setActiveTab] = useState<"all" | "unread" | "read">(
+    "unread",
+  );
+
+  const filteredNotifications =
+    activeTab === "all"
+      ? NOTIFICATIONS
+      : NOTIFICATIONS.filter(
+          (notification) => notification.status === activeTab,
+        );
 
   return (
     <div>
@@ -82,8 +92,17 @@ export const Notifications = () => {
           </Tabs>
         </DrawerHeader>
 
-        <DrawerBody>
-          
+        <DrawerBody className="scrollbar-thin p-0">
+          <div className="flex flex-col">
+            {filteredNotifications.map((notification) => {
+              return (
+                <NotificationItem
+                  key={notification.id}
+                  notification={notification}
+                />
+              );
+            })}
+          </div>
         </DrawerBody>
 
         <DrawerFooter className="border-divider border-t">
