@@ -201,8 +201,8 @@ export const NAV_ITEMS: NavItem[] = [
       },
       {
         title: "Support",
-        icon: <HeadphonesIcon />,
-        url: "#",
+        icon: <Headset />,
+        url: APP_ROUTES.support.root,
       },
       {
         title: "Wallet",

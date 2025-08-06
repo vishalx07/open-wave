@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Card, CardContent, Divider } from "@jamsr-ui/react";
 import { TicketList } from "./_components/ticket-list";
 
@@ -9,7 +10,9 @@ export default async function layout({ children }: Props) {
   return (
     <Card className="h-full">
       <CardContent className="absolute inset-0 flex size-full gap-4">
-        <TicketList />
+        <Suspense>
+          <TicketList />
+        </Suspense>
 
         <Divider
           orientation="vertical"

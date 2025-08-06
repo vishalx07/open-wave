@@ -95,9 +95,11 @@ async function exportTableToExcel() {
     // loop through all of the rows and set the outline style.
     worksheet.eachRow({ includeEmpty: false }, (row) => {
       // store each cell to currentCell
+      // @ts-ignore
       const currentCell = row._cells;
 
       // loop through currentCell to apply border only for the non-empty cell of excel
+      // @ts-ignore
       currentCell.forEach((singleCell) => {
         // store the cell address i.e. A1, A2, A3, B1, B2, B3, ...
         const cellAddress = singleCell._address;
