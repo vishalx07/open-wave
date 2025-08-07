@@ -13,7 +13,7 @@ export const transactionsData: Transaction[] = [
     user: {
       userId: "A-8486214",
       name: "James Brown",
-      avatar: "/james.png",
+      avatar: "/images/avatars/james.png",
     },
     paymentMethod: {
       name: "Money Transfer",
@@ -31,7 +31,7 @@ export const transactionsData: Transaction[] = [
     user: {
       userId: "A-8486215",
       name: "Sophia Williams",
-      avatar: "/sophia.png",
+      avatar: "/images/avatars/sophia.png",
     },
     paymentMethod: {
       name: "Money Transfer",
@@ -49,7 +49,7 @@ export const transactionsData: Transaction[] = [
     user: {
       userId: "A-8486216",
       name: "Matthew Johnson",
-      avatar: "/arthur.png",
+      avatar: "/images/avatars/arthur.png",
     },
     paymentMethod: {
       name: "Money Transfer",
