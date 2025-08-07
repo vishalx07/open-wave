@@ -18,6 +18,8 @@ const changePassword = <T extends string>(path: T) =>
 
 const wallet = <T extends string>(path: T) => route("/wallet" + path);
 
+const plans = <T extends string>(path: T) => route("/plans" + path);
+
 export const APP_ROUTES = {
   home: route("/"),
   dashboard: {
@@ -51,7 +53,11 @@ export const APP_ROUTES = {
     root: route("/referrals"),
     tab: (tab: string) => route(`/referrals?tab=${tab}`),
   },
-  plans: route("/plans"),
+  plans: {
+    root: plans(""),
+    list: plans("/list"),
+    setting: plans("/setting"),
+  },
   auth: {
     root: route("/auth"),
     login: {

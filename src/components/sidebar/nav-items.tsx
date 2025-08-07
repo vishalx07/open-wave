@@ -70,7 +70,17 @@ export const NAV_ITEMS: NavItem[] = [
       {
         title: "Plans",
         icon: <Crown />,
-        url: APP_ROUTES.plans,
+        url: APP_ROUTES.plans.root,
+        items: [
+          {
+            title: "List",
+            url: APP_ROUTES.plans.list,
+          },
+          {
+            title: "Setting",
+            url: APP_ROUTES.plans.setting,
+          },
+        ],
       },
       {
         title: "Authentication",
