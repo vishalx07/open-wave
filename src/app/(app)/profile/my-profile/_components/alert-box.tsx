@@ -60,7 +60,7 @@ export const AlertBox = () => {
           <Button
             color="primary"
             as={NextLink}
-            href={APP_ROUTES.plans}
+            href={APP_ROUTES.plans.root}
           >
             Upgrade Now
           </Button>
